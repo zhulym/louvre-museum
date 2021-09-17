@@ -1,0 +1,91 @@
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 76px 0;
+}
+.footer__menu-wrapper {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  left: -163px;
+  gap: 82px;
+}
+
+.footer__logo-text {
+  @include fontStyleHeading($size: 28px, $lineHeight: 50px);
+  padding-left: 15px;
+  font-weight: 400;
+  display: inline;
+  transition: all 0.3s ease;
+  &:hover {
+    color: $font-gold;
+  }
+}
+
+.footer__menu-item {
+  margin-left: 75px;
+}
+
+.footer__menu-link {
+  @include fontStyle($weight: 200, $lineHeight: 50px);
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+  &:hover {
+    color: $font-gold;
+  }
+  &:active {
+    color: $font-gold;
+  }
+}
+.footer__social-wrapper {
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
+  height: 140px;
+}
+.footer__social-item {
+  a {
+    min-width: 48px;
+    min-height: 48px;
+    border-radius: 50%;
+    border: 2px solid $social;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 7px;
+    transition: all 0.3s ease;
+    img {
+      transition: all 0.3s ease;
+    }
+    &:hover {
+      border-color: $font-gold;
+      box-shadow: 0 0 10px $font-gold;
+      cursor: pointer;
+    }
+    &:hover img {
+      display: block;
+      opacity: 0;
+    }
+  }
+}
+
+.tube {
+  background: url(../assets/images/footer/tube1.png) no-repeat;
+  background-position: center top 15px;
+}
+.insta {
+  background: url(../assets/images/footer/insta.png) no-repeat;
+  background-position: left 14.3px top 13.3px;
+}
+.face {
+  background: url(../assets/images/footer/face.png) no-repeat;
+  background-position: center top 13px;
+}
+.twit {
+  background: url(../assets/images/footer/twit.png) no-repeat;
+  background-position: center top 14px;
+}
+.pint {
+  background: url(../assets/images/footer/pint.png) no-repeat;
+  background-position: center top 13px;
+}

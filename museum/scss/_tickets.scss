@@ -1,0 +1,137 @@
+.tickets__content {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 70px;
+}
+
+.tickets__heading {
+  h2 {
+    @include fontStyleHeading();
+    padding: 75px 0 25px 0;
+    border-bottom: 3px solid $dark-red;
+    margin-bottom: 75px;
+  }
+}
+
+.tickets__type {
+  position: relative;
+  right: 87px;
+  p {
+    @include fontStyle($size: 28px, $weight: 600, $lineHeight: 33px);
+    letter-spacing: initial;
+    margin-bottom: 48px;
+  }
+}
+
+.tickets__type-item {
+  position: relative;
+  left: 0px;
+  margin-bottom: 49px;
+  input[type="radio"] {
+    display: none;
+  }
+  label {
+    @include fontStyle($lineHeight: 26px);
+    letter-spacing: initial;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 40px;
+    margin-right: 4px;
+    line-height: 18px;
+    user-select: none;
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 18px;
+      position: absolute;
+      left: 0;
+      bottom: 1px;
+      background: url(../assets/images/tickets/radio.png) 0 0 no-repeat;
+    }
+  }
+}
+
+.tickets__type-item input[type="radio"]:checked + label:before {
+  background: url(../assets/images/tickets/radio-checked.png) 0 0 no-repeat;
+}
+
+.tickets__type-item label:hover:before {
+  filter: brightness(120%);
+}
+
+.tickets__amount-text {
+  text-align: right;
+  @include fontStyle($size: 28px, $weight: 700, $lineHeight: 33px);
+  letter-spacing: initial;
+}
+
+.tickets__amount-wrapper {
+  margin-bottom: 37px;
+  position: relative;
+  left: 26px;
+  input {
+    border: none;
+    outline: none;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    @include fontStyle($size: 32px, $weight: 400, $lineHeight: 37px);
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    &:active {
+      position: relative;
+      top: 2px;
+    }
+  }
+  input {
+    background: none;
+    border: none;
+    max-width: 60px;
+    @include fontStyle($size: 22px, $weight: 300);
+    text-align: center;
+    margin-left: 16px;
+  }
+}
+.amount__buttons {
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid white;
+  padding: 2px 8px;
+  width: 150px;
+}
+.tickets__age {
+  @include fontStyle($lineHeight: 26px);
+  letter-spacing: initial;
+  margin: 13px 0 13px 0;
+}
+
+.tickets__total {
+  position: relative;
+  left: 25px;
+  @include fontStyle($size: 28px, $weight: 600, $lineHeight: 33px);
+  letter-spacing: 1.65px;
+  margin-top: 51px;
+}
+.tickets__total-amount {
+  @include fontStyle($size: 28px, $weight: 600, $lineHeight: 33px);
+  letter-spacing: 1.65px;
+}
+.tickets__buy {
+  @include fontStyle($lineHeight: 26px);
+  margin-top: 50px;
+  color: $font-dark;
+  padding: 11px 36px;
+  background: $bg-white;
+  border-radius: 2px;
+  &:hover {
+    background-color: $font-gold;
+    cursor: pointer;
+  }
+}

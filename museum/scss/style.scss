@@ -1,0 +1,85 @@
+/*======================================  FONTS  ===========================================*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
+
+/*======================================  CONSTANTS  ========================================*/
+@import "constants";
+
+/*======================================  MIXINS  ===========================================*/
+@import "mixins";
+
+/*======================================  IMPORT SCSS  =====================================*/
+@import "header";
+@import "welcome";
+@import "virtual-tour";
+@import "picture-explore";
+@import "video";
+@import "tickets";
+@import "contacts";
+@import "footer";
+
+/*======================================  DEFAULT STYLES  ==================================*/
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    color: #fff;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    border: none;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+ul,
+ul li,
+p,
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+}
+
+ul,
+ul li {
+    list-style: none;
+    display: block;
+}
+button {
+    transition: all 0.3s ease;
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1920px;
+    padding: 0 240px;
+    overflow: hidden;
+}
+.dark-section {
+    background-color: $bg-dark;
+}

@@ -1,0 +1,34 @@
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 76px 0;
+}
+
+.header__logo-text {
+  @include fontStyleHeading($size: 28px, $lineHeight: 50px);
+  padding-left: 15px;
+  font-weight: 400;
+  display: inline;
+  transition: all 0.3s ease;
+  &:hover {
+    color: $font-gold;
+  }
+}
+
+.header__menu-list {
+  display: flex;
+}
+.header__menu-item {
+  margin-left: 76px;
+}
+
+.header__menu-link {
+  @include fontStyle($weight: 200, $lineHeight: 50px);
+  text-transform: capitalize;
+  &:hover {
+    color: $font-gold;
+  }
+  &:active {
+    color: $font-gold;
+  }
+}

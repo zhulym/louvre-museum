@@ -1,0 +1,34 @@
+.explore {
+  margin-top: 75px;
+}
+.explore__content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 75px;
+}
+
+.explore__description {
+  max-width: 660px;
+  h2 {
+    @include fontStyleHeading();
+    padding-bottom: 25px;
+    border-bottom: 3px solid $dark-red;
+    margin-bottom: 77px;
+  }
+  p {
+    margin-bottom: 25px;
+    @include fontStyle();
+    letter-spacing: initial;
+  }
+  &:last-child {
+    margin-bottom: 315px;
+  }
+  span {
+    color: $yellow;
+  }
+}
+
+.explore__image {
+  padding-top: 12px;
+  padding-bottom: 70px;
+}

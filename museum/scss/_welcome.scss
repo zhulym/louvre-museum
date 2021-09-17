@@ -1,0 +1,27 @@
+.welcome__heading {
+  @include fontStyleHeading();
+  padding-top: 114px;
+  font-weight: 300;
+  margin-bottom: 26px;
+}
+.welcome__text {
+  @include fontStyle($size: 28px, $lineHeight: 33px);
+  letter-spacing: 2px;
+}
+
+.welcome__button {
+  @include mainButton();
+  margin: 76px 0 246px 0;
+}
+.welcome__content {
+  position: relative;
+  z-index: 10;
+}
+
+.welcome-bgi {
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  width: 1215;
+  height: 750;
+}
