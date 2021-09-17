@@ -28,7 +28,9 @@
 
 html,
 body {
+    position: relative;
     margin: 0;
+    height: 100%;
 }
 
 html {
@@ -76,9 +78,10 @@ button {
 .container {
     position: relative;
     margin: 0 auto;
-    max-width: 1920px;
-    padding: 0 240px;
+    max-width: 1480px;
+    padding: 0 20px;
     overflow: hidden;
+    height: 100%;
 }
 .dark-section {
     background-color: $bg-dark;

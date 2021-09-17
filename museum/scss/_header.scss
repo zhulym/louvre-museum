@@ -1,12 +1,12 @@
 .header__container {
   display: flex;
   justify-content: space-between;
-  padding: 76px 0;
+  padding: 51px 0;
 }
 
 .header__logo-text {
   @include fontStyleHeading($size: 28px, $lineHeight: 50px);
-  padding-left: 15px;
+  padding-left: 20px;
   font-weight: 400;
   display: inline;
   transition: all 0.3s ease;
@@ -17,9 +17,7 @@
 
 .header__menu-list {
   display: flex;
-}
-.header__menu-item {
-  margin-left: 76px;
+  gap: 56px;
 }
 
 .header__menu-link {

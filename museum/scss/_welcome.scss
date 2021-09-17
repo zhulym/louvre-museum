@@ -1,6 +1,6 @@
 .welcome__heading {
   @include fontStyleHeading();
-  padding-top: 114px;
+  padding-top: 148px;
   font-weight: 300;
   margin-bottom: 26px;
 }
@@ -14,14 +14,175 @@
   margin: 76px 0 246px 0;
 }
 .welcome__content {
-  position: relative;
+  position: absolute;
   z-index: 10;
 }
 
-.welcome-bgi {
+.welcome {
+  position: relative;
+  height: 100%;
+}
+
+// .slider__wrapper {
+//   position: relative;
+//   height: 100%;
+//   width: 100%;
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+
+.slider__container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-right__container {
+  position: relative;
+  right: 0px;
+  max-width: 1000px;
+  max-height: 750;
+}
+
+.slider-right__items {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px black;
+}
+
+.slider-right__item {
+  display: none;
+  position: relative;
+  width: 100%;
+  padding-bottom: 52px;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+}
+
+.active,
+.next {
+  display: block;
+}
+
+.next {
   position: absolute;
-  bottom: -5px;
-  right: 0;
-  width: 1215;
-  height: 750;
+  top: 0;
+  width: 100%;
+}
+
+.to-left {
+  animation: linear 0.3s left;
+}
+
+.to-right {
+  animation: linear 0.3s right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation: linear 0.3s left;
+  animation-direction: reverse;
+}
+
+.from-right {
+  animation: linear 0.3s right;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+.pagination__wrapper {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  align-self: center;
+  background-color: $bg-dark;
+  padding: 36px 75px;
+  padding-left: 66px;
+  right: 0px;
+  bottom: 0%;
+  z-index: 100;
+}
+
+.slider__pagination {
+  position: relative;
+  top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-left: 53px;
+}
+
+.pagination-item {
+  background-color: white;
+  width: 16px;
+  height: 16px;
+  margin-bottom: 20px;
+  transition: all 0.3s linear;
+}
+
+.active-pagination {
+  background-color: $paginationColor;
+  box-shadow: 0 0 15px $paginationColor;
+  transform: scale(1.05);
+}
+
+.pagination-item:hover {
+  cursor: pointer;
+  background-color: rgb(179, 179, 179);
+}
+
+.slider__numbers {
+  font-size: 22px;
+  line-height: 40px;
+  position: relative;
+  top: 3px;
+}
+
+.slider__number {
+  margin: 0 5px;
+}
+
+.arrow {
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.slider__arrows {
+  display: flex;
+  gap: 20px;
+  margin-left: 59px;
+}
+
+.slider-left__arrow:active {
+  transform: scale(1.2) translateX(-5px);
+}
+
+.slider-right__arrow:active {
+  transform: scale(1.2) translateX(5px);
 }
