@@ -269,7 +269,26 @@
 			</div>
 		</section>
 
-		<section class="tickets dark-section" id="tickets">
+		<section class="gallery dark-section" id="gallery">
+			<div class="container">
+				<div class="gallery__shadow"></div>
+				<div class="gallery__heading">
+					<h2>Art gallery</h2>
+				</div>
+				<div class="gallery__picture-container">
+					<div class="gallery__picture-inner-container">
+						<div class="gallery__left">
+						</div>
+						<div class="gallery__center">
+						</div>
+						<div class="gallery__right">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="tickets" id="tickets">
 			<div class="container">
 				<div class="tickets__heading">
 					<h2>Buy tickets</h2>
@@ -303,22 +322,18 @@
 						<div class="tickets__amount-wrapper">
 							<p class="tickets__age">Basic 18+</p>
 							<div class="amount__buttons">
-								<button><img class="amount__button-minus18" src="./assets/images/tickets/button-minus.png"
-										alt="button-minus"></button>
+								<button><span class="amount__button-minus18 ">_</span></button>
 								<input class="amount__number18" type="number" value="1" readonly>
-								<button><img class="amount__button-plus18" src="./assets/images/tickets/button-plus.png"
-										alt="button-plus"></button>
+								<button><span class="amount__button-plus18">+</span></button>
 							</div>
 						</div>
 
 						<div class="tickets__amount-wrapper">
 							<p class="tickets__age">Senior 65+</p>
 							<div class="amount__buttons">
-								<button><img class="amount__button-minus65" src="./assets/images/tickets/button-minus.png"
-										alt="button-minus"></button>
+								<button><span class="amount__button-minus65 ">_</span></button>
 								<input class="amount__number65" type="number" value="1" readonly>
-								<button><img class="amount__button-plus65" src="./assets/images/tickets/button-plus.png"
-										alt="button-plus"></button>
+								<button><span class="amount__button-plus65">+</span></button>
 							</div>
 						</div>
 
@@ -397,6 +412,7 @@
 	<script src="./script/swiper/swiper-bundle.min.js"></script>
 	<script src="./script/index.js"></script>
 	<script src="./script/video-journey.js"></script>
+	<script src="./script/art-gallery.js"></script>
 </body>
 
 </html>

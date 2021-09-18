@@ -833,6 +833,114 @@ input[type="range"].sound__progress {
   border: 0;
 }
 
+.gallery__heading h2 {
+  font-family: "Forum", cursive;
+  font-size: 80px;
+  font-weight: 300;
+  line-height: 90px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  padding: 75px 0 25px 0;
+  margin-bottom: 53px;
+}
+
+.gallery {
+  height: 2200px;
+}
+
+.gallery__picture-container {
+  position: relative;
+  overflow-y: hidden;
+}
+
+.gallery__picture-inner-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 36px;
+          column-gap: 36px;
+}
+
+.gallery__picture-inner-container img {
+  margin: 12px 0;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.gallery__hide {
+  -webkit-animation: galleryAnimationHide 0.5s ease;
+          animation: galleryAnimationHide 0.5s ease;
+}
+
+.gallery__show {
+  -webkit-animation: galleryAnimationShow 0.5s ease;
+          animation: galleryAnimationShow 0.5s ease;
+}
+
+.gallery__left {
+  position: relative;
+  top: 12px;
+}
+
+.gallery__center {
+  position: relative;
+  top: -40px;
+}
+
+.gallery__right {
+  position: relative;
+  top: 35px;
+}
+
+.gallery__shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0px -110px 125px 30px black inset;
+          box-shadow: 0px -110px 125px 30px black inset;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+@-webkit-keyframes galleryAnimationHide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes galleryAnimationHide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes galleryAnimationShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes galleryAnimationShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .tickets__content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -843,6 +951,15 @@ input[type="range"].sound__progress {
   padding-bottom: 70px;
 }
 
+#tickets {
+  color: black !important;
+}
+
+.tickets__heading {
+  border-bottom: 3px solid #710707;
+  margin-bottom: 75px;
+}
+
 .tickets__heading h2 {
   font-family: "Forum", cursive;
   font-size: 80px;
@@ -850,9 +967,9 @@ input[type="range"].sound__progress {
   line-height: 90px;
   text-transform: uppercase;
   letter-spacing: 5px;
-  padding: 75px 0 25px 0;
-  border-bottom: 3px solid #710707;
-  margin-bottom: 75px;
+  color: #9d8665;
+  padding-top: 75px;
+  padding-bottom: 27px;
 }
 
 .tickets__type {
@@ -868,12 +985,14 @@ input[type="range"].sound__progress {
   letter-spacing: 2px;
   letter-spacing: initial;
   margin-bottom: 48px;
+  color: #000;
 }
 
 .tickets__type-item {
   position: relative;
   left: 0px;
-  margin-bottom: 49px;
+  margin-bottom: 25px;
+  color: #000;
 }
 
 .tickets__type-item input[type="radio"] {
@@ -897,17 +1016,19 @@ input[type="range"].sound__progress {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  color: #000;
 }
 
 .tickets__type-item label:before {
   content: "";
   display: inline-block;
+  color: #000;
   width: 17px;
   height: 18px;
   position: absolute;
   left: 0;
   bottom: 1px;
-  background: url(../assets/images/tickets/radio.png) 0 0 no-repeat;
+  background: url(../assets/images/tickets/radio.svg) 0 0 no-repeat;
 }
 
 .tickets__type-item input[type="radio"]:checked + label:before {
@@ -927,17 +1048,31 @@ input[type="range"].sound__progress {
   line-height: 33px;
   letter-spacing: 2px;
   letter-spacing: initial;
+  color: #000;
 }
 
 .tickets__amount-wrapper {
-  margin-bottom: 37px;
+  margin-bottom: -13px;
   position: relative;
   left: 26px;
+  color: #000;
+  margin-top: 25px;
 }
 
 .tickets__amount-wrapper input {
   border: none;
   outline: none;
+  color: #000;
+  background: none;
+  border: none;
+  max-width: 60px;
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 38px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-left: 6px;
 }
 
 .tickets__amount-wrapper button {
@@ -949,6 +1084,7 @@ input[type="range"].sound__progress {
           align-items: center;
   background: none;
   border: none;
+  color: #000;
   font-family: "Roboto", sans-serif;
   font-size: 32px;
   font-weight: 400;
@@ -967,19 +1103,6 @@ input[type="range"].sound__progress {
   top: 2px;
 }
 
-.tickets__amount-wrapper input {
-  background: none;
-  border: none;
-  max-width: 60px;
-  font-family: "Roboto", sans-serif;
-  font-size: 22px;
-  font-weight: 300;
-  line-height: 38px;
-  letter-spacing: 2px;
-  text-align: center;
-  margin-left: 16px;
-}
-
 .amount__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -987,9 +1110,15 @@ input[type="range"].sound__progress {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 3px solid white;
+  border: 3px solid #000;
   padding: 2px 8px;
   width: 150px;
+}
+
+.amount__buttons span {
+  font-size: 32px;
+  line-height: 37px;
+  color: #000;
 }
 
 .tickets__age {
@@ -1000,6 +1129,7 @@ input[type="range"].sound__progress {
   letter-spacing: 2px;
   letter-spacing: initial;
   margin: 13px 0 13px 0;
+  color: #000;
 }
 
 .tickets__total {
@@ -1010,8 +1140,9 @@ input[type="range"].sound__progress {
   font-weight: 600;
   line-height: 33px;
   letter-spacing: 2px;
+  color: #000;
   letter-spacing: 1.65px;
-  margin-top: 51px;
+  margin-top: 62px;
 }
 
 .tickets__total-amount {
@@ -1029,16 +1160,28 @@ input[type="range"].sound__progress {
   font-weight: 300;
   line-height: 26px;
   letter-spacing: 2px;
-  margin-top: 50px;
-  color: #000;
+  margin-top: 60px;
+  color: #ffffff;
   padding: 11px 36px;
-  background: #ffffff;
+  background: #000;
   border-radius: 2px;
 }
 
 .tickets__buy:hover {
   background-color: #9d8665;
   cursor: pointer;
+}
+
+.amount__button-minus18,
+.amount__button-minus65 {
+  position: relative;
+  top: -13px;
+}
+
+.amount__button-plus18,
+.amount__button-plus65 {
+  position: relative;
+  left: 4px;
 }
 
 .contacts__heading {

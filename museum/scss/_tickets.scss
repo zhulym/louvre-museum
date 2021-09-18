@@ -3,13 +3,17 @@
   justify-content: space-between;
   padding-bottom: 70px;
 }
-
+#tickets {
+  color: black !important;
+}
 .tickets__heading {
+  border-bottom: 3px solid $dark-red;
+  margin-bottom: 75px;
   h2 {
     @include fontStyleHeading();
-    padding: 75px 0 25px 0;
-    border-bottom: 3px solid $dark-red;
-    margin-bottom: 75px;
+    color: $font-gold;
+    padding-top: 75px;
+    padding-bottom: 27px;
   }
 }
 
@@ -20,13 +24,15 @@
     @include fontStyle($size: 28px, $weight: 600, $lineHeight: 33px);
     letter-spacing: initial;
     margin-bottom: 48px;
+    color: $font-dark;
   }
 }
 
 .tickets__type-item {
   position: relative;
   left: 0px;
-  margin-bottom: 49px;
+  margin-bottom: 25px;
+  color: $font-dark;
   input[type="radio"] {
     display: none;
   }
@@ -40,15 +46,17 @@
     margin-right: 4px;
     line-height: 18px;
     user-select: none;
+    color: $font-dark;
     &:before {
       content: "";
       display: inline-block;
+      color: $font-dark;
       width: 17px;
       height: 18px;
       position: absolute;
       left: 0;
       bottom: 1px;
-      background: url(../assets/images/tickets/radio.png) 0 0 no-repeat;
+      background: url(../assets/images/tickets/radio.svg) 0 0 no-repeat;
     }
   }
 }
@@ -65,21 +73,32 @@
   text-align: right;
   @include fontStyle($size: 28px, $weight: 700, $lineHeight: 33px);
   letter-spacing: initial;
+  color: $font-dark;
 }
 
 .tickets__amount-wrapper {
-  margin-bottom: 37px;
+  margin-bottom: -13px;
   position: relative;
   left: 26px;
+  color: $font-dark;
+  margin-top: 25px;
   input {
     border: none;
     outline: none;
+    color: $font-dark;
+    background: none;
+    border: none;
+    max-width: 60px;
+    @include fontStyle($size: 22px, $weight: 300);
+    text-align: center;
+    margin-left: 6px;
   }
   button {
     display: flex;
     align-items: center;
     background: none;
     border: none;
+    color: $font-dark;
     @include fontStyle($size: 32px, $weight: 400, $lineHeight: 37px);
     &:hover {
       transform: scale(1.1);
@@ -90,34 +109,34 @@
       top: 2px;
     }
   }
-  input {
-    background: none;
-    border: none;
-    max-width: 60px;
-    @include fontStyle($size: 22px, $weight: 300);
-    text-align: center;
-    margin-left: 16px;
-  }
 }
+
 .amount__buttons {
   display: flex;
   justify-content: space-between;
-  border: 3px solid white;
+  border: 3px solid $font-dark;
   padding: 2px 8px;
   width: 150px;
+  span {
+    font-size: 32px;
+    line-height: 37px;
+    color: $font-dark;
+  }
 }
 .tickets__age {
   @include fontStyle($lineHeight: 26px);
   letter-spacing: initial;
   margin: 13px 0 13px 0;
+  color: $font-dark;
 }
 
 .tickets__total {
   position: relative;
   left: 25px;
   @include fontStyle($size: 28px, $weight: 600, $lineHeight: 33px);
+  color: $font-dark;
   letter-spacing: 1.65px;
-  margin-top: 51px;
+  margin-top: 62px;
 }
 .tickets__total-amount {
   @include fontStyle($size: 28px, $weight: 600, $lineHeight: 33px);
@@ -125,13 +144,24 @@
 }
 .tickets__buy {
   @include fontStyle($lineHeight: 26px);
-  margin-top: 50px;
-  color: $font-dark;
+  margin-top: 60px;
+  color: $bg-white;
   padding: 11px 36px;
-  background: $bg-white;
+  background: $font-dark;
   border-radius: 2px;
   &:hover {
     background-color: $font-gold;
     cursor: pointer;
   }
+}
+
+.amount__button-minus18,
+.amount__button-minus65 {
+  position: relative;
+  top: -13px;
+}
+.amount__button-plus18,
+.amount__button-plus65 {
+  position: relative;
+  left: 4px;
 }
