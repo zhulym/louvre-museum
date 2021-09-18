@@ -4,7 +4,7 @@
   h2 {
     @include fontStyleHeading();
     color: $font-gold;
-    padding-top: 72px;
+    padding-top: 75px;
     padding-bottom: 27px;
   }
 }
@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  row-gap: 77px;
+  row-gap: 72px;
   column-gap: 60px;
 }
 
@@ -21,8 +21,17 @@
   position: relative;
   display: inline-block;
   transition: all 0.3s ease;
-  &:hover {
-    transform: scale(1.02);
+  // &:hover {
+  //   transform: scale(1.02);
+  // }
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 300px;
+    bottom: 67px;
+    height: 3px;
+    background-color: $dark-red;
   }
   &:hover::after {
     content: "";
@@ -30,6 +39,7 @@
     left: 0;
     bottom: 67px;
     height: 3px;
+    width: 100%;
     background-color: $dark-red;
     animation: redUnderline 0.5s;
     animation-fill-mode: forwards;
@@ -61,9 +71,16 @@
 
 @keyframes redUnderline {
   from {
-    width: 0px;
+    width: 300px;
   }
   to {
     width: 440px;
   }
+}
+
+.virtusl-tour__item {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }

@@ -1,15 +1,3 @@
-const videoProgress = document.querySelector('.video__progress');
-const soundProgress = document.querySelector('.sound__progress');
-
-videoProgress.addEventListener('input', function () {
-  const value = this.value;
-  this.style.background = `linear-gradient(to right, #82CFD0 0%, #82CFD0 ${value}%, #fff ${value}%, white 100%)`
-})
-soundProgress.addEventListener('input', function () {
-  const value = this.value;
-  this.style.background = `linear-gradient(to right, #82CFD0 0%, #82CFD0 ${value}%, #fff ${value}%, white 100%)`
-})
-
 // const ticketCost = 110;
 // let valueAmount18 = 1;
 // let valueAmount65 = 1;

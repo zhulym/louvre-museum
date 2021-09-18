@@ -1,60 +1,82 @@
-.video__player {
-  background: url(../assets/images/video/video-image.jpg) no-repeat;
-  background-size: 100% 100%;
+.video__container {
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 90px;
-  padding: 205px 0;
-  max-height: 629px;
-  button {
-    cursor: pointer;
-    background: none;
-    border: none;
-  }
+}
+.video {
+  margin-bottom: 75px;
+}
+.video__player {
+  position: relative;
+  line-height: 0;
+  width: 100%;
+  // box-shadow: 0px 0px 25px 10px black;
+}
+
+.video__content {
+  position: relative;
+  max-height: 650px;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .video__controls {
   position: relative;
   background: $font-dark;
   display: flex;
+  align-items: center;
   align-self: center;
   justify-content: space-between;
-  padding: 23px 35px 20px 35px;
+  gap: 10px;
+  height: 75px;
+  padding: 44px 30px;
 }
+
+.video__controls.show-control {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2147483648;
+}
+
 .controls-button {
   background: none;
   border: none;
   cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  user-select: none;
+  transform: scale(0.6);
   &:hover {
     filter: brightness(45%) contrast(37%);
   }
-}
-input[type="range"] {
-  position: relative;
-  top: 14px;
-  &:hover {
-    cursor: pointer;
+  &:active {
+    transform: scale(0.95);
   }
 }
 
 input[type="range"].video__progress {
   width: 820px;
 }
+
 input[type="range"].sound__progress {
   width: 155px;
+  background: linear-gradient(to right, #660606 0%, #660606 20%, #fff 20%, #fff 100%);
 }
 
 .video__progress,
 .sound__progress {
-  background: linear-gradient(to right, #23809f 0%, #23809f 48%, #fff 48%, #fff 100%);
-  border: solid 2px #23809f;
-  border-radius: 8px;
-  height: 7px;
-  width: 400px;
+  position: relative;
+  background: linear-gradient(to right, #660606 0%, #660606 0%, #fff 0%, #fff 100%);
+  border: solid 1px #660606;
+  height: 5px;
   outline: none;
   transition: background 450ms ease-in;
   -webkit-appearance: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 ::-webkit-slider-thumb {
@@ -66,10 +88,80 @@ input[type="range"].sound__progress {
   border-radius: 50%;
 }
 
+.video__large-play-button {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  outline: none;
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 50%;
+  background-color: #ffffff00;
+  border: none;
+  transition: all 0.2s ease;
+  &:active {
+    transform: translate(-50%, -50%) scale(0.97);
+  }
+  img {
+    display: block;
+    border-radius: 50%;
+    line-height: 0;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.hide__large-button {
+  opacity: 0;
+}
+
+.speaker {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.speaker.mute {
+  &:before {
+    content: "";
+    width: 50px;
+    height: 5px;
+    background-color: #b3b3b3;
+    position: absolute;
+    left: -3px;
+    top: 13px;
+    border-radius: 5px;
+    transform: rotate(-45deg);
+    animation: showMute;
+  }
+}
+
+.play-back-rate {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 100;
+  color: white;
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+.video-item {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.video__active {
+  position: relative;
+  opacity: 1;
+}
+
 .video__heading {
   display: flex;
   justify-content: space-between;
-  padding-top: 39px;
+  padding-top: 75px;
   margin-bottom: 75px;
   h2 {
     @include fontStyleHeading();
@@ -82,13 +174,4 @@ input[type="range"].sound__progress {
     color: $font-dark;
     letter-spacing: initial;
   }
-}
-
-.speaker {
-  position: relative;
-  left: 8px;
-}
-.sound {
-  position: relative;
-  left: -10px;
 }

@@ -19,6 +19,7 @@
     margin-bottom: 25px;
     @include fontStyle();
     letter-spacing: initial;
+    line-height: 38.5px !important;
   }
   &:last-child {
     margin-bottom: 315px;
