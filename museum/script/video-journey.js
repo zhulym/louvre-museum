@@ -11,8 +11,8 @@ const soundProgress = document.querySelector('.sound__progress');
 const speaker = document.querySelector('.speaker');
 const fullscreenBtn = document.querySelector('.fullscreen');
 const playRate = document.querySelector('.play-back-rate');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
+// const prevBtn = document.querySelector('.prev-btn');
+// const nextBtn = document.querySelector('.next-btn');
 let currentItem = 0;
 let mouseActive = false;
 let video = videoItem[currentItem];
@@ -27,8 +27,8 @@ video.addEventListener('timeupdate', handleProgress);
 video.addEventListener('ended', handleEnd);
 player.addEventListener('fullscreenchange', toogleControl);
 speaker.addEventListener('click', muteVideo);
-prevBtn.addEventListener('click', handlePrevBtn);
-nextBtn.addEventListener('click', handleNextBtn);
+// prevBtn.addEventListener('click', handlePrevBtn);
+// nextBtn.addEventListener('click', handleNextBtn);
 fullscreenBtn.addEventListener('click', toggleFullscreen);
 videoContent.addEventListener('click', playVideo);
 videoProgress.addEventListener('input', handleProgressChange);
@@ -204,7 +204,7 @@ function minusTenSec() {
 }
 
 function handleKeys(e) {
-  e.preventDefault();
+  // e.preventDefault();
   e.code === 'Space' ? playVideo() : null;
   e.key === 'm' ? muteVideo() : null;
   e.key === 'f' ? toggleFullscreen() : null;
@@ -229,3 +229,38 @@ function handleKeys(e) {
   e.key === '8' ? handleProgressKeyNum(80) : null;
   e.key === '9' ? handleProgressKeyNum(90) : null;
 }
+
+/* ============================ MINI SLIDER =============================================*/
+//   // АДАПТАЦИЯ (под каждую ширину можно разные настройки)
+//   // breakpoints: {
+//   //     320: {
+//   //         slidesPerView: 1,
+//   //     },
+//   //     480: {
+//   //         slidesPerView: 2,
+//   //     },
+//   //     992: {
+//   //         slidesPerView: 3,
+//   //     }
+//   // },
+
+let swiper = new Swiper(".mySwiper", {
+
+  slidesPerView: 3,
+  spaceBetween: 42,
+  loop: true,
+  autoHeight: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  preloadImages: true,
+  lazy: {
+    loadOnTransitionStart: true,
+    loadPrevNext: false,
+  },
+});

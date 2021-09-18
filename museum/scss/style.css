@@ -261,7 +261,7 @@
 
 .pagination-item:hover {
   cursor: pointer;
-  background-color: #b3b3b3;
+  background-color: #9d8665;
 }
 
 .slider__numbers {
@@ -496,7 +496,7 @@
 }
 
 .video {
-  margin-bottom: 75px;
+  margin-bottom: 67px;
 }
 
 .video__player {
@@ -513,6 +513,13 @@
   transition: all 0.3s ease;
 }
 
+video[poster] {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .video__controls {
   position: relative;
   background: #000;
@@ -524,12 +531,9 @@
           align-items: center;
   -ms-flex-item-align: center;
       align-self: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 10px;
+  gap: 44px;
   height: 75px;
-  padding: 44px 30px;
+  padding: 44px 27px;
 }
 
 .video__controls.show-control {
@@ -544,15 +548,16 @@
   background: none;
   border: none;
   cursor: pointer;
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  padding-top: 7px;
   outline: none;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -webkit-transform: scale(0.6);
-          transform: scale(0.6);
 }
 
 .controls-button:hover {
@@ -561,27 +566,29 @@
 }
 
 .controls-button:active {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 input[type="range"].video__progress {
-  width: 820px;
+  width: 1290px;
+  left: -8px;
 }
 
 input[type="range"].sound__progress {
-  width: 155px;
-  background: -webkit-gradient(linear, left top, right top, from(#660606), color-stop(20%, #660606), color-stop(20%, #fff), to(#fff));
-  background: linear-gradient(to right, #660606 0%, #660606 20%, #fff 20%, #fff 100%);
+  width: 213px;
+  left: -2px;
+  background: -webkit-gradient(linear, left top, right top, from(#660606), color-stop(20%, #660606), color-stop(20%, #c4c4c4), to(#c4c4c4));
+  background: linear-gradient(to right, #660606 0%, #660606 20%, #c4c4c4 20%, #c4c4c4 100%);
 }
 
 .video__progress,
 .sound__progress {
   position: relative;
-  background: -webkit-gradient(linear, left top, right top, from(#660606), color-stop(0%, #660606), color-stop(0%, #fff), to(#fff));
-  background: linear-gradient(to right, #660606 0%, #660606 0%, #fff 0%, #fff 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#660606), color-stop(0%, #660606), color-stop(0%, #c4c4c4), to(#c4c4c4));
+  background: linear-gradient(to right, #660606 0%, #660606 0%, #c4c4c4 0%, #c4c4c4 100%);
   border: solid 1px #660606;
-  height: 5px;
+  height: 10px;
   outline: none;
   -webkit-transition: background 450ms ease-in;
   transition: background 450ms ease-in;
@@ -595,8 +602,8 @@ input[type="range"].sound__progress {
 
 ::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   background: #fff;
   border: 2px solid #999;
   border-radius: 50%;
@@ -618,8 +625,8 @@ input[type="range"].sound__progress {
 }
 
 .video__large-play-button:active {
-  -webkit-transform: translate(-50%, -50%) scale(0.97);
-          transform: translate(-50%, -50%) scale(0.97);
+  -webkit-transform: translate(-50%, -50%) scale(0.9);
+          transform: translate(-50%, -50%) scale(0.9);
 }
 
 .video__large-play-button img {
@@ -640,16 +647,17 @@ input[type="range"].sound__progress {
   position: relative;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  left: -4px;
 }
 
 .speaker.mute:before {
   content: "";
-  width: 50px;
-  height: 5px;
+  width: 40px;
+  height: 3px;
   background-color: #b3b3b3;
   position: absolute;
   left: -3px;
-  top: 13px;
+  top: 15px;
   border-radius: 5px;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -712,6 +720,105 @@ input[type="range"].sound__progress {
   max-width: 720px;
   color: #000;
   letter-spacing: initial;
+}
+
+/*=============================== Settings Mini Slider =================================*/
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  font-size: 12px;
+  background-color: black;
+}
+
+.swiper {
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.swiper-slide {
+  position: relative;
+  min-width: 0;
+}
+
+.swiper-wrapper {
+  position: relative;
+  min-width: 0;
+}
+
+.swiper-slide video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 12px;
+  bottom: -33px;
+  left: 0;
+  width: 100%;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #333333;
+}
+
+.mini-pagination__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 12px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 110%;
+  z-index: 10;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.swiper-button-prev {
+  left: 610px;
+}
+
+.swiper-button-next {
+  right: 610px;
+}
+
+.swiper-button-next:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  content: "";
+}
+
+.swiper-button-prev:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  content: "";
 }
 
 .tickets__content {

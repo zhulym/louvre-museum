@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Museum</title>
 	<link rel="icon" href="./assets/images/favicon.ico">
+	<link rel="stylesheet" href="./script/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="./scss/style.css">
 	<script src="https://kit.fontawesome.com/498e4f3ed3.js" crossorigin="anonymous"></script>
 </head>
@@ -68,7 +69,7 @@
 							<div class="slider__numbers">
 								<span class="slider__number slider__current-number">01</span>
 								<span>|</span>
-								<span class="slider__number slider__amount-slides"></span>
+								<span class="slider__number slider__amount-slides">05</span>
 							</div>
 
 							<div class="slider__pagination">
@@ -180,6 +181,7 @@
 
 		<section class="video" id="video">
 			<div class="container">
+
 				<div class="video__heading">
 					<h2>video journey</h2>
 					<p>
@@ -187,6 +189,7 @@
 						Hammurabi's Code
 					</p>
 				</div>
+
 				<div class="video__container">
 
 					<div class="video__player">
@@ -204,12 +207,12 @@
 						</div>
 
 						<div class="video__controls">
-							<button class="controls-button prev-btn"><img src="./assets/images/video/prev-button.svg"
-									alt="prev-button"></button>
+							<!-- <button class="controls-button prev-btn"><img src="./assets/images/video/prev-button.svg"
+									alt="prev-button"></button> -->
 							<button class="controls-button small-play"><img class="small-play__item"
 									src="./assets/images/video/small-play-button.svg" alt="small-play-button"></button>
-							<button class="controls-button next-btn"><img src="./assets/images/video/next-button.svg"
-									alt="next-button"></button>
+							<!-- <button class="controls-button next-btn"><img src="./assets/images/video/next-button.svg"
+									alt="next-button"></button> -->
 							<input id="video__progress" value="0" type="range" min="0" max="100" step="0.1" name="progressVideo"
 								class="video__progress ranges">
 							<button class="controls-button speaker"><img class="speaker-img"
@@ -223,6 +226,45 @@
 						<button class="video__large-play-button"><img src="./assets/images/video/large-play-button.png"
 								alt="large-play-button"></button>
 					</div>
+				</div>
+
+				<div class="swiper mySwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<iframe loading="lazy" width="452" height="254" src="https://www.youtube.com/embed/zp1BXPX8jcU?controls=0"
+								title="YouTube video player" frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen="allowfullscreen" modestbranding="1">
+							</iframe>
+						</div>
+						<div class="swiper-slide">
+							<iframe loading="lazy" width="452" height="254" src="https://www.youtube.com/embed/Vi5D6FKhRmo?controls=0"
+								title="YouTube video player" frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+						</div>
+						<div class="swiper-slide">
+							<iframe loading="lazy" width="452" height="254" src="https://www.youtube.com/embed/NOhDysLnTvY?controls=0"
+								title="YouTube video player" frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+						</div>
+						<div class="swiper-slide">
+							<iframe loading="lazy" width="452" height="254" src="https://www.youtube.com/embed/aWmJ5DgyWPI?controls=0"
+								title="YouTube video player" frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+						</div>
+						<div class="swiper-slide">
+							<iframe loading="lazy" width="452" height="254" src="https://www.youtube.com/embed/2OR0OCr6uRE?controls=0"
+								title="YouTube video player" frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-prev"><img src="./assets/images/video/mini-arrows-left.png" alt="left"></div>
+					<div class="swiper-button-next"><img src="./assets/images/video/mini-arrows-right.png" alt="right"></div>
 				</div>
 			</div>
 		</section>
@@ -352,6 +394,7 @@
 		</div>
 	</footer>
 
+	<script src="./script/swiper/swiper-bundle.min.js"></script>
 	<script src="./script/index.js"></script>
 	<script src="./script/video-journey.js"></script>
 </body>
