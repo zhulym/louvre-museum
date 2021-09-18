@@ -95,7 +95,7 @@
 
 .welcome__content {
   position: absolute;
-  z-index: 10;
+  z-index: 1;
 }
 
 .welcome {
@@ -126,8 +126,6 @@
   position: relative;
   height: 100%;
   overflow: hidden;
-  -webkit-box-shadow: inset 0 0 10px black;
-          box-shadow: inset 0 0 10px black;
 }
 
 .slider-right__item {
@@ -140,6 +138,16 @@
   background-position: center center;
   height: 100%;
   width: 100%;
+}
+
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 153px 0px 99px -58px black inset;
+          box-shadow: 153px 0px 99px -58px black inset;
+  top: 0;
+  left: 0;
 }
 
 .active,
@@ -819,6 +827,10 @@ input[type="range"].sound__progress {
 .swiper-button-prev:after,
 .swiper-container-rtl .swiper-button-prev:after {
   content: "";
+}
+
+.video__iframe {
+  border: 0;
 }
 
 .tickets__content {
