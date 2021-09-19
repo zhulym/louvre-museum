@@ -1163,8 +1163,8 @@ input[type="range"].sound__progress {
 }
 
 .tickets__amount-wrapper button:active {
-  position: relative;
-  top: 2px;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 .amount__buttons {
@@ -1224,16 +1224,49 @@ input[type="range"].sound__progress {
   font-weight: 300;
   line-height: 26px;
   letter-spacing: 2px;
+  position: relative;
   margin-top: 60px;
   color: #ffffff;
   padding: 11px 36px;
   background: #000;
+  border: 1px solid #000;
   border-radius: 2px;
+  overflow: hidden;
+}
+
+.tickets__buy:focus {
+  outline: none;
 }
 
 .tickets__buy:hover {
   background-color: #9d8665;
   cursor: pointer;
+}
+
+span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: ripple 600ms linear;
+          animation: ripple 600ms linear;
+  background-color: white;
+}
+
+@-webkit-keyframes ripple {
+  to {
+    -webkit-transform: scale(4);
+            transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  to {
+    -webkit-transform: scale(4);
+            transform: scale(4);
+    opacity: 0;
+  }
 }
 
 .amount__button-minus18,

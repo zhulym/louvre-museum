@@ -105,8 +105,7 @@
       cursor: pointer;
     }
     &:active {
-      position: relative;
-      top: 2px;
+      transform: scale(0.95);
     }
   }
 }
@@ -142,16 +141,37 @@
   @include fontStyle($size: 28px, $weight: 600, $lineHeight: 33px);
   letter-spacing: 1.65px;
 }
+
 .tickets__buy {
   @include fontStyle($lineHeight: 26px);
+  position: relative;
   margin-top: 60px;
   color: $bg-white;
   padding: 11px 36px;
   background: $font-dark;
+  border: 1px solid $font-dark;
   border-radius: 2px;
+  overflow: hidden;
+  &:focus {
+    outline: none;
+  }
   &:hover {
     background-color: $font-gold;
     cursor: pointer;
+  }
+}
+span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgb(255, 255, 255);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
   }
 }
 
