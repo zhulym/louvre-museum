@@ -87,3 +87,11 @@ button {
 .dark-section {
     background-color: $bg-dark;
 }
+
+.parallax {
+    background: url(../assets/images/parallax.jpg);
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+}
