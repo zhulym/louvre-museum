@@ -66,6 +66,10 @@
   padding-top: 148px;
   font-weight: 300;
   margin-bottom: 26px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .welcome__text {
@@ -75,6 +79,10 @@
   line-height: 33px;
   letter-spacing: 2px;
   letter-spacing: 2px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .welcome__button {
@@ -138,6 +146,13 @@
   background-position: center center;
   height: 100%;
   width: 100%;
+}
+
+.slider-right__item img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .shadow {
@@ -291,10 +306,6 @@
           user-select: none;
 }
 
-.arrow:hover {
-  opacity: 0.9;
-}
-
 .slider__arrows {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -303,14 +314,36 @@
   margin-left: 59px;
 }
 
+.slider-left__arrow:hover img {
+  opacity: 0;
+}
+
 .slider-left__arrow:active {
   -webkit-transform: scale(1.2) translateX(-5px);
           transform: scale(1.2) translateX(-5px);
 }
 
+.slider-left__arrow:hover {
+  background: url(../assets/images/welcome/slider/hover-left-arrow.svg) no-repeat;
+  background-position: center;
+  background-size: 32px;
+  background-position-y: 12px;
+}
+
+.slider-right__arrow:hover img {
+  opacity: 0;
+}
+
 .slider-right__arrow:active {
   -webkit-transform: scale(1.2) translateX(5px);
           transform: scale(1.2) translateX(5px);
+}
+
+.slider-right__arrow:hover {
+  background: url(../assets/images/welcome/slider/hover-right-arrow.svg) no-repeat;
+  background-position: center;
+  background-size: 32px;
+  background-position-y: 12px;
 }
 
 .virtual-tour__heading {
@@ -731,12 +764,22 @@ input[type="range"].sound__progress {
 }
 
 /*=============================== Settings Mini Slider =================================*/
+.swiper-pagination {
+  -webkit-transition: all 0.3s ease !important;
+  transition: all 0.3s ease !important;
+}
+
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   line-height: 12px;
   font-size: 12px;
-  background-color: black;
+  background-color: #999999;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet:hover {
+  background-color: #710707 !important;
 }
 
 .swiper {
@@ -753,6 +796,8 @@ input[type="range"].sound__progress {
 .swiper-wrapper {
   position: relative;
   min-width: 0;
+  -webkit-transition: all 0.3s ease !important;
+  transition: all 0.3s ease !important;
 }
 
 .swiper-slide video {
@@ -777,6 +822,8 @@ input[type="range"].sound__progress {
   bottom: -33px;
   left: 0;
   width: 100%;
+  -webkit-transition: all 0.3s ease !important;
+  transition: all 0.3s ease !important;
 }
 
 .swiper-pagination-bullet-active {
@@ -792,6 +839,8 @@ input[type="range"].sound__progress {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 12px;
+  -webkit-transition: all 0.3s ease !important;
+  transition: all 0.3s ease !important;
 }
 
 .swiper-button-next,
@@ -811,12 +860,27 @@ input[type="range"].sound__progress {
           justify-content: center;
 }
 
+.swiper-button-next img:hover,
+.swiper-button-prev img:hover {
+  opacity: 0;
+}
+
 .swiper-button-prev {
   left: 610px;
 }
 
+.swiper-button-prev:hover {
+  background: url(../assets/images/video/red-arrow-left.svg) no-repeat;
+  background-position: center;
+}
+
 .swiper-button-next {
   right: 610px;
+}
+
+.swiper-button-next:hover {
+  background: url(../assets/images/video/red-arrow-right.svg) no-repeat;
+  background-position: center;
 }
 
 .swiper-button-next:after,
@@ -1237,6 +1301,10 @@ input[type="range"].sound__progress {
 
 .contacts__info {
   margin-top: 50px;
+}
+
+.contacts__info a {
+  color: #000;
 }
 
 .footer {

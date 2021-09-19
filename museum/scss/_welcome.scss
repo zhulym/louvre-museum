@@ -3,10 +3,12 @@
   padding-top: 148px;
   font-weight: 300;
   margin-bottom: 26px;
+  user-select: none;
 }
 .welcome__text {
   @include fontStyle($size: 28px, $lineHeight: 33px);
   letter-spacing: 2px;
+  user-select: none;
 }
 
 .welcome__button {
@@ -54,6 +56,9 @@
   background-position: center center;
   height: 100%;
   width: 100%;
+  img {
+    user-select: none;
+  }
 }
 .shadow {
   position: absolute;
@@ -166,9 +171,9 @@
 .arrow {
   cursor: pointer;
   user-select: none;
-  &:hover {
-    opacity: 0.9;
-  }
+  // &:hover {
+  //   opacity: 0.9;
+  // }
 }
 
 .slider__arrows {
@@ -177,10 +182,32 @@
   margin-left: 59px;
 }
 
-.slider-left__arrow:active {
-  transform: scale(1.2) translateX(-5px);
+.slider-left__arrow {
+  &:hover img {
+    opacity: 0;
+  }
+  &:active {
+    transform: scale(1.2) translateX(-5px);
+  }
+  &:hover {
+    background: url(../assets/images/welcome/slider/hover-left-arrow.svg) no-repeat;
+    background-position: center;
+    background-size: 32px;
+    background-position-y: 12px;
+  }
 }
 
-.slider-right__arrow:active {
-  transform: scale(1.2) translateX(5px);
+.slider-right__arrow {
+  &:hover img {
+    opacity: 0;
+  }
+  &:active {
+    transform: scale(1.2) translateX(5px);
+  }
+  &:hover {
+    background: url(../assets/images/welcome/slider/hover-right-arrow.svg) no-repeat;
+    background-position: center;
+    background-size: 32px;
+    background-position-y: 12px;
+  }
 }

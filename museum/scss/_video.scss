@@ -186,12 +186,19 @@ input[type="range"].sound__progress {
 }
 
 /*=============================== Settings Mini Slider =================================*/
+.swiper-pagination {
+  transition: all 0.3s ease !important;
+}
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   line-height: 12px;
   font-size: 12px;
-  background-color: black;
+  background-color: #999999;
+  opacity: 1;
+  &:hover {
+    background-color: $dark-red !important;
+  }
 }
 
 .swiper {
@@ -207,6 +214,7 @@ input[type="range"].sound__progress {
 .swiper-wrapper {
   position: relative;
   min-width: 0;
+  transition: all 0.3s ease !important;
 }
 
 .swiper-slide video {
@@ -226,6 +234,7 @@ input[type="range"].sound__progress {
   bottom: -33px;
   left: 0;
   width: 100%;
+  transition: all 0.3s ease !important;
 }
 
 .swiper-pagination-bullet-active {
@@ -237,6 +246,7 @@ input[type="range"].sound__progress {
   display: flex;
   justify-content: center;
   gap: 12px;
+  transition: all 0.3s ease !important;
 }
 
 .swiper-button-next,
@@ -248,13 +258,26 @@ input[type="range"].sound__progress {
   display: flex;
   align-items: center;
   justify-content: center;
+  img {
+    &:hover {
+      opacity: 0;
+    }
+  }
 }
 .swiper-button-prev {
   left: 610px;
+  &:hover {
+    background: url(../assets/images/video/red-arrow-left.svg) no-repeat;
+    background-position: center;
+  }
 }
 
 .swiper-button-next {
   right: 610px;
+  &:hover {
+    background: url(../assets/images/video/red-arrow-right.svg) no-repeat;
+    background-position: center;
+  }
 }
 
 .swiper-button-next:after,
