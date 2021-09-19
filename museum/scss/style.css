@@ -1222,7 +1222,7 @@ input[type="range"].sound__progress {
   line-height: 33px;
   letter-spacing: 2px;
   letter-spacing: initial;
-  margin-top: 11px;
+  margin-top: 0px;
 }
 
 .contacts__info-item {
@@ -1232,11 +1232,15 @@ input[type="range"].sound__progress {
   line-height: 26px;
   letter-spacing: 2px;
   letter-spacing: initial;
-  padding-bottom: 21px;
+  padding-bottom: 25px;
 }
 
 .contacts__info {
-  margin-top: 37px;
+  margin-top: 50px;
+}
+
+.footer {
+  position: relative;
 }
 
 .footer__container {
@@ -1257,7 +1261,8 @@ input[type="range"].sound__progress {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  left: -163px;
+  left: -177px;
+  top: -2px;
   gap: 82px;
 }
 
@@ -1268,7 +1273,9 @@ input[type="range"].sound__progress {
   line-height: 50px;
   text-transform: uppercase;
   letter-spacing: 5px;
-  padding-left: 15px;
+  position: relative;
+  top: -5px;
+  padding-left: 20px;
   font-weight: 400;
   display: inline;
   -webkit-transition: all 0.3s ease;
@@ -1280,7 +1287,7 @@ input[type="range"].sound__progress {
 }
 
 .footer__menu-item {
-  margin-left: 75px;
+  margin-left: 90px;
 }
 
 .footer__menu-link {
@@ -1306,11 +1313,11 @@ input[type="range"].sound__progress {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 24px;
+  gap: 25px;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  height: 140px;
+  height: 137px;
 }
 
 .footer__social-item a {
@@ -1327,7 +1334,7 @@ input[type="range"].sound__progress {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 7px;
+  margin-bottom: 5px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -1372,6 +1379,38 @@ input[type="range"].sound__progress {
 .pint {
   background: url(../assets/images/footer/pint.png) no-repeat;
   background-position: center top 13px;
+}
+
+.footer__line {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  color: #666666;
+  bottom: 130px;
+}
+
+.footer__rights {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer__rights-item {
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 22px;
+  letter-spacing: 2px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 15px 0px 40px 0px;
+}
+
+.footer__rights-item a:hover {
+  color: #caaa7d;
 }
 
 /*======================================  DEFAULT STYLES  ==================================*/

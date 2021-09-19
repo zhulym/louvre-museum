@@ -23,13 +23,13 @@
 .contacts__place {
   @include fontStyle($size: 28px, $weight: 500, $lineHeight: 33px);
   letter-spacing: initial;
-  margin-top: 11px;
+  margin-top: 0px;
 }
 .contacts__info-item {
   @include fontStyle($lineHeight: 26px);
   letter-spacing: initial;
-  padding-bottom: 21px;
+  padding-bottom: 25px;
 }
 .contacts__info {
-  margin-top: 37px;
+  margin-top: 50px;
 }
