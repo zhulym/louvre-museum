@@ -17,7 +17,7 @@ let currentItem = 0;
 let mouseActive = false;
 let video = videoItem[currentItem];
 let ended = false;
-video.volume = 0.2;
+video.volume = 0.4;
 
 document.addEventListener('keypress', handleKeys);
 document.addEventListener('keydown', handleKeys);
@@ -105,8 +105,8 @@ function muteVideo() {
     soundProgress.value = 0;
     rangePosition(soundProgress, video.volume * 100);
   } else {
-    video.volume = 0.2;
-    soundProgress.value = 0.2;
+    video.volume = 0.4;
+    soundProgress.value = 0.4;
     rangePosition(soundProgress, video.volume * 100);
   }
 }
@@ -170,8 +170,8 @@ function resetParams() {
   videoItem[currentItem].currentTime = 0;
   rangePosition(videoProgress, 0);
   videoProgress.value = 0;
-  videoItem[currentItem].volume = 0.2;
-  soundProgress.value = 0.2;
+  videoItem[currentItem].volume = 0.4;
+  soundProgress.value = 0.4;
   rangePosition(soundProgress, video.volume * 100);
   speaker.classList.remove('mute');
   largePlay.classList.remove('hide__large-button');
@@ -205,29 +205,29 @@ function minusTenSec() {
 
 function handleKeys(e) {
   // e.preventDefault();
-  e.code === 'Space' ? playVideo() : null;
-  e.key === 'm' ? muteVideo() : null;
-  e.key === 'f' ? toggleFullscreen() : null;
-  e.key === 'p' ? handlePrevBtn() : null;
-  e.key === 'n' ? handleNextBtn() : null;
-  e.key === 'j' ? minusTenSec() : null;
-  e.key === 'k' ? playVideo() : null;
-  e.key === 'l' ? plusTenSec() : null;
-  e.key === 'Home' ? handleProgressKeyNum(0) : null;
-  e.key === 'End' ? handleProgressKeyNum(99) : null;
-  e.key === 'ArrowUp' ? arrowUpVolume() : null;
-  e.key === 'ArrowDown' ? arrowDownVolume() : null;
-  e.key === '<' ? slower() : null;
-  e.key === '>' ? faster() : null;
-  e.key === '1' ? handleProgressKeyNum(10) : null;
-  e.key === '2' ? handleProgressKeyNum(20) : null;
-  e.key === '3' ? handleProgressKeyNum(30) : null;
-  e.key === '4' ? handleProgressKeyNum(40) : null;
-  e.key === '5' ? handleProgressKeyNum(50) : null;
-  e.key === '6' ? handleProgressKeyNum(60) : null;
-  e.key === '7' ? handleProgressKeyNum(70) : null;
-  e.key === '8' ? handleProgressKeyNum(80) : null;
-  e.key === '9' ? handleProgressKeyNum(90) : null;
+  // e.code === 'Space' ? playVideo() : null;
+  // e.key === 'm' ? muteVideo() : null;
+  // e.key === 'f' ? toggleFullscreen() : null;
+  // e.key === 'p' ? handlePrevBtn() : null;
+  // e.key === 'n' ? handleNextBtn() : null;
+  // e.key === 'j' ? minusTenSec() : null;
+  // e.key === 'k' ? playVideo() : null;
+  // e.key === 'l' ? plusTenSec() : null;
+  // e.key === 'Home' ? handleProgressKeyNum(0) : null;
+  // e.key === 'End' ? handleProgressKeyNum(99) : null;
+  // e.key === 'ArrowUp' ? arrowUpVolume() : null;
+  // e.key === 'ArrowDown' ? arrowDownVolume() : null;
+  // e.key === '<' ? slower() : null;
+  // e.key === '>' ? faster() : null;
+  // e.key === '1' ? handleProgressKeyNum(10) : null;
+  // e.key === '2' ? handleProgressKeyNum(20) : null;
+  // e.key === '3' ? handleProgressKeyNum(30) : null;
+  // e.key === '4' ? handleProgressKeyNum(40) : null;
+  // e.key === '5' ? handleProgressKeyNum(50) : null;
+  // e.key === '6' ? handleProgressKeyNum(60) : null;
+  // e.key === '7' ? handleProgressKeyNum(70) : null;
+  // e.key === '8' ? handleProgressKeyNum(80) : null;
+  // e.key === '9' ? handleProgressKeyNum(90) : null;
 }
 
 /* ============================ MINI SLIDER =============================================*/

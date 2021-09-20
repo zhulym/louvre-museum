@@ -30,6 +30,12 @@
 }
 
 .explore__image {
+  position: relative;
   padding-top: 12px;
   padding-bottom: 70px;
+}
+
+.explore-slider {
+  position: absolute;
+  left: 420px;
 }

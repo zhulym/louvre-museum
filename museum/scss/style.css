@@ -522,8 +522,14 @@
 }
 
 .explore__image {
+  position: relative;
   padding-top: 12px;
   padding-bottom: 70px;
+}
+
+.explore-slider {
+  position: absolute;
+  left: 420px;
 }
 
 .video__container {
@@ -619,8 +625,8 @@ input[type="range"].video__progress {
 input[type="range"].sound__progress {
   width: 213px;
   left: -2px;
-  background: -webkit-gradient(linear, left top, right top, from(#660606), color-stop(20%, #660606), color-stop(20%, #c4c4c4), to(#c4c4c4));
-  background: linear-gradient(to right, #660606 0%, #660606 20%, #c4c4c4 20%, #c4c4c4 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#660606), color-stop(40%, #660606), color-stop(40%, #c4c4c4), to(#c4c4c4));
+  background: linear-gradient(to right, #660606 0%, #660606 40%, #c4c4c4 40%, #c4c4c4 100%);
 }
 
 .video__progress,
@@ -1157,8 +1163,6 @@ input[type="range"].sound__progress {
 }
 
 .tickets__amount-wrapper button:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -1279,6 +1283,423 @@ span.ripple {
 .amount__button-plus65 {
   position: relative;
   left: 4px;
+}
+
+/*================================================ Tickets Form =============================================== */
+.tickets__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(29, 35, 39, 0.9);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  z-index: 1000;
+}
+
+.tickets__overlay.active {
+  display: block;
+}
+
+.form_control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.date-time-control {
+  width: 47%;
+}
+
+.tickets__form-item {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  -webkit-box-shadow: 7px 7px 15px #000000;
+          box-shadow: 7px 7px 15px #000000;
+  color: black !important;
+  width: 1440px;
+  padding: 90px 235px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.tickets__form-item label,
+.tickets__form-item input,
+.tickets__form-item select,
+.tickets__form-item option {
+  color: black;
+  width: 100%;
+  padding: 5px 0px 5px 5px;
+  border: 1px solid #030303;
+  border-radius: 0px;
+  height: 45px;
+  outline: none;
+}
+
+.tickets__form-item label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  width: 35%;
+  border-right: none;
+}
+
+.tickets__form-item label img {
+  padding-left: 7px;
+}
+
+.tickets__form-item label span {
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.tickets__form-item input {
+  border-left: none;
+}
+
+.tickets__form-item select,
+.tickets__form-item option {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+input[type="date"] {
+  font-size: 18px;
+}
+
+.date-time__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.date-time__container label {
+  width: 100% !important;
+}
+
+.close-form {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.close-form:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.tickets__form-item.form-animation {
+  left: 50%;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+}
+
+.tickets__form {
+  max-width: 400px;
+}
+
+.tickets__form p {
+  font-size: 18px;
+  line-height: 21px;
+  color: #710707;
+  font-weight: 400;
+  padding: 16px 10px 10px 0px;
+  border-bottom: 3px solid #740c11;
+  margin-bottom: 60px;
+}
+
+.tickets__form img {
+  display: block;
+}
+
+.tickets__form-heading {
+  font-family: "Forum", cursive;
+  font-size: 50px;
+  line-height: 55px;
+  font-weight: 400;
+  color: #9d8665;
+  text-transform: uppercase;
+}
+
+.entry-tickets {
+  width: 100%;
+  border: 1px solid black;
+  padding: 0px 15px 15px 15px;
+  height: 135px;
+}
+
+.entry-tickets-heading {
+  font-family: "Forum", cursive !important;
+  margin: 0px 0px 15px 0px !important;
+  padding: 8px 0 5px 0 !important;
+  line-height: 20px !important;
+  color: #9d8665 !important;
+  font-weight: 400 !important;
+}
+
+.entry-tickets-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 105px;
+  height: 25px;
+}
+
+.entry-tickets-input input {
+  font-size: 18px !important;
+  width: 35px;
+  height: 25px;
+  padding-left: 10px;
+  padding-right: 0px;
+  outline: none;
+}
+
+.entry-tickets-button {
+  background-color: black;
+  outline: none;
+  border: none;
+  width: 35px;
+  height: 25px;
+}
+
+.entry-tickets-button img {
+  display: block;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.entry-tickets-basic,
+.entry-tickets-senior {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.entry-tickets-content label {
+  font-size: 18px;
+  line-height: 0px;
+  border: none;
+  width: 50%;
+  padding-left: 0;
+  position: relative;
+  top: -12px;
+}
+
+/*========================================= form right block =============================*/
+.tickets__cards {
+  position: relative;
+  border: 1px solid black;
+  padding: 30px;
+  font-size: 12px !important;
+  width: 530px;
+}
+
+.tickets__overview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.overview-heading {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+  color: #272727;
+  text-transform: none;
+}
+
+.overview-tour {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  color: #740c11;
+  margin: 0 0 6px 0;
+}
+
+.tickets__overview-image {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.tickets__overview-image img {
+  display: block;
+}
+
+.tickets__overview-description span {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  padding-left: 10px;
+  color: #030303;
+}
+
+.tickets__counter-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5px;
+}
+
+.tickets__counter-item.counter-line {
+  border-bottom: 2px solid #740c11;
+  padding-bottom: 10px;
+}
+
+.card-tickets-amount {
+  background-color: black;
+  border-radius: 3px;
+  font-size: 18px;
+  line-height: 21px;
+  color: #a4a4a3;
+  padding: 0 10px 0 10px;
+}
+
+.card-amount-description {
+  font-size: 22px;
+  line-height: 26px;
+  color: black !important;
+  padding-left: 10px;
+}
+
+.card-amount-result {
+  position: absolute;
+  right: 0;
+  color: black !important;
+}
+
+.tickets-total-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  top: 5px;
+}
+
+.total-block__text {
+  font-size: 32px;
+  line-height: 37px;
+  color: #000000;
+}
+
+.total-block__result {
+  font-size: 32px;
+  line-height: 37px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.card-firs-side {
+  position: relative;
+  background-color: #bcbcbc;
+  border-radius: 3px;
+  padding: 5px 20px;
+  font-size: 12px;
+  width: 360px;
+  height: 210px;
+  margin-top: 14px;
+}
+
+.card-control {
+  margin-bottom: 8px;
+}
+
+.card-control label,
+.card-control input {
+  font-size: 12px;
+  line-height: 14px;
+  color: #161615;
+  border: none;
+  outline: none;
+}
+
+.card-control input {
+  height: 35px;
+  padding: 3px 0 0 8px;
+}
+
+.card-control label {
+  border: none;
+  height: 20px;
+  padding: 17px 0 12px 0px;
+}
+
+.card-label.expiration-date {
+  padding: 0;
+  margin: 0;
+}
+
+.card-number {
+  width: 215px !important;
+}
+
+.card-date,
+.card-year {
+  width: 100px !important;
+}
+
+.card-year {
+  margin-left: 10px;
+}
+
+.visa {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 32px;
+}
+
+.mastercard {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 64px;
 }
 
 .contacts__heading {

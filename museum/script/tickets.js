@@ -1,5 +1,9 @@
 const ticketsBuyBtn = document.querySelector('.tickets__buy');
-ticketsBuyBtn.addEventListener("click", createRipple);
+const ticketsOverlay = document.querySelector('.tickets__overlay');
+const ticketsFormItem = document.querySelector('.tickets__form-item');
+const closeBtn = document.querySelector('.close-form');
+
+
 function createRipple(event) {
   const button = event.currentTarget;
   const circle = document.createElement("span");
@@ -15,4 +19,18 @@ function createRipple(event) {
   }
   button.appendChild(circle);
 }
+function openTicketsForm() {
+  ticketsOverlay.classList.add('active');
+  setTimeout(() => { ticketsFormItem.classList.add('form-animation') }, 300)
 
+
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  ticketsBuyBtn.addEventListener("click", openTicketsForm);
+  ticketsFormItem.addEventListener("click", (e) => e.stopPropagation());
+  [ticketsOverlay, closeBtn].forEach(el => el.addEventListener("click", () => {
+    ticketsOverlay.classList.remove('active');
+    ticketsFormItem.classList.remove('form-animation');
+  }))
+});
