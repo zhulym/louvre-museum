@@ -1247,32 +1247,6 @@ input[type="range"].sound__progress {
   cursor: pointer;
 }
 
-span.ripple {
-  position: absolute;
-  border-radius: 50%;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-animation: ripple 600ms linear;
-          animation: ripple 600ms linear;
-  background-color: white;
-}
-
-@-webkit-keyframes ripple {
-  to {
-    -webkit-transform: scale(4);
-            transform: scale(4);
-    opacity: 0;
-  }
-}
-
-@keyframes ripple {
-  to {
-    -webkit-transform: scale(4);
-            transform: scale(4);
-    opacity: 0;
-  }
-}
-
 .amount__button-minus18,
 .amount__button-minus65 {
   position: relative;
@@ -1328,8 +1302,8 @@ span.ripple {
   display: -ms-flexbox;
   display: flex;
   gap: 40px;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .tickets__form-item label,
@@ -1521,7 +1495,7 @@ input[type="date"] {
   top: -12px;
 }
 
-/*========================================= form right block =============================*/
+/*========================================= Form right block =============================*/
 .tickets__cards {
   position: relative;
   border: 1px solid black;
@@ -1644,6 +1618,8 @@ input[type="date"] {
   width: 360px;
   height: 210px;
   margin-top: 14px;
+  -webkit-box-shadow: 1px 3px 5px -1px rgba(73, 73, 73, 0.7);
+          box-shadow: 1px 3px 5px -1px rgba(73, 73, 73, 0.7);
 }
 
 .card-control {
@@ -1700,6 +1676,120 @@ input[type="date"] {
   position: absolute;
   right: 20px;
   top: 64px;
+}
+
+.card-second-side {
+  position: absolute;
+  top: 355px;
+  left: 140px;
+  background-color: #939393;
+  border-radius: 3px;
+  font-size: 12px;
+  width: 360px;
+  height: 210px;
+  z-index: -1;
+}
+
+.tickets__card-form {
+  width: 100%;
+}
+
+.black-line {
+  width: 100%;
+  height: 45px;
+  background-color: black;
+  margin: 25px 0 0px 0;
+}
+
+.second-side-cvv {
+  position: absolute;
+  right: 20px;
+  width: 75px;
+  text-align: center;
+}
+
+.second-side-cvv label {
+  font-size: 12px;
+  line-height: 14px;
+  border: none;
+  color: #161615;
+  padding-left: 10px;
+}
+
+.second-side-cvv input {
+  position: relative;
+  top: -10px;
+  height: 35px;
+  border: none;
+  outline: none;
+}
+
+.cvv-description {
+  width: 75px;
+  font-size: 10px;
+  line-height: 12px;
+  color: #161615 !important;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.card-form-submit {
+  position: relative;
+  font-size: 22px;
+  line-height: 26px;
+  background-color: #710707;
+  margin: 50px 0 0px 250px;
+  padding: 10px 85px;
+  border: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.card-form-submit:hover {
+  cursor: pointer;
+  background-color: #9d8665;
+}
+
+.card-form-submit:focus {
+  outline: none;
+}
+
+.card-form-submit:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.card-form-submit .circle {
+  position: absolute;
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-animation: scale 0.5s ease-out;
+          animation: scale 0.5s ease-out;
+}
+
+@-webkit-keyframes scale {
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(3);
+            transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+@keyframes scale {
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(3);
+            transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
 }
 
 .contacts__heading {
