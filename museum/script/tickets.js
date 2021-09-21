@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   formBookBtn.addEventListener("click", createRipple);
   ticketsFormItem.addEventListener("click", (e) => e.stopPropagation());
   [ticketsOverlay, closeBtn].forEach(el => el.addEventListener("click", () => {
-    ticketsOverlay.classList.remove('active');
+    setTimeout(() => { ticketsOverlay.classList.remove('active') }, 300)
     ticketsFormItem.classList.remove('form-animation');
   }))
 });

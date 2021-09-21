@@ -173,7 +173,7 @@
 
 /*================================================ Tickets Form =============================================== */
 .tickets__overlay {
-  // display: none;
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -192,13 +192,13 @@
 }
 
 .date-time-control {
+  position: relative;
   width: 47%;
 }
 
 .tickets__form-item {
   position: relative;
-  // left: -250%;
-  left: 50%;
+  left: -250%;
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: #ffffff;
@@ -208,7 +208,7 @@
   padding: 90px 235px;
   display: flex;
   gap: 40px;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   label,
   input,
   select,
@@ -301,6 +301,48 @@ input[type="date"] {
   color: $font-gold;
   text-transform: uppercase;
 }
+#date {
+  background: #ffffff url("../assets/images/tickets/tickets-form/arrow-input.svg") no-repeat top 13px right 13px;
+  appearance: none;
+  font-size: 10px;
+  width: 240px !important;
+}
+
+#time {
+  background: #ffffff url("../assets/images/tickets/tickets-form/arrow-input.svg") no-repeat top 13px right 13px;
+  appearance: none;
+  font-size: 18px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: auto;
+  top: 0;
+  bottom: 0;
+  color: transparent;
+  background: transparent;
+}
+
+#ticket-selected-type {
+  padding-left: 45px;
+  position: relative;
+  border: 1px solid #cecece;
+  background: #ffffff url("../assets/images/tickets/tickets-form/arrow-input.svg") no-repeat top 13px right 13px;
+  appearance: none;
+}
+
+.ticket-selected-icon {
+  position: absolute;
+  display: block;
+  color: #000000;
+  z-index: 5;
+  top: 571px;
+  left: 247px;
+}
 
 .entry-tickets {
   width: 100%;
@@ -378,6 +420,8 @@ input[type="date"] {
   margin-bottom: 22px;
 }
 .overview-heading {
+  position: relative;
+  top: -5px;
   font-weight: 500;
   font-size: 32px;
   line-height: 37px;
@@ -396,6 +440,8 @@ input[type="date"] {
   align-self: flex-start;
   img {
     display: block;
+    position: relative;
+    top: -5px;
   }
 }
 
@@ -471,6 +517,7 @@ input[type="date"] {
   height: 210px;
   margin-top: 14px;
   box-shadow: 1px 3px 5px -1px rgba(73, 73, 73, 0.7);
+  z-index: 2;
 }
 
 .card-control {
@@ -496,6 +543,7 @@ input[type="date"] {
 .card-label.expiration-date {
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 .card-number {
   width: 215px !important;
@@ -505,9 +553,77 @@ input[type="date"] {
   width: 100px !important;
 }
 
+.card-number-style {
+  display: inline-block;
+  position: relative;
+}
+
+.card-number-style input[type="number"]::-webkit-outer-spin-button,
+.card-number-style input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.number-minus.number-month,
+.number-plus.number-month,
+.number-minus.number-year,
+.number-plus.number-year {
+  position: absolute;
+  display: block;
+  text-align: center;
+  background-color: rgba(196, 28, 28, 0);
+  border: none;
+  outline: none;
+  width: 15px;
+  height: 15px;
+  padding: 0 !important;
+  margin: 0 !important;
+  img {
+    display: block;
+    padding-left: 5px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.number-minus.number-month {
+  left: 77px;
+  top: 35px;
+}
+
+.number-plus.number-month {
+  left: 77px;
+  top: 25px;
+}
+
+.number-minus.number-year {
+  left: 192px;
+  top: 35px;
+}
+.number-plus.number-year {
+  left: 192px;
+  top: 25px;
+}
+
+.number-border-date,
+.number-border-year {
+  position: absolute;
+  width: 1px;
+  height: 35px;
+  background-color: #a4a4a4;
+}
+
+.number-border-date {
+  left: 70px;
+}
+.number-border-year {
+  left: 185px;
+}
+
 .card-year {
   margin-left: 10px;
 }
+
 .visa {
   display: block;
   position: absolute;
@@ -530,7 +646,6 @@ input[type="date"] {
   font-size: 12px;
   width: 360px;
   height: 210px;
-  z-index: -1;
 }
 
 .tickets__card-form {
@@ -576,10 +691,11 @@ input[type="date"] {
 
 .card-form-submit {
   position: relative;
+  top: 56px;
+  left: 250px;
   font-size: 22px;
   line-height: 26px;
   background-color: #710707;
-  margin: 50px 0 0px 250px;
   padding: 10px 85px;
   border: none;
   user-select: none;

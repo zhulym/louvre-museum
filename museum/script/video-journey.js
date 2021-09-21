@@ -27,8 +27,6 @@ video.addEventListener('timeupdate', handleProgress);
 video.addEventListener('ended', handleEnd);
 player.addEventListener('fullscreenchange', toogleControl);
 speaker.addEventListener('click', muteVideo);
-// prevBtn.addEventListener('click', handlePrevBtn);
-// nextBtn.addEventListener('click', handleNextBtn);
 fullscreenBtn.addEventListener('click', toggleFullscreen);
 videoContent.addEventListener('click', playVideo);
 videoProgress.addEventListener('input', handleProgressChange);
@@ -37,6 +35,8 @@ videoProgress.addEventListener('mousemove', (e) => mouseActive && handleProgress
 videoProgress.addEventListener('mousedown', () => mouseActive = true);
 videoProgress.addEventListener('mouseup', () => mouseActive = false);
 soundProgress.addEventListener('input', handleVolumeChange);
+// prevBtn.addEventListener('click', handlePrevBtn);
+// nextBtn.addEventListener('click', handleNextBtn);
 
 function playVideo() {
   largePlay.classList.toggle('hide__large-button');

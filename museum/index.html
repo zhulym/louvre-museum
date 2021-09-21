@@ -363,13 +363,13 @@
 									<div class="form_control date-time-control">
 										<label for="date"><img src="./assets/images/tickets/tickets-form/date.svg"
 												alt="date"><span>Date</span></label>
-										<input type="date" id="date" name="date" class="form-input" value="1" required />
+										<input type="date" id="date" name="date" class="form-input" value="" required />
 										<div class="error-message"></div>
 									</div>
 									<div class="form_control date-time-control">
 										<label for="time"><img src="./assets/images/tickets/tickets-form/time.svg"
 												alt="time"><span>Time</span></label>
-										<input type="time" id="time" name="time" class="form-input" required />
+										<input type="time" id="time" name="time" class="form-input" value="" required />
 										<div class="error-message"></div>
 									</div>
 								</div>
@@ -392,9 +392,11 @@
 									<div class="error-message"></div>
 								</div>
 								<div class="form_control">
-									<select name="type" id="type" onChange="javascript: doIcon(this.value);">
-										<option selected style="background-image: url(./assets/images/tickets/tickets-form/type.svg);">
-											TicketType</option>
+									<img class="ticket-selected-icon" src="./assets/images/tickets/tickets-form/type.svg" alt="type-icon">
+									<select name="type" id="ticket-selected-type">
+										<option selected>
+											Ticket Type
+										</option>
 										<option value="">Permanent exhibition</option>
 										<option value="">Temporary exhibition</option>
 										<option value="">Combined Admission</option>
@@ -475,11 +477,32 @@
 											<label for="card-number" class="card-label">Card number</label>
 											<input type="text" name="card-number" value="" id="card-number" class="card-number">
 										</div>
-										<div class="card-control">
+
+										<div class="card-control card-number-style">
 											<label for="card-date" class="card-label expiration-date">Expiration date</label>
-											<input type="number" name="card-date" value="03" id="card-date" class="card-date">
-											<input type="number" name="card-year" value="2024" id="card-year" class="card-year">
+
+											<button class="number-minus number-month" type="button"
+												onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();"><img
+													src="./assets/images/tickets/tickets-form/arrownumber-down.svg" alt="number-down"></button>
+											<input type="number" readonly name="card-date" min="1" max="12" value="03" id="card-date"
+												class="card-date">
+											<button class="number-plus number-month" type="button"
+												onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();"><img
+													src="./assets/images/tickets/tickets-form/arrownumber-up.svg" alt="number-up"></button>
+
+											<button class="number-minus number-year" type="button"
+												onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();"><img
+													src="./assets/images/tickets/tickets-form/arrownumber-down.svg" alt="number-down"></button>
+											<input type="number" readonly name="card-year" min="1" max="2124" value="2024" id="card-year"
+												class="card-year">
+											<button class="number-plus number-year" type="button"
+												onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();"><img
+													src="./assets/images/tickets/tickets-form/arrownumber-up.svg" alt="number-up"></button>
+											<span class="number-border-date"></span>
+											<span class="number-border-year"></span>
+
 										</div>
+
 										<div class="card-control">
 											<label for="card-cardholder" class="card-label expiration-date">Cardholder name</label>
 											<input type="text" name="card-cardholder" value="" id="card-cardholder" class="card-cardholder">
