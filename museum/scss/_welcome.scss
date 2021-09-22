@@ -178,9 +178,11 @@
 }
 
 .slider__arrows {
+  position: relative;
+  left: -8px;
   display: flex;
-  gap: 20px;
-  margin-left: 59px;
+  gap: 10px;
+  margin-left: 61px;
   transition: all 0.3s ease;
 }
 
