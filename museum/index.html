@@ -81,12 +81,12 @@
 							</div>
 
 							<div class="slider__arrows">
-								<div class="slider-left__arrow arrow">
+								<button type="button" class="slider-left__arrow arrow">
 									<img src="./assets/images/welcome/slider/left-arrow.svg" alt="left-arrow">
-								</div>
-								<div class="slider-right__arrow arrow right-arrow">
+								</button>
+								<button type="button" class="slider-right__arrow arrow right-arrow">
 									<img src="./assets/images/welcome/slider/right-arrow.svg" alt="right-arrow">
-								</div>
+								</button>
 							</div>
 						</div>
 
@@ -263,8 +263,10 @@
 						</div>
 					</div>
 					<div class="swiper-pagination"></div>
-					<div class="swiper-button-prev"><img src="./assets/images/video/mini-arrows-left.svg" alt="left"></div>
-					<div class="swiper-button-next"><img src="./assets/images/video/mini-arrows-right.svg" alt="right"></div>
+					<button type="button" class="swiper-button-prev"><img src="./assets/images/video/mini-arrows-left.svg"
+							alt="left"></button>
+					<button type="button" class="swiper-button-next"><img src="./assets/images/video/mini-arrows-right.svg"
+							alt="right"></button>
 				</div>
 			</div>
 		</section>
@@ -359,6 +361,7 @@
 							<p>Tour to Louvre</p>
 
 							<form name="ticketsForm" class="form" novalidate>
+
 								<div class="date-time__container">
 									<div class="form_control date-time-control">
 										<label for="date"><img src="./assets/images/tickets/tickets-form/date.svg"
@@ -407,7 +410,7 @@
 									<p class="entry-tickets-heading">Entry ticket</p>
 									<div class="entry-tickets-content">
 										<div class="entry-tickets-basic">
-											<label for="">Basic 18+ (20 €)</label>
+											<label for="input-basic">Basic 18+ (20 €)</label>
 											<div class="entry-tickets-input">
 												<button class="entry-tickets-button"><img
 														src="./assets/images/tickets/tickets-form/rectangleminus-form.svg"
@@ -419,12 +422,12 @@
 											</div>
 										</div>
 										<div class="entry-tickets-senior">
-											<label for="">Senior 65+ (10 €)</label>
+											<label for="input-senior">Senior 65+ (10 €)</label>
 											<div class="entry-tickets-input">
 												<button class="entry-tickets-button"><img
 														src="./assets/images/tickets/tickets-form/rectangleminus-form.svg"
 														alt="rectangleminus"></button>
-												<input class="input-basic" id="input-basic" type="number" readonly min="0" max="20" value="2">
+												<input class="input-basic" id="input-senior" type="number" readonly min="0" max="20" value="2">
 												<button class="entry-tickets-button"><img
 														src="./assets/images/tickets/tickets-form/rectangleplus-form.svg"
 														alt="rectangleminus"></button>
@@ -432,6 +435,8 @@
 										</div>
 									</div>
 								</div>
+							</form>
+
 						</div>
 
 						<div class="tickets__cards">
@@ -467,6 +472,8 @@
 
 								</p>
 							</div>
+
+
 							<div class="tickets__card-form-container">
 
 								<form name="tickets-card-form" class="tickets__card-form">
@@ -526,6 +533,7 @@
 
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>

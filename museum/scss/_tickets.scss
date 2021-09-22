@@ -151,6 +151,7 @@
   border: 1px solid $font-dark;
   border-radius: 2px;
   overflow: hidden;
+  transition: all 0.3s ease;
   &:focus {
     outline: none;
   }

@@ -304,6 +304,10 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  background: none;
+  outline: none;
+  border: none;
+  background-position: center;
 }
 
 .slider__arrows {
@@ -312,6 +316,8 @@
   display: flex;
   gap: 20px;
   margin-left: 59px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .slider-left__arrow:hover img {
@@ -325,9 +331,10 @@
 
 .slider-left__arrow:hover {
   background: url(../assets/images/welcome/slider/hover-left-arrow.svg) no-repeat;
-  background-position: center;
+  background-position-x: 6px;
+  background-position-y: 14px;
+  background-size: contain;
   background-size: 32px;
-  background-position-y: 12px;
 }
 
 .slider-right__arrow:hover img {
@@ -341,9 +348,10 @@
 
 .slider-right__arrow:hover {
   background: url(../assets/images/welcome/slider/hover-right-arrow.svg) no-repeat;
-  background-position: center;
+  background-position-x: 6px;
+  background-position-y: 14px;
+  background-size: contain;
   background-size: 32px;
-  background-position-y: 12px;
 }
 
 .virtual-tour__heading {
@@ -770,11 +778,6 @@ input[type="range"].sound__progress {
 }
 
 /*=============================== Settings Mini Slider =================================*/
-.swiper-pagination {
-  -webkit-transition: all 0.3s ease !important;
-  transition: all 0.3s ease !important;
-}
-
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
@@ -802,8 +805,6 @@ input[type="range"].sound__progress {
 .swiper-wrapper {
   position: relative;
   min-width: 0;
-  -webkit-transition: all 0.3s ease !important;
-  transition: all 0.3s ease !important;
 }
 
 .swiper-slide video {
@@ -828,8 +829,6 @@ input[type="range"].sound__progress {
   bottom: -33px;
   left: 0;
   width: 100%;
-  -webkit-transition: all 0.3s ease !important;
-  transition: all 0.3s ease !important;
 }
 
 .swiper-pagination-bullet-active {
@@ -845,8 +844,6 @@ input[type="range"].sound__progress {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 12px;
-  -webkit-transition: all 0.3s ease !important;
-  transition: all 0.3s ease !important;
 }
 
 .swiper-button-next,
@@ -864,6 +861,13 @@ input[type="range"].sound__progress {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background: none;
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: none;
 }
 
 .swiper-button-next img:hover,
@@ -1236,6 +1240,8 @@ input[type="range"].sound__progress {
   border: 1px solid #000;
   border-radius: 2px;
   overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .tickets__buy:focus {
@@ -2218,11 +2224,6 @@ ul,
 ul li {
   list-style: none;
   display: block;
-}
-
-button {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 
 .container {
