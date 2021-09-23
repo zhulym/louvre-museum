@@ -159,8 +159,10 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-box-shadow: 153px 0px 99px -58px black inset;
-          box-shadow: 153px 0px 99px -58px black inset;
+  -webkit-box-shadow: 14px -5px 30px -10px rgba(0, 0, 0, 0.2) inset;
+          box-shadow: 14px -5px 30px -10px rgba(0, 0, 0, 0.2) inset;
+  background: -webkit-gradient(linear, left top, right top, from(black), color-stop(30%, rgba(255, 255, 255, 0)));
+  background: linear-gradient(90deg, black 0%, rgba(255, 255, 255, 0) 30%);
   top: 0;
   left: 0;
 }
@@ -312,12 +314,12 @@
 
 .slider__arrows {
   position: relative;
-  left: -8px;
+  left: 7px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
-  margin-left: 61px;
+  margin-left: 45px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
