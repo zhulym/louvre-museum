@@ -83,6 +83,7 @@ ul li {
 }
 .dark-section {
     background-color: $bg-dark;
+    box-shadow: 0 0 0px 1px black;
 }
 
 .parallax {
@@ -91,4 +92,5 @@ ul li {
     width: 100%;
     background-size: cover;
     background-attachment: fixed;
+    background-position-x: center;
 }
