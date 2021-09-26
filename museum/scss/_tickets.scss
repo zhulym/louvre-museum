@@ -314,6 +314,28 @@ input[type="date"] {
   appearance: none;
   font-size: 18px;
 }
+input[type="time"]::-webkit-datetime-edit-hour-field,
+input[type="time"]::-webkit-datetime-edit-minute-field,
+input[type="time"]::-webkit-datetime-edit-text {
+  -webkit-appearance: none;
+  display: none;
+}
+input[type="date"]::-webkit-datetime-edit-text {
+  -webkit-appearance: none;
+  display: none;
+}
+input[type="date"]::-webkit-datetime-edit-month-field {
+  -webkit-appearance: none;
+  display: none;
+}
+input[type="date"]::-webkit-datetime-edit-day-field {
+  -webkit-appearance: none;
+  display: none;
+}
+input[type="date"]::-webkit-datetime-edit-year-field {
+  -webkit-appearance: none;
+  display: none;
+}
 
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator {
@@ -331,7 +353,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 #ticket-selected-type {
   padding-left: 45px;
   position: relative;
-  border: 1px solid #cecece;
+  border: 1px solid black;
   background: #ffffff url("../assets/images/tickets/tickets-form/arrow-input.svg") no-repeat top 13px right 13px;
   appearance: none;
 }
