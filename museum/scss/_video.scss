@@ -290,3 +290,7 @@ input[type="range"].sound__progress {
 .video__iframe {
   border: 0;
 }
+
+input.video__progress {
+  background: linear-gradient(to right, #660606 54%, #660606 54%, #c4c4c4 0%, #c4c4c4 100%) !important;
+}

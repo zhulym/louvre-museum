@@ -911,6 +911,11 @@ input[type="range"].sound__progress {
   border: 0;
 }
 
+input.video__progress {
+  background: -webkit-gradient(linear, left top, right top, color-stop(54%, #660606), color-stop(54%, #660606), color-stop(0%, #c4c4c4), to(#c4c4c4)) !important;
+  background: linear-gradient(to right, #660606 54%, #660606 54%, #c4c4c4 0%, #c4c4c4 100%) !important;
+}
+
 .gallery__heading h2 {
   font-family: "Forum", cursive;
   font-size: 80px;
