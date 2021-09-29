@@ -1,0 +1,30 @@
+@mixin fontStyle($size: 22px, $weight: 300, $lineHeight: 38px) {
+  font-family: "Roboto", sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+  letter-spacing: 2px;
+}
+
+@mixin fontStyleHeading($size: 80px, $lineHeight: 90px) {
+  font-family: "Forum", cursive;
+  font-size: $size;
+  font-weight: 300;
+  line-height: $lineHeight;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+@mixin mainButton() {
+  background-color: $dark-red;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 200;
+  border-radius: 10px;
+  padding: 24px 69px;
+  display: inline-block;
+  letter-spacing: 2px;
+  &:hover {
+    background-color: $font-gold;
+  }
+}
