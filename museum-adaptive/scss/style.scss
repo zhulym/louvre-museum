@@ -1,0 +1,103 @@
+/*======================================  FONTS  ===========================================*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
+
+/*======================================  CONSTANTS  ========================================*/
+@import "constants";
+
+/*======================================  MIXINS  ===========================================*/
+@import "mixins";
+
+/*======================================  IMPORT SCSS  =====================================*/
+@import "header";
+@import "welcome";
+@import "virtual-tour";
+@import "picture-explore";
+@import "video";
+@import "gallery";
+@import "tickets";
+@import "contacts";
+@import "footer";
+@import "media-queries-1024";
+@import "media-queries-768";
+@import "media-queries-420";
+
+/*======================================  DEFAULT STYLES  ==================================*/
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    color: #fff;
+}
+
+html,
+body {
+    position: relative;
+    margin: 0;
+    height: 100%;
+}
+
+body.lock_page-scroll {
+    overflow: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    border: none;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+ul,
+ul li,
+p,
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+}
+
+ul,
+ul li {
+    list-style: none;
+    display: block;
+}
+
+.container {
+    position: relative;
+    margin: -1px auto;
+    max-width: 1480px;
+    width: 100%;
+    padding: 0 20px;
+    overflow: hidden;
+    height: 100%;
+}
+.dark-section {
+    background-color: $bg-dark;
+}
+
+.parallax {
+    background: url(../assets/images/parallax.jpg);
+    height: 400px;
+    width: 100%;
+    background-position-x: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
