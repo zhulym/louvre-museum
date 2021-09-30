@@ -1,0 +1,149 @@
+.explore {
+  margin-top: 75px;
+}
+
+.explore__content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 80px;
+}
+
+.explore__description {
+  max-width: 660px;
+  h2 {
+    @include fontStyleHeading();
+    padding-bottom: 25px;
+    border-bottom: 3px solid $dark-red;
+    margin-bottom: 75px;
+  }
+  p {
+    margin-bottom: 25px;
+    @include fontStyle();
+    letter-spacing: initial;
+    line-height: 38.5px !important;
+    user-select: none;
+  }
+  &:last-child {
+    margin-bottom: 315px;
+  }
+  span {
+    color: $yellow;
+  }
+}
+
+.explore__image-wrapper {
+  position: relative;
+  padding-top: 12px;
+  padding-bottom: 70px;
+}
+
+.explore__1024 {
+  display: none;
+}
+
+/*================= slider ================*/
+.explore__image-wrapper {
+  position: relative;
+  flex-basis: 50%;
+  display: flex;
+  justify-content: flex-end;
+  width: 720px;
+  height: 710px;
+  padding-bottom: 0px;
+  margin-bottom: 75px;
+  margin-top: 0px;
+}
+.explore__image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.explore__before,
+.explore__after {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.content-image {
+  height: 100%;
+  width: 100%;
+}
+
+// .explore__scroller {
+//   width: 39px;
+//   height: 39px;
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   border-radius: 50%;
+//   background-color: transparent;
+//   opacity: 0.9;
+//   pointer-events: auto;
+//   cursor: pointer;
+//   border: 5px solid #fff;
+// }
+
+.explore__scroller:hover {
+  opacity: 1;
+}
+
+.scrolling {
+  pointer-events: none;
+  opacity: 1;
+}
+
+// .explore__scroller:before,
+// .explore__scroller:after {
+//   content: " ";
+//   display: block;
+//   width: 5px;
+//   height: 9999px;
+//   position: absolute;
+//   left: 50%;
+//   margin-left: -3.5px;
+//   z-index: 30;
+//   transition: 0.1s;
+//   background: #fff;
+// }
+.explore__scroller:before {
+  top: 100%;
+}
+.explore__scroller:after {
+  bottom: 100%;
+}
+/////////////////////////////////////////// delete all down !!!!!!!!!!!!!!!!!!!!!!!!
+.explore__image {
+  overflow: visible !important;
+  // overflow-x: hidden !important;
+}
+
+.explore-delete {
+  position: absolute;
+  z-index: 50;
+  width: 100%;
+  height: auto;
+}
+
+.explore__scroller {
+  display: none;
+}
+.explore__scroller:before,
+.explore__scroller:after {
+  display: none;
+}
+
+.explore__before,
+.explore__after {
+  visibility: hidden;
+}

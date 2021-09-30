@@ -1,0 +1,571 @@
+@media only screen and (max-width: 1366px) {
+  .tickets__type {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  /*==============  WELCOME  ==============*/
+  * {
+    font-size: 20px;
+  }
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .header__container {
+    padding: 42px 0 38px 0;
+    align-items: center;
+  }
+
+  .slider-right__item {
+    max-width: 700px;
+    width: 100%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .welcome__empty-block {
+    width: 324px;
+    height: 100%;
+  }
+
+  .welcome__heading {
+    @include fontHeading($lineHeight: 90px, $weight: 400);
+    padding-top: 50px;
+    margin-bottom: 25px;
+  }
+
+  .welcome__text {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .welcome__button {
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 300;
+    padding: 19px 45px;
+    margin: 50px 0 0px 0;
+  }
+
+  .slider-right__item {
+    padding-bottom: 54px;
+  }
+  .pagination__wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    align-self: initial;
+    justify-content: flex-end;
+    gap: 31px;
+    padding: 0px 75px;
+    padding-left: 0px;
+    width: 700px;
+    height: 120px;
+  }
+  .slider__pagination {
+    position: relative;
+    top: 1px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-left: 0px;
+  }
+
+  .slider__numbers {
+    font-size: 20px !important;
+    line-height: 40px;
+    position: relative;
+    top: 3px;
+    right: 10px;
+  }
+  .slider__arrows {
+    position: relative;
+    left: 7px;
+    top: -3px;
+    gap: 10px;
+    margin-left: 0px;
+  }
+
+  .pagination-item {
+    width: 12px;
+    height: 12px;
+    margin-bottom: 0px;
+  }
+
+  .header__menu-link {
+    font-size: 20px;
+    line-height: 23px;
+  }
+  .welcome__content.hide-welcome-content {
+    display: none;
+  }
+  .welcome__content {
+    z-index: 6;
+  }
+  .header__menu-list {
+    gap: 0px;
+  }
+  .header__logo {
+    z-index: 10;
+  }
+  .header__menu-wrapper li {
+    margin-bottom: 24px !important;
+    font-size: 20px !important;
+    &::after {
+      content: url("../assets/images/welcome/arrow-burger.svg");
+      position: absolute;
+      right: 77px;
+    }
+  }
+  .header__menu-wrapper ul {
+    width: 100%;
+  }
+
+  /*==============  Burger  ==============*/
+  .burger__icon {
+    z-index: 25;
+    display: block;
+    position: relative;
+    width: 32px;
+    height: 18px;
+    top: -2px;
+    cursor: pointer;
+    &::before,
+    &::after,
+    span {
+      left: 0px;
+      position: absolute;
+      height: 10%;
+      width: 100%;
+      transition: all 0.3s ease 0s;
+      background-color: #fff;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+    }
+
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      top: 50%;
+      transform: scale(1) translate(0px, -50%);
+    }
+  }
+  .burger__icon.menu__active {
+    left: 5px;
+    span {
+      transform: scale(0) translate(0px, -50%);
+    }
+    &::before {
+      top: 50%;
+      transform: rotate(-45deg) translate(0px, -50%);
+    }
+    &::after {
+      bottom: 50%;
+      transform: rotate(45deg) translate(0px, 50%);
+    }
+  }
+
+  .header__menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: -150%;
+    width: 25%;
+    padding: 162px 30px 30px 55px;
+    transition: left 0.3s ease 0s;
+    overflow: auto;
+    z-index: 5;
+    height: 714px;
+    background: hsla(0, 0%, 0%, 0.904);
+    ul {
+      flex-direction: column;
+    }
+    li {
+      margin-bottom: 40px;
+      font-size: 22px;
+    }
+    &::before {
+      content: "";
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 80px;
+      z-index: 2;
+    }
+  }
+
+  .menu__active {
+    left: 0;
+  }
+
+  /*==============  VIRTUAL  ==============*/
+  .virtual-tour__heading h2 {
+    @include fontHeading();
+    padding-bottom: 20px;
+  }
+  .virtual-tour__heading {
+    margin-bottom: 61px;
+  }
+
+  .tour-item {
+    flex-basis: 330px;
+  }
+  .tour-item__wrapper {
+    column-gap: 108px;
+    row-gap: 60px;
+  }
+  .tour-item h3 {
+    font-size: 28px;
+    line-height: 31px;
+    font-weight: 400;
+    padding-top: 19px;
+    letter-spacing: 3px;
+  }
+
+  .tour-item:after {
+    bottom: 61px;
+  }
+  .tour-item__360 {
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: initial;
+    margin-top: 23px;
+  }
+  .tour-item__google {
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2px;
+    letter-spacing: initial;
+    margin-top: 10px;
+  }
+  .tour-item:after {
+    width: 150px;
+  }
+  @keyframes redUnderline {
+    from {
+      width: 150px;
+    }
+    to {
+      width: 330px;
+    }
+  }
+
+  /*==============  EXPLORE  ==============*/
+  .explore__description h2 {
+    @include fontHeading();
+    padding-bottom: 23px;
+    margin-bottom: 59px;
+  }
+  .explore {
+    margin-top: 61px;
+  }
+  .explore__description {
+    max-width: 100%;
+  }
+  .explore__description p {
+    display: none;
+  }
+  .explore__content {
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 0px;
+  }
+
+  .explore__image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-basis: initial;
+    padding: 0 0 60px 0;
+    margin: 10px 0 63px 0;
+    height: 700px;
+  }
+  .explore__description .explore__1024 {
+    display: block;
+    font-size: 20px;
+    line-height: 37px !important;
+    margin-bottom: 48px;
+    letter-spacing: initial;
+  }
+  .explore__1024 span {
+    font-size: 20px;
+  }
+  .explore__image {
+    width: 100%;
+    max-height: 702px;
+    position: relative;
+    overflow: hidden;
+  }
+  .explore__scroller:before,
+  .explore__scroller:after {
+    height: 0;
+  }
+  .explore__scroller:before,
+  .explore__scroller:after {
+    content: " ";
+    display: block;
+    width: 5px;
+    height: 9999px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3.5px;
+    z-index: 30;
+    -webkit-transition: 0.1s;
+    transition: 0.1s;
+    background: #fff;
+  }
+
+  /*==============  VIDEO  ==============*/
+  .video__content {
+    max-height: 444px;
+  }
+  .video__heading h2 {
+    @include fontHeading();
+    padding-top: 0;
+  }
+  .video__heading p {
+    display: none;
+  }
+  .video__heading {
+    padding-top: 60px;
+    margin-bottom: 40px;
+  }
+  .video__large-play-button img {
+    width: 70%;
+    margin: 0px auto;
+  }
+  .video {
+    margin-bottom: 0px;
+  }
+  .video__controls {
+    height: 60px;
+    padding: 20px 39px;
+    gap: 30px;
+    img {
+      transform: scale(2);
+    }
+  }
+  .controls-button {
+    padding-top: 0px;
+    padding-left: 7px;
+  }
+  .video__progress,
+  .sound__progress {
+    height: 7px;
+  }
+  input[type="range"].sound__progress {
+    width: 270px;
+    left: -6px;
+    transform: scaleX(1.1);
+  }
+  input[type="range"].video__progress {
+    width: 1575px;
+    left: -8px;
+  }
+  .fullscreen {
+    img {
+      transform: scale(1.5);
+    }
+  }
+  .speaker {
+    left: -12px;
+    top: -5px;
+    transform: scale(1.3);
+  }
+
+  .small-play img {
+    position: relative;
+    top: -2px;
+  }
+
+  .video__iframe {
+    max-width: 300px;
+    max-height: 170px;
+  }
+  .swiper {
+    margin-bottom: 95px;
+  }
+  .swiper-button-next {
+    right: 383px;
+  }
+  .swiper-button-prev {
+    left: 383px;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 114%;
+  }
+
+  /*==============  GALLERY  ==============*/
+
+  .gallery__heading h2 {
+    @include fontHeading();
+    padding-bottom: 5px;
+  }
+
+  .gallery__left {
+    top: 40px;
+  }
+
+  .gallery__right {
+    top: 39px;
+  }
+
+  .gallery {
+    height: 1460px;
+  }
+
+  /*==============  Tickets  ==============*/
+  .tickets__heading h2 {
+    @include fontHeading();
+    padding-bottom: 19px;
+  }
+  .tickets__form-item {
+    width: 1024px;
+    overflow-y: scroll;
+    max-height: 100%;
+  }
+  .tickets__type {
+    display: none;
+  }
+  .tickets__image {
+    max-width: 700px;
+    max-height: 440px;
+    img {
+      position: relative;
+      top: -47px;
+    }
+  }
+  .tickets__heading {
+    margin-bottom: 62px;
+  }
+  .tickets__content {
+    overflow: hidden;
+    margin-bottom: 60px;
+    padding-bottom: 0px;
+  }
+  .tickets__amount {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-basis: 20.7%;
+  }
+  .tickets__amount-text {
+    text-align: left;
+  }
+  .tickets__amount-wrapper {
+    margin-bottom: 0px;
+    position: initial;
+    margin-top: 25px;
+  }
+  .tickets__total {
+    position: initial;
+    margin-top: 25px;
+  }
+  .tickets__age {
+    margin: 5px 0 9px 0;
+  }
+  .tickets__total-amount {
+    color: black;
+    margin-left: 15px;
+  }
+  .amount__buttons {
+    width: 173px;
+  }
+  .tickets__buy {
+    margin-top: 70px;
+    width: 175px;
+  }
+  .parallax {
+    background-position-x: center !important;
+    background-size: 183% !important;
+    background-position-y: 0px !important;
+  }
+  .tickets__form-item {
+    width: 1030px;
+    padding: 75px 30px 30px 30px;
+  }
+  .ticket-selected-icon {
+    top: 555px;
+    left: 43px;
+  }
+  #ticket-selected-type {
+    border: 1px solid black;
+  }
+
+  /*==============  Contacts  ==============*/
+  .contacts__heading h2 {
+    @include fontHeading();
+    padding-bottom: 19px;
+  }
+  .contacts__heading {
+    margin-bottom: 60px;
+  }
+  .contacts__place {
+    letter-spacing: initial;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .contacts__info {
+    margin-top: 35px;
+  }
+
+  .contacts__info-item {
+    letter-spacing: initial;
+    font-size: 20px;
+    line-height: 23px;
+    padding-bottom: 15px;
+    a {
+      font-size: 20px;
+    }
+  }
+  .contacts__map {
+    img {
+      opacity: 0;
+    }
+    flex-basis: 694px;
+    background: url(../assets/images/contacts/map1024.jpg);
+  }
+  .contacts__wrapper {
+    padding-bottom: 62px;
+  }
+
+  /*==============  Footer  ==============*/
+  .footer__container {
+    padding: 54px 0 78px 0;
+  }
+  .footer__menu-wrapper {
+    left: -73px;
+    top: 0px;
+    gap: 32px;
+  }
+  .footer__logo-text {
+    position: initial;
+  }
+  .footer__social-wrapper {
+    height: 147px;
+  }
+  //////////////////////////////////////////////DELETE LATER
+  #video__progress {
+    display: none;
+    background: linear-gradient(to right, #660606 40%, #660606 40%, #c4c4c4 0%, #c4c4c4 100%) !important;
+  }
+  .video__progress-1024 {
+    display: block;
+    background: linear-gradient(to right, #660606 40%, #660606 40%, #c4c4c4 0%, #c4c4c4 100%) !important;
+  }
+}
