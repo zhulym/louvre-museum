@@ -108,6 +108,47 @@ function slideOnPag(event) {
   }
 }
 
+//// mouse swipes ////
+let startX = 0;
+let startY = 0;
+let distX = 0;
+let distY = 0;
+let swipeTime = 0;
+let startTime = 0;
+const distHorizontal = 150;
+const distVertical = 100;
+const allowedTime = 1000;
+
+sliderContainer.addEventListener('mousedown', function (e) {
+  sliderContainer.style.cursor = 'pointer';
+  startX = e.pageX;
+  startY = e.pageY;
+  startTime = new Date().getTime();
+  e.preventDefault();
+})
+
+sliderContainer.addEventListener('mouseup', function (e) {
+  sliderContainer.style.cursor = 'pointer';
+  distX = e.pageX - startX;
+  distY = e.pageY - startY;
+  swipeTime = new Date().getTime() - startTime;
+
+  if (swipeTime <= allowedTime) {
+    if (Math.abs(distX) >= distHorizontal && Math.abs(distY) <= distVertical) {
+      if (distX > 0) {
+        if (isActive) {
+          slideRight();
+        }
+      } else {
+        if (isActive) {
+          slideLeft();
+        }
+      }
+    }
+  }
+  e.preventDefault();
+})
+
 /*==============================================  BURGER MENU  ============================================*/
 const burgerIcon = document.querySelector('.burger__icon');
 const headerMenuWrap = document.querySelector('.header__menu-wrapper');
@@ -185,7 +226,6 @@ document.body.addEventListener('touchcancel', function () {
   active = false;
   exploreScroller.classList.remove('scrolling');
 });
-
 
 // Самооценка проекта:
 console.log(`

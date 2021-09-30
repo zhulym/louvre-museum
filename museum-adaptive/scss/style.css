@@ -176,6 +176,10 @@
   width: 440px;
   height: 100%;
   color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .welcome__wrapper {
