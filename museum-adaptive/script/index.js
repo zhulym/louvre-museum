@@ -1,1 +1,256 @@
-const _0x577abb=_0x4cc9;(function(_0x5bf4aa,_0x24832e){const _0x17b26a=_0x4cc9,_0x4383ab=_0x5bf4aa();while(!![]){try{const _0x202211=parseInt(_0x17b26a(0xb0))/0x1*(-parseInt(_0x17b26a(0xa4))/0x2)+parseInt(_0x17b26a(0xa5))/0x3*(parseInt(_0x17b26a(0xb5))/0x4)+-parseInt(_0x17b26a(0x10e))/0x5+parseInt(_0x17b26a(0xcc))/0x6+-parseInt(_0x17b26a(0x9c))/0x7+-parseInt(_0x17b26a(0xdb))/0x8+parseInt(_0x17b26a(0x102))/0x9*(parseInt(_0x17b26a(0xb3))/0xa);if(_0x202211===_0x24832e)break;else _0x4383ab['push'](_0x4383ab['shift']());}catch(_0x2f889f){_0x4383ab['push'](_0x4383ab['shift']());}}}(_0x55a9,0x9a10d));const sliderContainer=document[_0x577abb(0xdc)]('.slider__container'),upArrow=document['querySelector'](_0x577abb(0xae)),downArrow=document['querySelector'](_0x577abb(0x117)),rightSlides=document[_0x577abb(0xe9)](_0x577abb(0xaf)),pagination=document[_0x577abb(0xdc)]('.slider__pagination'),sliderCurrentNumber=document[_0x577abb(0xdc)](_0x577abb(0xac)),sliderAmountSlides=document[_0x577abb(0xdc)](_0x577abb(0x129)),length=rightSlides[_0x577abb(0x103)];let currentLeftIdx=0x0,currentRightIdx=0x0,isActive=!![],paginationItems;createPagination(),sliderAmountSlides[_0x577abb(0xde)]='0'+length,upArrow['addEventListener'](_0x577abb(0x101),slideLeft),downArrow['addEventListener'](_0x577abb(0x101),slideRight),pagination[_0x577abb(0xa7)](_0x577abb(0x101),slideOnPag);function delPrevSlide(_0x20c816,_0x5d2bc0,_0x2adfd2){const _0xadd4c7=_0x577abb;isActive=![],_0x20c816[_0x2adfd2][_0xadd4c7(0x12a)][_0xadd4c7(0x12b)](_0x5d2bc0),_0x20c816[_0x2adfd2][_0xadd4c7(0xa7)](_0xadd4c7(0xb2),function(){const _0x968121=_0xadd4c7;this[_0x968121(0x12a)][_0x968121(0xc3)](_0x968121(0x106),_0x5d2bc0);});}function addNextSlide(_0x1bf73d,_0x15ca3e,_0x311191){const _0x3492c7=_0x577abb;_0x1bf73d[_0x311191][_0x3492c7(0x12a)]['add'](_0x3492c7(0xaa),_0x15ca3e),_0x1bf73d[_0x311191][_0x3492c7(0xa7)]('animationend',function(){const _0x4fb5c4=_0x3492c7;this['classList']['remove']('next',_0x15ca3e),this[_0x4fb5c4(0x12a)][_0x4fb5c4(0x12b)](_0x4fb5c4(0x106)),isActive=!![];});}function clearPagination(){Array['from'](paginationItems)['forEach'](_0x56f023=>{const _0x18819f=_0x4cc9;_0x56f023['classList'][_0x18819f(0x11d)](_0x18819f(0x10a))&&_0x56f023['classList']['remove'](_0x18819f(0x10a));});}function slideLeft(){const _0x2af768=_0x577abb;isActive&&(clearPagination(),delPrevSlide(rightSlides,'to-left',currentRightIdx),currentRightIdx=(currentRightIdx-0x1+length)%length,addNextSlide(rightSlides,_0x2af768(0x122),currentRightIdx),paginationItems[currentRightIdx]['classList'][_0x2af768(0x12b)]('active-pagination'),sliderCurrentNumber[_0x2af768(0xde)]='0'+(currentRightIdx+0x1));}function slideRight(){const _0xbc0ffa=_0x577abb;isActive&&(clearPagination(),delPrevSlide(rightSlides,_0xbc0ffa(0xf2),currentRightIdx),currentRightIdx=(currentRightIdx+0x1+length)%length,addNextSlide(rightSlides,'from-left',currentRightIdx),paginationItems[currentRightIdx][_0xbc0ffa(0x12a)][_0xbc0ffa(0x12b)]('active-pagination'),sliderCurrentNumber[_0xbc0ffa(0xde)]='0'+(currentRightIdx+0x1));}function createPagination(){const _0xb7f51e=_0x577abb;for(let _0x3a3101=0x0;_0x3a3101<length-0x1;_0x3a3101++){const _0x325082=document[_0xb7f51e(0x111)](_0xb7f51e(0xc0));_0x325082[_0xb7f51e(0xef)](_0xb7f51e(0xf4),_0xb7f51e(0xb7)),_0x325082[_0xb7f51e(0xef)](_0xb7f51e(0xeb),_0x3a3101+0x1),pagination[_0xb7f51e(0xf5)](_0x325082);}paginationItems=document['getElementsByClassName']('pagination-item');}function slideOnPag(_0x18868b){const _0x43ab99=_0x577abb,_0x521e41=Number(_0x18868b[_0x43ab99(0xbe)][_0x43ab99(0xc8)][_0x43ab99(0x105)]);if(currentRightIdx===_0x521e41)return;_0x521e41<currentRightIdx&&isActive&&(clearPagination(),delPrevSlide(rightSlides,_0x43ab99(0xf7),currentRightIdx),currentRightIdx=_0x521e41,addNextSlide(rightSlides,'from-right',currentRightIdx),paginationItems[currentRightIdx][_0x43ab99(0x12a)][_0x43ab99(0x12b)](_0x43ab99(0x10a)),sliderCurrentNumber[_0x43ab99(0xde)]='0'+(currentRightIdx+0x1)),_0x521e41>currentRightIdx&&isActive&&(clearPagination(),delPrevSlide(rightSlides,_0x43ab99(0xf2),currentRightIdx),currentRightIdx=_0x521e41,addNextSlide(rightSlides,'from-left',currentRightIdx),paginationItems[currentRightIdx][_0x43ab99(0x12a)][_0x43ab99(0x12b)](_0x43ab99(0x10a)),sliderCurrentNumber[_0x43ab99(0xde)]='0'+(currentRightIdx+0x1));}function _0x4cc9(_0x3bdeec,_0x478475){const _0x55a94c=_0x55a9();return _0x4cc9=function(_0x4cc9c1,_0x221690){_0x4cc9c1=_0x4cc9c1-0x98;let _0x2a24d1=_0x55a94c[_0x4cc9c1];return _0x2a24d1;},_0x4cc9(_0x3bdeec,_0x478475);}let startX=0x0,startY=0x0,distX=0x0,distY=0x0,swipeTime=0x0,startTime=0x0;const distHorizontal=0x96,distVertical=0x64,allowedTime=0x3e8;sliderContainer['addEventListener'](_0x577abb(0x115),function(_0x402fba){const _0x27b348=_0x577abb;sliderContainer[_0x27b348(0xe5)]['cursor']=_0x27b348(0x114),startX=_0x402fba['pageX'],startY=_0x402fba[_0x27b348(0xfd)],startTime=new Date()[_0x27b348(0xad)](),_0x402fba[_0x27b348(0x12f)]();}),sliderContainer['addEventListener'](_0x577abb(0xdf),function(_0x164d2f){const _0x14d77b=_0x577abb;sliderContainer[_0x14d77b(0xe5)][_0x14d77b(0x130)]=_0x14d77b(0x114),distX=_0x164d2f[_0x14d77b(0x12d)]-startX,distY=_0x164d2f[_0x14d77b(0xfd)]-startY,swipeTime=new Date()[_0x14d77b(0xad)]()-startTime,swipeTime<=allowedTime&&(Math[_0x14d77b(0xbf)](distX)>=distHorizontal&&Math[_0x14d77b(0xbf)](distY)<=distVertical&&(distX>0x0?isActive&&slideRight():isActive&&slideLeft())),_0x164d2f[_0x14d77b(0x12f)]();});const burgerIcon=document[_0x577abb(0xdc)](_0x577abb(0xab)),headerMenuWrap=document[_0x577abb(0xdc)]('.header__menu-wrapper'),welcomeContent=document[_0x577abb(0xdc)](_0x577abb(0xea)),menuLinks=document[_0x577abb(0xe9)]('.header__menu-item'),footerSocial=document[_0x577abb(0xdc)](_0x577abb(0x132)),container=document[_0x577abb(0xdc)](_0x577abb(0xce));document[_0x577abb(0xa7)](_0x577abb(0xee),()=>{const _0x1e9137=_0x577abb;[burgerIcon,...menuLinks][_0x1e9137(0x109)](_0x5d0998=>_0x5d0998[_0x1e9137(0xa7)](_0x1e9137(0x101),showHideMenu)),document[_0x1e9137(0xa7)](_0x1e9137(0x101),hideMenuDocClick);});function hideMenuDocClick(_0x5c7fe0){const _0x1f9b23=_0x577abb;if(_0x5c7fe0[_0x1f9b23(0xbe)][_0x1f9b23(0x12a)][_0x1f9b23(0x11d)]('burger__icon'))return;[headerMenuWrap,burgerIcon]['forEach'](_0x2a0ebe=>_0x2a0ebe[_0x1f9b23(0x12a)][_0x1f9b23(0xc3)](_0x1f9b23(0x11b))),headerMenuWrap[_0x1f9b23(0xa7)](_0x1f9b23(0x101),_0x4a57de=>_0x4a57de[_0x1f9b23(0xb1)]()),welcomeContent[_0x1f9b23(0x12a)]['remove'](_0x1f9b23(0xbb));}function showHideMenu(){const _0x30203c=_0x577abb;headerMenuWrap[_0x30203c(0x12a)]['toggle'](_0x30203c(0x11b)),burgerIcon['classList'][_0x30203c(0xa8)](_0x30203c(0x11b)),welcomeContent[_0x30203c(0x12a)][_0x30203c(0xa8)](_0x30203c(0xbb)),footerSocial[_0x30203c(0x12a)][_0x30203c(0xa8)](_0x30203c(0xf9));}const exploreScroller=document[_0x577abb(0xdc)](_0x577abb(0xfb)),exploreSlider=document['querySelector'](_0x577abb(0xb4)),exploreAfter=document['querySelector']('.explore__after');let active=![];exploreScroller['addEventListener'](_0x577abb(0x115),function(){const _0x57803e=_0x577abb;active=!![],exploreScroller['classList'][_0x57803e(0x12b)](_0x57803e(0x11e));}),document['body'][_0x577abb(0xa7)](_0x577abb(0xdf),function(){const _0x18caa7=_0x577abb;active=![],exploreScroller[_0x18caa7(0x12a)][_0x18caa7(0xc3)]('scrolling');}),document['body'][_0x577abb(0xa7)]('mouseleave',function(){const _0x113ff0=_0x577abb;active=![],exploreScroller[_0x113ff0(0x12a)][_0x113ff0(0xc3)]('scrolling');}),document[_0x577abb(0xcd)]['addEventListener']('mousemove',function(_0x1ec422){const _0x1aa6a7=_0x577abb;if(!active)return;let _0xfca52d=_0x1ec422[_0x1aa6a7(0x12d)];_0xfca52d-=exploreSlider[_0x1aa6a7(0xdd)]()[_0x1aa6a7(0xa3)],scrollIt(_0xfca52d);});function scrollIt(_0x3b586a){const _0x2d0080=_0x577abb;let _0x21c7e4=Math[_0x2d0080(0xfe)](0x0,Math[_0x2d0080(0x9f)](_0x3b586a,exploreSlider[_0x2d0080(0x108)]));exploreAfter['style'][_0x2d0080(0xbd)]=_0x21c7e4+'px',exploreScroller[_0x2d0080(0xe5)][_0x2d0080(0xa3)]=_0x21c7e4-0x13+'px';}scrollIt(0x1b8),exploreScroller[_0x577abb(0xa7)](_0x577abb(0x104),function(){const _0x57bf8d=_0x577abb;active=!![],exploreScroller[_0x57bf8d(0x12a)]['add']('scrolling');}),document['body'][_0x577abb(0xa7)](_0x577abb(0x116),function(){const _0x4cc4c2=_0x577abb;active=![],exploreScroller[_0x4cc4c2(0x12a)][_0x4cc4c2(0xc3)](_0x4cc4c2(0x11e));}),document[_0x577abb(0xcd)]['addEventListener'](_0x577abb(0x12c),function(){const _0x1ee81e=_0x577abb;active=![],exploreScroller[_0x1ee81e(0x12a)][_0x1ee81e(0xc3)](_0x1ee81e(0x11e));}),console[_0x577abb(0x9e)](_0x577abb(0xa0));const galleryInnerContainer=document[_0x577abb(0xdc)](_0x577abb(0xf3)),galleryLeft=document[_0x577abb(0xdc)](_0x577abb(0xd0)),galleryCenter=document[_0x577abb(0xdc)]('.gallery__center'),galleryRight=document[_0x577abb(0xdc)](_0x577abb(0x123));window['addEventListener']('load',addGalleryReload),window[_0x577abb(0xa7)](_0x577abb(0xd3),addGallery);const galleryImages=['./assets/images/gallery/galery1.jpg',_0x577abb(0xe7),_0x577abb(0xe0),_0x577abb(0xe4),_0x577abb(0xf0),_0x577abb(0x9a),'./assets/images/gallery/galery7.jpg',_0x577abb(0x120),_0x577abb(0xec),_0x577abb(0x112),'./assets/images/gallery/galery11.jpg',_0x577abb(0xc4),_0x577abb(0xc2),'./assets/images/gallery/galery14.jpg',_0x577abb(0xfc)];let newImageArr=shuffle(galleryImages);createGallery();window[_0x577abb(0xc5)]>0x300&&setInterval(()=>{const _0x57cc2e=_0x577abb;while(galleryLeft[_0x57cc2e(0xd8)]){galleryLeft['removeChild'](galleryLeft['firstChild']);}while(galleryCenter[_0x57cc2e(0xd8)]){galleryCenter[_0x57cc2e(0xcf)](galleryCenter[_0x57cc2e(0xd8)]);}while(galleryRight[_0x57cc2e(0xd8)]){galleryRight[_0x57cc2e(0xcf)](galleryRight['firstChild']);}newImageArr=shuffle(galleryImages),createGallery();},0x1388);function shuffle(_0xfd544){const _0x5b25a2=_0x577abb;return _0xfd544[_0x5b25a2(0x99)](()=>Math[_0x5b25a2(0xda)]()-0.5);}function createImage(_0x7eeb28,_0x2ce415,_0x1d18ea){const _0x5c16e5=_0x577abb,_0x59edc8=document[_0x5c16e5(0x111)](_0x5c16e5(0x131));_0x59edc8[_0x5c16e5(0x12a)][_0x5c16e5(0x12b)]('gallery-img'),_0x59edc8[_0x5c16e5(0xa6)]=''+_0x2ce415,_0x59edc8[_0x5c16e5(0xd6)]=_0x5c16e5(0x12e)+_0x1d18ea,_0x7eeb28[_0x5c16e5(0xf5)](_0x59edc8);}function createGallery(){const _0x134aaf=_0x577abb;window[_0x134aaf(0xc5)]>0x300&&newImageArr['map']((_0x569687,_0x720d25)=>{const _0x1b7a88=_0x134aaf;if(galleryLeft[_0x1b7a88(0xfa)][_0x1b7a88(0x103)]<0x5)createImage(galleryLeft,_0x569687,_0x720d25);else galleryCenter['children'][_0x1b7a88(0x103)]<0x5?createImage(galleryCenter,_0x569687,_0x720d25):createImage(galleryRight,_0x569687,_0x720d25);});}window[_0x577abb(0xa7)](_0x577abb(0x98),addGalleryReload),window[_0x577abb(0xa7)](_0x577abb(0xd3),addGallery);function addGalleryReload(_0x5d90dd){const _0x20ff4d=_0x577abb;window[_0x20ff4d(0xc5)]<=0x300&&createGallery768();}function addGallery(_0x438305){const _0x548db4=_0x577abb;_0x438305[_0x548db4(0xbe)][_0x548db4(0xc5)]<=0x300&&createGallery768();}function createGallery768(){const _0x88178c=_0x577abb;while(galleryLeft['firstChild']){galleryLeft['removeChild'](galleryLeft[_0x88178c(0xd8)]);}while(galleryCenter['firstChild']){galleryCenter['removeChild'](galleryCenter['firstChild']);}while(galleryRight[_0x88178c(0xd8)]){galleryRight[_0x88178c(0xcf)](galleryRight[_0x88178c(0xd8)]);}newImageArr[_0x88178c(0x126)]((_0x3be8d7,_0xa16afa)=>{const _0x58c88f=_0x88178c;galleryLeft[_0x58c88f(0xfa)]['length']<0x8?createImage(galleryLeft,_0x3be8d7,_0xa16afa):createImage(galleryRight,_0x3be8d7,_0xa16afa);});}const ticketsBuyBtn=document[_0x577abb(0xdc)](_0x577abb(0xc6)),formBookBtn=document[_0x577abb(0xdc)](_0x577abb(0xa2)),ticketsOverlay=document[_0x577abb(0xdc)](_0x577abb(0xba)),ticketsFormItem=document[_0x577abb(0xdc)](_0x577abb(0xca)),closeBtn=document[_0x577abb(0xdc)](_0x577abb(0x119));document[_0x577abb(0xa7)]('DOMContentLoaded',()=>{const _0x27b13d=_0x577abb;ticketsBuyBtn['addEventListener'](_0x27b13d(0x101),openTicketsForm),formBookBtn[_0x27b13d(0xa7)]('click',_0x171802=>_0x171802[_0x27b13d(0x12f)]()),formBookBtn[_0x27b13d(0xa7)](_0x27b13d(0x101),createRipple),ticketsFormItem[_0x27b13d(0xa7)](_0x27b13d(0x101),_0x368567=>_0x368567[_0x27b13d(0xb1)]()),[ticketsOverlay,closeBtn][_0x27b13d(0x109)](_0x1302b1=>_0x1302b1['addEventListener'](_0x27b13d(0x101),()=>{const _0x1dec23=_0x27b13d;setTimeout(()=>{const _0x3c4dc8=_0x4cc9;ticketsOverlay[_0x3c4dc8(0x12a)][_0x3c4dc8(0xc3)](_0x3c4dc8(0x106));},0x12c),ticketsFormItem[_0x1dec23(0x12a)]['remove'](_0x1dec23(0xe3));}));});function openTicketsForm(){const _0x344e9c=_0x577abb;ticketsOverlay['classList'][_0x344e9c(0x12b)](_0x344e9c(0x106)),setTimeout(()=>{const _0x4aa802=_0x344e9c;ticketsFormItem['classList'][_0x4aa802(0x12b)](_0x4aa802(0xe3));},0x12c);}function createRipple(_0x311657){const _0x4931d9=_0x577abb,_0x7265de=document['createElement'](_0x4931d9(0xc0));_0x7265de[_0x4931d9(0x12a)][_0x4931d9(0x12b)]('circle'),_0x7265de[_0x4931d9(0xe5)][_0x4931d9(0xe2)]=_0x311657[_0x4931d9(0x124)]+'px',_0x7265de[_0x4931d9(0xe5)][_0x4931d9(0xa3)]=_0x311657[_0x4931d9(0xb8)]+'px',this[_0x4931d9(0xe1)](_0x7265de),setTimeout(()=>_0x7265de['remove'](),0x1f4);}const player=document[_0x577abb(0xdc)](_0x577abb(0xbc)),videoItem=document[_0x577abb(0xe9)](_0x577abb(0xd1)),play=document['querySelector']('.small-play'),playImage=document['querySelector'](_0x577abb(0xd9)),largePlay=document[_0x577abb(0xdc)](_0x577abb(0x10b)),videoContent=document[_0x577abb(0xdc)]('.video__content'),videoControl=document['querySelector']('.video__controls'),ranges=document[_0x577abb(0xe9)]('.ranges'),videoProgress=document[_0x577abb(0xdc)](_0x577abb(0x125)),soundProgress=document['querySelector'](_0x577abb(0x11a)),speaker=document[_0x577abb(0xdc)](_0x577abb(0xcb)),fullscreenBtn=document['querySelector'](_0x577abb(0xf6)),playRate=document[_0x577abb(0xdc)](_0x577abb(0x11c));let currentItem=0x0,mouseActive=![],video=videoItem[currentItem],ended=![];video[_0x577abb(0xb6)]=0.4,document[_0x577abb(0xa7)](_0x577abb(0x121),handleKeys),document[_0x577abb(0xa7)]('keydown',handleKeys),play[_0x577abb(0xa7)](_0x577abb(0x101),playVideo),largePlay['addEventListener'](_0x577abb(0x101),playVideo),video[_0x577abb(0xa7)]('timeupdate',handleProgress),video[_0x577abb(0xa7)](_0x577abb(0xa1),handleEnd),player[_0x577abb(0xa7)]('fullscreenchange',toogleControl),speaker['addEventListener'](_0x577abb(0x101),muteVideo),fullscreenBtn[_0x577abb(0xa7)](_0x577abb(0x101),toggleFullscreen),videoContent[_0x577abb(0xa7)]('click',playVideo),videoProgress[_0x577abb(0xa7)](_0x577abb(0xf1),handleProgressChange),videoProgress[_0x577abb(0xa7)](_0x577abb(0x101),handleProgressClick),videoProgress['addEventListener'](_0x577abb(0x107),_0x278049=>mouseActive&&handleProgressClick(_0x278049)),videoProgress[_0x577abb(0xa7)](_0x577abb(0x115),()=>mouseActive=!![]),videoProgress[_0x577abb(0xa7)](_0x577abb(0xdf),()=>mouseActive=![]),soundProgress[_0x577abb(0xa7)](_0x577abb(0xf1),handleVolumeChange);function playVideo(){const _0x45e8a6=_0x577abb;largePlay[_0x45e8a6(0x12a)]['toggle'](_0x45e8a6(0xf8)),largePlay[_0x45e8a6(0x12a)]['contains'](_0x45e8a6(0xf8))?(playImage['setAttribute']('src',_0x45e8a6(0x100)),video[_0x45e8a6(0x113)](),setInterval(()=>{handleProgress();},0xa)):(playImage[_0x45e8a6(0xef)](_0x45e8a6(0xa6),_0x45e8a6(0xed)),video[_0x45e8a6(0xc1)]());}function rangePosition(_0x44062f,_0x3ddfbc){const _0x1616e6=_0x577abb;return _0x44062f[_0x1616e6(0xe5)][_0x1616e6(0xe6)]=_0x1616e6(0x9b)+_0x3ddfbc+'%,\x20#fff\x20'+_0x3ddfbc+'%,\x20#fff\x20100%)';}function handleProgressChange(){const _0x5797d6=_0x577abb;rangePosition(videoProgress,videoProgress[_0x5797d6(0x10c)]);}function handleProgressClick(_0x35a1d9){const _0x9a2725=_0x577abb;video[_0x9a2725(0xb9)]=_0x35a1d9[_0x9a2725(0xb8)]/videoProgress['offsetWidth']*video[_0x9a2725(0xd7)];}function handleProgress(){const _0x19258c=_0x577abb;let _0x49e217=video[_0x19258c(0xb9)]/video[_0x19258c(0xd7)]*0x64;videoProgress[_0x19258c(0x10c)]=_0x49e217,rangePosition(videoProgress,_0x49e217),video['currentTime']===video[_0x19258c(0xd7)]&&!ended&&(handleEnd(),ended=!ended);}function handleProgressKeyNum(_0xaae934){const _0x30d22c=_0x577abb;video[_0x30d22c(0xb9)]=_0xaae934/0x64*video[_0x30d22c(0xd7)];}function handleEnd(){const _0x2fbe70=_0x577abb;largePlay[_0x2fbe70(0x12a)]['toggle']('hide__large-button'),playImage[_0x2fbe70(0xef)]('src',_0x2fbe70(0xed)),rangePosition(videoProgress,0x0),videoProgress[_0x2fbe70(0x10c)]=0x0;}function handleVolumeChange(){const _0x482e94=_0x577abb;video['volume']=soundProgress['value'],video[_0x482e94(0xb6)]===0x0?(speaker[_0x482e94(0x12a)][_0x482e94(0x12b)](_0x482e94(0xd4)),video['muted']=!![]):(speaker['classList'][_0x482e94(0xc3)](_0x482e94(0xd4)),video[_0x482e94(0xa9)]=![]),rangePosition(soundProgress,soundProgress[_0x482e94(0x10c)]*0x64);}function muteVideo(){const _0x488377=_0x577abb;video[_0x488377(0xa9)]=!video[_0x488377(0xa9)],video['muted']?speaker[_0x488377(0x12a)][_0x488377(0x12b)]('mute'):speaker[_0x488377(0x12a)][_0x488377(0xc3)](_0x488377(0xd4)),video[_0x488377(0xa9)]?(video[_0x488377(0xb6)]=0x0,soundProgress['value']=0x0,rangePosition(soundProgress,video[_0x488377(0xb6)]*0x64)):(video[_0x488377(0xb6)]=0.4,soundProgress['value']=0.4,rangePosition(soundProgress,video[_0x488377(0xb6)]*0x64));}function launchFS(_0x29b4e2){const _0x2ccc2b=_0x577abb;_0x29b4e2['requestFullscreen']?_0x29b4e2[_0x2ccc2b(0x9d)]():null;}function exitFS(){const _0x3933f3=_0x577abb;document['exitFullscreen']?document[_0x3933f3(0xff)]():null;}function toggleFullscreen(){const _0x353713=_0x577abb;document[_0x353713(0xc7)]?exitFS():launchFS(player);}function toogleControl(){const _0x2a1f92=_0x577abb;videoControl['classList']['toggle'](_0x2a1f92(0x10f));}function arrowUpVolume(){const _0x2cb045=_0x577abb;if(video[_0x2cb045(0xb6)]===0x1)return;speaker[_0x2cb045(0x12a)][_0x2cb045(0xc3)]('mute'),video[_0x2cb045(0xa9)]=![],video[_0x2cb045(0xb6)]=+video[_0x2cb045(0xb6)][_0x2cb045(0x11f)](0x2)+0.1,soundProgress[_0x2cb045(0x10c)]=video[_0x2cb045(0xb6)],rangePosition(soundProgress,video[_0x2cb045(0xb6)]*0x64);}function arrowDownVolume(){const _0x567403=_0x577abb;video[_0x567403(0xb6)]!==0x0&&(video[_0x567403(0xb6)]=+video[_0x567403(0xb6)][_0x567403(0x11f)](0x2)-0.1,video[_0x567403(0xb6)]===0x0&&(video[_0x567403(0xa9)]=!![],speaker[_0x567403(0x12a)][_0x567403(0x12b)](_0x567403(0xd4))),soundProgress[_0x567403(0x10c)]=video['volume'],rangePosition(soundProgress,video[_0x567403(0xb6)]*0x64));}function showPlayBackRate(){const _0x1fa35b=_0x577abb;playRate[_0x1fa35b(0xde)]='X\x20'+video[_0x1fa35b(0xd2)],setTimeout(()=>{const _0x3d9cf2=_0x1fa35b;playRate[_0x3d9cf2(0xde)]='';},0x3e8);}function faster(){const _0x1916a6=_0x577abb;if(video['playbackRate']>=0x2)return;video[_0x1916a6(0xd2)]+=0.25,showPlayBackRate();}function slower(){const _0x3c45db=_0x577abb;if(video['playbackRate']<=0.5)return;video[_0x3c45db(0xd2)]-=0.25,showPlayBackRate();}function resetParams(){const _0x35634b=_0x577abb;videoItem[currentItem][_0x35634b(0xc1)](),videoItem[currentItem][_0x35634b(0xb9)]=0x0,rangePosition(videoProgress,0x0),videoProgress[_0x35634b(0x10c)]=0x0,videoItem[currentItem][_0x35634b(0xb6)]=0.4,soundProgress[_0x35634b(0x10c)]=0.4,rangePosition(soundProgress,video[_0x35634b(0xb6)]*0x64),speaker['classList'][_0x35634b(0xc3)](_0x35634b(0xd4)),largePlay['classList'][_0x35634b(0xc3)]('hide__large-button'),playImage[_0x35634b(0xef)]('src','./assets/images/video/small-play-button.svg'),videoItem[currentItem][_0x35634b(0x12a)][_0x35634b(0xc3)](_0x35634b(0xd5),'video'),ended=![];}function handleNextBtn(){const _0x2e5cee=_0x577abb;resetParams();if(currentItem===videoItem['length']-0x1)currentItem=-0x1;currentItem++,videoItem[currentItem][_0x2e5cee(0x12a)][_0x2e5cee(0x12b)](_0x2e5cee(0xd5),_0x2e5cee(0xc9)),video=document[_0x2e5cee(0xdc)](_0x2e5cee(0x110));}function handlePrevBtn(){const _0x4f6035=_0x577abb;resetParams();if(currentItem===0x0)currentItem=videoItem[_0x4f6035(0x103)]-0x1;currentItem--,videoItem[currentItem][_0x4f6035(0x12a)][_0x4f6035(0x12b)]('video__active','video'),video=document[_0x4f6035(0xdc)]('.video');}function plusTenSec(){video['currentTime']+=0xa;}function minusTenSec(){const _0x9580c6=_0x577abb;video[_0x9580c6(0xb9)]-=0xa;}function _0x55a9(){const _0x19e26c=['volume','pagination-item','offsetX','currentTime','.tickets__overlay','hide-welcome-content','.video__player','width','target','abs','span','pause','./assets/images/gallery/galery13.jpg','remove','./assets/images/gallery/galery12.jpg','innerWidth','.tickets__buy','fullscreenElement','dataset','video','.tickets__form-item','.speaker','5917902OMFtxA','body','.container','removeChild','.gallery__left','.video-item','playbackRate','resize','mute','video__active','alt','duration','firstChild','.small-play__item','random','7296896YNyzmA','querySelector','getBoundingClientRect','innerHTML','mouseup','./assets/images/gallery/galery3.jpg','appendChild','top','form-animation','./assets/images/gallery/galery4.jpg','style','background','./assets/images/gallery/galery2.jpg','poster','querySelectorAll','.welcome__content','data-idx','./assets/images/gallery/galery9.jpg','./assets/images/video/small-play-button.svg','DOMContentLoaded','setAttribute','./assets/images/gallery/galery5.jpg','input','to-right','.gallery__picture-inner-container','class','append','.fullscreen','to-left','hide__large-button','menu-class','children','.explore__scroller','./assets/images/gallery/galery15.jpg','pageY','max','exitFullscreen','./assets/images/video/pause-button.png','click','234RdEaie','length','touchstart','idx','active','mousemove','offsetWidth','forEach','active-pagination','.video__large-play-button','value','.swiper-button-prev','2093410GdUCCh','show-control','.video','createElement','./assets/images/gallery/galery10.jpg','play','pointer','mousedown','touchend','.slider-right__arrow','./assets/images/video/poster1024.jpg','.close-form','.sound__progress','menu__active','.play-back-rate','contains','scrolling','toFixed','./assets/images/gallery/galery8.jpg','keypress','from-right','.gallery__right','offsetY','.video__progress','map','.swiper-button-next','.mySwiper','.slider__amount-slides','classList','add','touchcancel','pageX','galery','preventDefault','cursor','img','.footer__social','load','sort','./assets/images/gallery/galery6.jpg','linear-gradient(to\x20right,\x20#660606\x200%,\x20#660606\x20','4877537gVXDyJ','requestFullscreen','log','min','\x0aВниманию\x20проверяющих:\x0a\x20\x20-\x20разработка\x20велась\x20на\x20мониторе\x20с\x20разрешением\x201366px;\x0a\x20\x20-\x20желательно\x20обновлять\x20страницу\x20перед\x20проверкой\x20адаптива\x20каждого\x20разрешения\x0a\x20\x20-\x20проверять\x20желательно\x20используя\x20device\x20toolbar\x20браузера\x20в\x20режиме\x20responsive\x20выставив\x201920px\x20\x0a\x20\x20\x20\x20(ctrl\x20+\x200\x20\x20для\x20выравнивания);\x0a\x20\x20-\x20согласно\x20техзадания,\x20допускается\x20отклонение\x20вёрстки\x20от\x20макета\x20до\x20+/-\x2010px\x20по\x20горизонтали\x20и\x20вертикали\x0a\x0aСамооценка:\x20\x0a\x0a1.\x20Вёрстка\x20соответствует\x20макету.\x20Ширина\x20экрана\x201024px(в\x20допустимых\x20отклон.)\x20\x20\x20\x20\x20\x20\x20\x20\x20(+40)\x20\x0a2.\x20Вёрстка\x20соответствует\x20макету.\x20Ширина\x20экрана\x20768px(в\x20допустимых\x20отклон.)\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20(+40)\x0a3.\x20Вёрстка\x20соответствует\x20макету.\x20Ширина\x20экрана\x20420px(в\x20допустимых\x20отклон.)\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20(+40)\x0a4.\x20Ни\x20на\x20одном\x20из\x20разрешений\x20до\x20320px\x20не\x20появляется\x20горизонтальная\x20полоса\x20прокрутки\x20(+6\x20)\x20\x0a5.\x20Совмещается\x20адаптивная\x20и\x20резиновая\x20вёрстка:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20(+14)\x0a\x20\x20\x20\x20-\x20слайдера\x20в\x20секции\x20Welcome\x20+2\x0a\x20\x20\x20\x20-\x20слайдера\x20сравнения\x20изображений\x20в\x20секции\x20Explore\x20+2\x0a\x20\x20\x20\x20-\x20кастомного\x20видеоплеера\x20в\x20секции\x20Video\x20+2\x0a\x20\x20\x20\x20-\x20слайдера\x20в\x20секции\x20Video\x20+2\x0a\x20\x20\x20\x20-\x20YouTube-видео\x20в\x20плейлисте\x20в\x20секции\x20Video,\x20маленькие\x20видео\x20выровнены\x20по\x20краям\x20большого\x20+2\x0a\x20\x20\x20\x20-\x20галереи\x20изображений\x20и\x20изображений\x20в\x20ней\x20+2\x0a\x20\x20\x20\x20-\x20карты\x20+2\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a6.\x20На\x20ширине\x20экрана\x201024рх\x20и\x20меньше\x20реализовано\x20адаптивное\x20меню\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20(+12)\x0a7.\x20Оптимизация\x20скорости\x20загрузки\x20страницы\x20(50\x20to\x2089)\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20(+4\x20)\x0a\x20\x20\x0aИтого:\x20156.\x0a','ended','.card-form-submit','left','2PjRkdP','24702iewfTi','src','addEventListener','toggle','muted','next','.burger__icon','.slider__current-number','getTime','.slider-left__arrow','.slider-right__item','1151111OKQnlq','stopPropagation','animationend','813580BltBzx','.explore__image','344ttlBtw'];_0x55a9=function(){return _0x19e26c;};return _0x55a9();}function handleKeys(_0x3660ba){}let swiper=new Swiper(_0x577abb(0x128),{'slidesPerView':0x3,'spaceBetween':0x2a,'loop':!![],'autoHeight':!![],'pagination':{'el':'.swiper-pagination','clickable':!![]},'navigation':{'nextEl':_0x577abb(0x127),'prevEl':_0x577abb(0x10d)},'preloadImages':!![],'lazy':{'loadOnTransitionStart':!![],'loadPrevNext':![]},'breakpoints':{0x400:{'slidesPerView':0x3,'spaceBetween':0x29},0x300:{'slidesPerView':0x2,'spaceBetween':0x14},0x1a4:{'slidesPerView':0x2,'spaceBetween':0x14}}});const poster1024=document[_0x577abb(0xdc)]('.poster');window[_0x577abb(0xa7)]('resize',changePoster),window[_0x577abb(0xa7)](_0x577abb(0x98),changePosterReload);function changePosterReload(_0x492c92){const _0x3e2f4d=_0x577abb;window[_0x3e2f4d(0xc5)]<=0x400&&poster1024['setAttribute'](_0x3e2f4d(0xe8),'./assets/images/video/poster1024.jpg');}function changePoster(_0x3aee6d){const _0x37dd2c=_0x577abb;_0x3aee6d[_0x37dd2c(0xbe)][_0x37dd2c(0xc5)]<=0x400&&poster1024['setAttribute']('poster',_0x37dd2c(0x118));}
+/*==============================================  WELCOME SLIDER  ============================================*/
+const sliderContainer = document.querySelector('.slider__container');
+const upArrow = document.querySelector('.slider-left__arrow');
+const downArrow = document.querySelector('.slider-right__arrow');
+const rightSlides = document.querySelectorAll('.slider-right__item');
+const pagination = document.querySelector('.slider__pagination');
+const sliderCurrentNumber = document.querySelector('.slider__current-number');
+const sliderAmountSlides = document.querySelector('.slider__amount-slides');
+
+const length = rightSlides.length;
+let currentLeftIdx = 0;
+let currentRightIdx = 0;
+let isActive = true;
+let paginationItems;
+createPagination();
+sliderAmountSlides.innerHTML = `0${length}`;
+
+upArrow.addEventListener('click', slideLeft);
+downArrow.addEventListener('click', slideRight);
+pagination.addEventListener('click', slideOnPag);
+// sliderContainer.addEventListener('mousewheel', slideWheel);
+// function slideWheel(event) {
+//   if (event.wheelDelta < 0) {
+//     slideRight();
+//   }
+//   if (event.wheelDelta > 0) {
+//     slideLeft();
+//   }
+// }
+
+function delPrevSlide(slider, animation, index) {
+  isActive = false;
+  slider[index].classList.add(animation);
+  slider[index].addEventListener('animationend', function () {
+    this.classList.remove('active', animation);
+  })
+}
+
+function addNextSlide(slider, animation, index) {
+  slider[index].classList.add('next', animation);
+  slider[index].addEventListener('animationend', function () {
+    this.classList.remove('next', animation);
+    this.classList.add('active');
+    isActive = true;
+  })
+}
+
+function clearPagination() {
+  Array.from(paginationItems).forEach(el => {
+    if (el.classList.contains('active-pagination')) {
+      el.classList.remove('active-pagination');
+    }
+  })
+}
+
+function slideLeft() {
+  if (isActive) {
+    clearPagination();
+    delPrevSlide(rightSlides, 'to-left', currentRightIdx);
+    currentRightIdx = ((currentRightIdx - 1) + length) % length;
+    addNextSlide(rightSlides, 'from-right', currentRightIdx);
+    paginationItems[currentRightIdx].classList.add('active-pagination');
+    sliderCurrentNumber.innerHTML = `0${currentRightIdx + 1}`;
+  }
+}
+
+function slideRight() {
+  if (isActive) {
+    clearPagination();
+    delPrevSlide(rightSlides, 'to-right', currentRightIdx);
+    currentRightIdx = ((currentRightIdx + 1) + length) % length;
+    addNextSlide(rightSlides, 'from-left', currentRightIdx);
+    paginationItems[currentRightIdx].classList.add('active-pagination');
+    sliderCurrentNumber.innerHTML = `0${currentRightIdx + 1}`;
+  }
+}
+
+function createPagination() {
+  for (let i = 0; i < length - 1; i++) {
+    const pagItem = document.createElement('span');
+    pagItem.setAttribute('class', 'pagination-item')
+    pagItem.setAttribute('data-idx', i + 1)
+    pagination.append(pagItem);
+  }
+  paginationItems = document.getElementsByClassName('pagination-item');
+}
+
+function slideOnPag(event) {
+  const currentPag = Number(event.target.dataset.idx);
+  if (currentRightIdx === currentPag) {
+    return;
+  }
+  if (currentPag < currentRightIdx && isActive) {
+    clearPagination();
+    delPrevSlide(rightSlides, 'to-left', currentRightIdx);
+    currentRightIdx = currentPag;
+    addNextSlide(rightSlides, 'from-right', currentRightIdx);
+    paginationItems[currentRightIdx].classList.add('active-pagination');
+    sliderCurrentNumber.innerHTML = `0${currentRightIdx + 1}`;
+  }
+  if (currentPag > currentRightIdx && isActive) {
+    clearPagination();
+    delPrevSlide(rightSlides, 'to-right', currentRightIdx);
+    currentRightIdx = currentPag;
+    addNextSlide(rightSlides, 'from-left', currentRightIdx);
+    paginationItems[currentRightIdx].classList.add('active-pagination');
+    sliderCurrentNumber.innerHTML = `0${currentRightIdx + 1}`;
+  }
+}
+
+//// mouse swipes ////
+let startX = 0;
+let startY = 0;
+let distX = 0;
+let distY = 0;
+let swipeTime = 0;
+let startTime = 0;
+const distHorizontal = 150;
+const distVertical = 100;
+const allowedTime = 1000;
+
+sliderContainer.addEventListener('mousedown', function (e) {
+  sliderContainer.style.cursor = 'pointer';
+  startX = e.pageX;
+  startY = e.pageY;
+  startTime = new Date().getTime();
+  e.preventDefault();
+})
+
+sliderContainer.addEventListener('mouseup', function (e) {
+  sliderContainer.style.cursor = 'pointer';
+  distX = e.pageX - startX;
+  distY = e.pageY - startY;
+  swipeTime = new Date().getTime() - startTime;
+
+  if (swipeTime <= allowedTime) {
+    if (Math.abs(distX) >= distHorizontal && Math.abs(distY) <= distVertical) {
+      if (distX > 0) {
+        if (isActive) {
+          slideRight();
+        }
+      } else {
+        if (isActive) {
+          slideLeft();
+        }
+      }
+    }
+  }
+  e.preventDefault();
+})
+
+/*==============================================  BURGER MENU  ============================================*/
+const burgerIcon = document.querySelector('.burger__icon');
+const headerMenuWrap = document.querySelector('.header__menu-wrapper');
+const welcomeContent = document.querySelector('.welcome__content');
+const menuLinks = document.querySelectorAll('.header__menu-item');
+const footerSocial = document.querySelector('.footer__social');
+const container = document.querySelector('.container');
+
+document.addEventListener('DOMContentLoaded', () => {
+  [burgerIcon, ...menuLinks].forEach(el => el.addEventListener('click', showHideMenu));
+  document.addEventListener('click', hideMenuDocClick);
+});
+
+function hideMenuDocClick(e) {
+  if (e.target.classList.contains('burger__icon')) return;
+  [headerMenuWrap, burgerIcon].forEach(el => el.classList.remove('menu__active'));
+  headerMenuWrap.addEventListener("click", (e) => e.stopPropagation());
+  welcomeContent.classList.remove('hide-welcome-content');
+}
+
+function showHideMenu() {
+  headerMenuWrap.classList.toggle('menu__active');
+  burgerIcon.classList.toggle('menu__active');
+  welcomeContent.classList.toggle('hide-welcome-content');
+  footerSocial.classList.toggle('menu-class');
+}
+
+/*==============================================  Explore Slider  ============================================*/
+const exploreScroller = document.querySelector('.explore__scroller');
+const exploreSlider = document.querySelector('.explore__image');
+const exploreAfter = document.querySelector('.explore__after');
+let active = false;
+
+exploreScroller.addEventListener('mousedown', function () {
+  active = true;
+  exploreScroller.classList.add('scrolling');
+});
+
+document.body.addEventListener('mouseup', function () {
+  active = false;
+  exploreScroller.classList.remove('scrolling');
+});
+
+document.body.addEventListener('mouseleave', function () {
+  active = false;
+  exploreScroller.classList.remove('scrolling');
+});
+
+document.body.addEventListener('mousemove', function (e) {
+  if (!active) return;
+  let x = e.pageX;
+  x -= exploreSlider.getBoundingClientRect().left;
+  scrollIt(x);
+});
+
+function scrollIt(x) {
+  let transform = Math.max(0, (Math.min(x, exploreSlider.offsetWidth)));
+  exploreAfter.style.width = transform + "px";
+  exploreScroller.style.left = transform - 19 + "px";
+}
+
+scrollIt(440);
+
+exploreScroller.addEventListener('touchstart', function () {
+  active = true;
+  exploreScroller.classList.add('scrolling');
+});
+
+document.body.addEventListener('touchend', function () {
+  active = false;
+  exploreScroller.classList.remove('scrolling');
+});
+
+document.body.addEventListener('touchcancel', function () {
+  active = false;
+  exploreScroller.classList.remove('scrolling');
+});
+
+// Самооценка проекта:
+console.log(`
+Вниманию проверяющих:
+  - разработка велась на мониторе с разрешением 1366px;
+  - желательно обновлять страницу перед проверкой адаптива каждого разрешения
+  - проверять желательно используя device toolbar браузера в режиме responsive выставив 1920px 
+    (ctrl + 0  для выравнивания);
+  - согласно техзадания, допускается отклонение вёрстки от макета до +/- 10px по горизонтали и вертикали
+
+Самооценка: \n
+1. Вёрстка соответствует макету. Ширина экрана 1024px(в допустимых отклон.)         (+40) 
+2. Вёрстка соответствует макету. Ширина экрана 768px(в допустимых отклон.)          (+40)
+3. Вёрстка соответствует макету. Ширина экрана 420px(в допустимых отклон.)          (+40)
+4. Ни на одном из разрешений до 320px не появляется горизонтальная полоса прокрутки (+6 ) 
+5. Совмещается адаптивная и резиновая вёрстка:                                      (+14)
+    - слайдера в секции Welcome +2
+    - слайдера сравнения изображений в секции Explore +2
+    - кастомного видеоплеера в секции Video +2
+    - слайдера в секции Video +2
+    - YouTube-видео в плейлисте в секции Video, маленькие видео выровнены по краям большого +2
+    - галереи изображений и изображений в ней +2
+    - карты +2                        
+6. На ширине экрана 1024рх и меньше реализовано адаптивное меню                     (+12)
+7. Оптимизация скорости загрузки страницы (50 to 89)                                (+4 )
+  
+Итого: 156.
+`);
