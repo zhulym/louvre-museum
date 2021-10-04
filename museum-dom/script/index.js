@@ -227,12 +227,38 @@ document.body.addEventListener('touchcancel', function () {
   exploreScroller.classList.remove('scrolling');
 });
 
+/*==============================================  ScrollTop  ============================================*/
+const scrollTopBtn = document.querySelector(".scroll-up-button");
+
+const handleScroll = () => {
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    scrollTopBtn.style.display = "block";
+  }
+  else {
+    scrollTopBtn.style.display = "none";
+  }
+};
+
+const scrollToTop = () => {
+  const distFromTop = document.documentElement.scrollTop || document.body.scrollTop;
+  if (distFromTop > 0) window.scrollTo(0, 0);
+};
+
+document.addEventListener("scroll", handleScroll);
+scrollTopBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  scrollToTop();
+});
+
+
+
 // Самооценка проекта:
 console.log(`
 Самооценка: \n
 1. Слайдер в секции Welcome (всё работает согласно пунктов задания)                 (+24) 
 2. Вёрстка соответствует макету. Ширина экрана 768px(в допустимых отклон.)          (+40)
 3. Вёрстка соответствует макету. Ширина экрана 420px(в допустимых отклон.)          (+40)
+10. Дополнительный функционал (кнопка scrollTop)
 
   
 Итого: 160.

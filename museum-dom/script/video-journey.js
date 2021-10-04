@@ -11,8 +11,10 @@ const soundProgress = document.querySelector('.sound__progress');
 const speaker = document.querySelector('.speaker');
 const fullscreenBtn = document.querySelector('.fullscreen');
 const playRate = document.querySelector('.play-back-rate');
-// const prevBtn = document.querySelector('.prev-btn');
-// const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.swiper-button-prev');
+const nextBtn = document.querySelector('.swiper-button-next');
+const paginationBullets = document.getElementsByClassName('.swiper-pagination-bullet');
+console.log(paginationBullets);
 let currentItem = 0;
 let mouseActive = false;
 let video = videoItem[currentItem];
@@ -35,8 +37,8 @@ videoProgress.addEventListener('mousemove', (e) => mouseActive && handleProgress
 videoProgress.addEventListener('mousedown', () => mouseActive = true);
 videoProgress.addEventListener('mouseup', () => mouseActive = false);
 soundProgress.addEventListener('input', handleVolumeChange);
-// prevBtn.addEventListener('click', handlePrevBtn);
-// nextBtn.addEventListener('click', handleNextBtn);
+prevBtn.addEventListener('click', handlePrevBtn);
+nextBtn.addEventListener('click', handleNextBtn);
 
 function playVideo() {
   largePlay.classList.toggle('hide__large-button');
@@ -166,6 +168,7 @@ function slower() {
 }
 
 function resetParams() {
+  debugger
   videoItem[currentItem].pause();
   videoItem[currentItem].currentTime = 0;
   rangePosition(videoProgress, 0);
@@ -204,10 +207,14 @@ function minusTenSec() {
 }
 
 function handleKeys(e) {
-  // e.preventDefault();
+  e.preventDefault();
   e.code === 'Space' ? playVideo() : null;
   e.key === 'm' ? muteVideo() : null;
   e.key === 'f' ? toggleFullscreen() : null;
+  e.key === 'ArrowUp' ? arrowUpVolume() : null;
+  e.key === 'ArrowDown' ? arrowDownVolume() : null;
+  e.key === '<' ? slower() : null;
+  e.key === '>' ? faster() : null;
   // e.key === 'p' ? handlePrevBtn() : null;
   // e.key === 'n' ? handleNextBtn() : null;
   // e.key === 'j' ? minusTenSec() : null;
@@ -215,10 +222,6 @@ function handleKeys(e) {
   // e.key === 'l' ? plusTenSec() : null;
   // e.key === 'Home' ? handleProgressKeyNum(0) : null;
   // e.key === 'End' ? handleProgressKeyNum(99) : null;
-  e.key === 'ArrowUp' ? arrowUpVolume() : null;
-  e.key === 'ArrowDown' ? arrowDownVolume() : null;
-  e.key === '<' ? slower() : null;
-  e.key === '>' ? faster() : null;
   // e.key === '1' ? handleProgressKeyNum(10) : null;
   // e.key === '2' ? handleProgressKeyNum(20) : null;
   // e.key === '3' ? handleProgressKeyNum(30) : null;
@@ -264,19 +267,3 @@ let swiper = new Swiper(".mySwiper", {
     },
   },
 });
-
-/* ============== poster ================ */
-const poster1024 = document.querySelector('.poster');
-window.addEventListener('resize', changePoster);
-window.addEventListener('load', changePosterReload)
-
-function changePosterReload(e) {
-  if (window.innerWidth <= 1024) {
-    poster1024.setAttribute('poster', './assets/images/video/poster1024.webp')
-  }
-}
-function changePoster(e) {
-  if (e.target.innerWidth <= 1024) {
-    poster1024.setAttribute('poster', './assets/images/video/poster1024.webp')
-  }
-}

@@ -99,10 +99,31 @@ ul li {
 }
 
 .parallax {
-    background: url(../assets/images/parallax.webp);
+    background: url(../assets/images/parallax.jpg);
     height: 400px;
     width: 100%;
     background-position-x: center;
     background-attachment: fixed;
     background-size: cover;
+}
+
+.scroll-up-button {
+    color: rgb(117, 117, 117);
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: none;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), /* Exterior Shadow */ inset 0 1px rgba(255, 255, 255, 0.3),
+        /* Top light Line */ inset 0 10px rgba(255, 255, 255, 0.2),
+        /* Top Light Shadow */ inset 0 10px 20px rgba(255, 255, 255, 0.25),
+        /* Sides Light Shadow */ inset 0 -15px 30px rgba(0, 0, 0, 0.3); /* Dark Background */
 }
