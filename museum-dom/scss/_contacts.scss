@@ -1,3 +1,21 @@
+.contacts__map {
+  max-width: 960px;
+  max-height: 620px;
+}
+
+.mapboxgl-popup-content {
+  position: relative;
+  background: #bebebe;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+  padding: 10px 10px 15px;
+  pointer-events: auto;
+  color: #000000 !important;
+}
+.map-box {
+  background-color: black;
+}
+
 .contacts__heading {
   border-bottom: 3px solid $dark-red;
   margin-bottom: 75px;

@@ -51,6 +51,7 @@ function createImage(column, image, index) {
   galleryImage.classList.add('gallery-img');
   galleryImage.src = `${image}`;
   galleryImage.alt = `galery${index}`;
+  galleryImage.setAttribute('data-aos', 'fade-up');
   column.append(galleryImage);
 }
 function createGallery() {
@@ -100,3 +101,6 @@ function createGallery768() {
     }
   })
 }
+
+/* =============== Animation ========================*/
+AOS.init();

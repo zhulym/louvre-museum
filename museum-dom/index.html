@@ -8,6 +8,8 @@
 	<title>Museum</title>
 	<link rel="icon" href="./assets/images/favicon.ico">
 	<link rel="stylesheet" href="./script/swiper/swiper-bundle.min.css" />
+	<link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<link rel="stylesheet" href="./scss/style.css">
 </head>
 
@@ -245,10 +247,6 @@
 							<video class="video-item" src="./assets/video/video4.mp4"
 								poster="./assets/images/video/poster4.webp"></video>
 						</div>
-						<!-- <div class="extra-range">
-							<img class="extra-range768" src="./assets/images/video/extra-range.png" alt="extra-range">
-							<img class="extra-range420" src="./assets/images/video/extra-range420.png" alt="extra-range">
-						</div> -->
 						<div class="video__controls">
 							<button class="controls-button small-play"><img class="small-play__item"
 									src="./assets/images/video/small-play-button.svg" alt="small-play-button"></button>
@@ -657,7 +655,7 @@
 						</div>
 					</div>
 					<div class="contacts__map">
-						<img src="./assets/images/contacts/Rectanglemap.webp" alt="contacts-map">
+						<div id='map' style='width: 960px; height: 620px;'></div>
 					</div>
 				</div>
 			</div>
@@ -712,9 +710,11 @@
 	</footer>
 	<div class="scroll-up-button">UP</div>
 	<script src="./script/swiper/swiper-bundle.min.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
 	<script src="./script/index.js"></script>
-	<script src="./script/video-journey.js"></script>
-	<script src="./script/art-gallery.js"></script>
+	<script src="./script/video.js"></script>
+	<script src="./script/gallery.js"></script>
 	<script src="./script/tickets.js"></script>
 </body>
 

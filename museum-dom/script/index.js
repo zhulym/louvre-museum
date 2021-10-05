@@ -250,6 +250,53 @@ scrollTopBtn.addEventListener("click", function (e) {
   scrollToTop();
 });
 
+/*==============================================  MapBox  ============================================*/
+
+mapboxgl.accessToken = 'pk.eyJ1Ijoiemh1bHltIiwiYSI6ImNrdWUxbDdzMTFnNnYydW1vbm5pb2JhbmUifQ.tE8LBwTNY2yQA4ed8ib3ZA';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/light-v10',
+  center: [2.3364, 48.86091],
+  zoom: 15.75,
+});
+
+map.addControl(new mapboxgl.NavigationControl());
+
+const popup = new mapboxgl.Popup({ offset: 25, color: 'black' }).setText(
+  'Louvre Museum!'
+);
+
+const marker1 = new mapboxgl.Marker({
+  color: "#171717",
+  draggable: true
+})
+  .setLngLat([2.3364, 48.86091])
+  .setPopup(popup)
+  .addTo(map);
+
+const marker2 = new mapboxgl.Marker({
+  color: "#757575",
+  draggable: true
+}).setLngLat([2.3333, 48.8602])
+  .addTo(map);
+const marker3 = new mapboxgl.Marker({
+  color: "#757575",
+  draggable: true
+}).setLngLat([2.3397, 48.8607])
+  .addTo(map);
+const marker4 = new mapboxgl.Marker({
+  color: "#757575",
+  draggable: true
+}).setLngLat([2.3330, 48.8619])
+  .addTo(map);
+const marker5 = new mapboxgl.Marker({
+  color: "#757575",
+  draggable: true
+}).setLngLat([2.3365, 48.8625])
+  .addTo(map);
+
+
+
 
 
 // Самооценка проекта:
@@ -258,7 +305,9 @@ console.log(`
 1. Слайдер в секции Welcome (всё работает согласно пунктов задания)                 (+24) 
 2. Вёрстка соответствует макету. Ширина экрана 768px(в допустимых отклон.)          (+40)
 3. Вёрстка соответствует макету. Ширина экрана 420px(в допустимых отклон.)          (+40)
-10. Дополнительный функционал (кнопка scrollTop)
+
+9. Интерактивная карта в секции Contacts                                            (+12)
+10. Дополнительный функционал (кнопка scrollTop)                                    (+10)
 
   
 Итого: 160.

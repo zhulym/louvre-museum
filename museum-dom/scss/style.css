@@ -2096,6 +2096,12 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   }
 }
 
+.contacts__map {
+  max-width: 960px;
+  max-height: 620px;
+  color: black !important;
+}
+
 .contacts__heading {
   border-bottom: 3px solid #710707;
   margin-bottom: 75px;
@@ -2913,14 +2919,6 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   .contacts__info-item a {
     font-size: 20px;
   }
-  .contacts__map {
-    -ms-flex-preferred-size: 694px;
-        flex-basis: 694px;
-    background: url(../assets/images/contacts/map1024.webp);
-  }
-  .contacts__map img {
-    opacity: 0;
-  }
   .contacts__wrapper {
     padding-bottom: 62px;
   }
@@ -3379,12 +3377,6 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   }
   .contacts__map {
     margin-top: 24px;
-    -ms-flex-preferred-size: initial;
-        flex-basis: initial;
-    background: url(../assets/images/contacts/map768.webp);
-  }
-  .contacts__map img {
-    opacity: 0;
   }
   .contacts__wrapper {
     padding-bottom: 67px;
@@ -3890,7 +3882,6 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   }
   .contacts__map {
     margin-top: 23px;
-    background: url(../assets/images/contacts/map420.webp);
   }
   .contacts__wrapper {
     padding-bottom: 38px;
