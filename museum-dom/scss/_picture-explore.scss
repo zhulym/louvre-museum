@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 80px;
+  position: relative;
 }
 
 .explore__description {
@@ -31,94 +32,44 @@
   }
 }
 
-.explore__image-wrapper {
-  position: relative;
-  padding-top: 12px;
-  padding-bottom: 70px;
-}
-
 .explore__1024 {
   display: none;
 }
 
 /*================= slider ================*/
-.explore__image-wrapper {
+.explore-slider {
   position: relative;
-  flex-basis: 50%;
-  display: flex;
-  justify-content: flex-end;
   width: 720px;
-  height: 710px;
-  padding-bottom: 0px;
-  margin-bottom: 75px;
-  margin-top: 0px;
-}
-.explore__image {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
+  max-width: 720px;
+  height: 700px;
+  top: 12px;
+  margin-bottom: 85px;
 }
 
-.explore__before,
-.explore__after {
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-color: white;
-  background-size: cover;
-  background-position: center;
+.before {
   position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
+  background: url(../assets/images/picture_explore/before.jpg) no-repeat;
+  height: 700px;
+  width: 440px;
   overflow: hidden;
+  z-index: 2;
 }
-
-.content-image {
-  height: 100%;
-  width: 100%;
-}
-
-.explore__scroller {
-  width: 39px;
-  height: 39px;
+.after {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  background-color: transparent;
-  opacity: 0.9;
-  pointer-events: auto;
-  cursor: pointer;
-  border: 5px solid #fff;
+  background: url(../assets/images/picture_explore/after.jpg) no-repeat;
+  background-position: 50% 100%;
+  height: 700px;
+  width: 720px;
+  z-index: 1;
 }
 
 .explore__scroller:hover {
-  opacity: 1;
+  cursor: pointer;
 }
-
-.scrolling {
-  pointer-events: none;
-  opacity: 1;
-}
-
-.explore__scroller:before,
-.explore__scroller:after {
-  content: " ";
-  display: block;
-  width: 5px;
-  height: 9999px;
+.explore__scroller {
+  background-image: url(../assets/images/picture_explore/sliderscroller.png);
   position: absolute;
-  left: 50%;
-  margin-left: -3.5px;
-  z-index: 30;
-  transition: 0.1s;
-  background: #fff;
-}
-.explore__scroller:before {
-  top: 100%;
-}
-.explore__scroller:after {
-  bottom: 100%;
+  height: 700px;
+  width: 40px;
+  z-index: 5;
 }

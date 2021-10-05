@@ -4,16 +4,17 @@
 }
 
 .mapboxgl-popup-content {
-  position: relative;
-  background: #bebebe;
-  border-radius: 3px;
-  box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
-  padding: 10px 10px 15px;
-  pointer-events: auto;
-  color: #000000 !important;
+  background: #dbdbdb;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px black;
+  padding: 15px 30px 15px 15px;
+  color: #353535;
+  font-size: 16px;
 }
-.map-box {
-  background-color: black;
+
+.mapboxgl-popup-close-button {
+  outline: none;
+  color: black;
 }
 
 .contacts__heading {

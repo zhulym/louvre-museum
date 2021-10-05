@@ -202,19 +202,12 @@
 							looked different.
 						</p>
 					</div>
-					<div class="explore__image-wrapper">
-						<div class="explore__image">
-
-							<div class="explore__before">
-								<img class="content-image" src="./assets/images/picture_explore/after.jpg" alt="explore-image">
-							</div>
-
-							<div class="explore__after">
-								<img class="content-image" src="./assets/images/picture_explore/before.jpg" alt="explore-image">
-							</div>
-
-							<div class="explore__scroller">
-							</div>
+					<div class="explore-slider">
+						<div class="before">
+						</div>
+						<div class="explore__scroller">
+						</div>
+						<div class="after">
 						</div>
 					</div>
 				</div>
@@ -400,17 +393,20 @@
 						<div>
 							<p>Ticket Type</p>
 							<div class="tickets__type-item">
-								<input type="radio" id="permanent" name="ticket-type" value="permanent" checked>
+								<input class="tickets__type-input" data-price="20" type="radio" id="permanent" name="ticket-type"
+									value="permanent" checked>
 								<label for="permanent">Permanent exhibition</label>
 							</div>
 
 							<div class="tickets__type-item">
-								<input type="radio" id="temporary" name="ticket-type" value="temporary">
+								<input class="tickets__type-input" data-price="25" type="radio" id="temporary" name="ticket-type"
+									value="temporary">
 								<label for="temporary">Temporary exhibition</label>
 							</div>
 
 							<div class="tickets__type-item">
-								<input type="radio" id="combined" name="ticket-type" value="combined">
+								<input class="tickets__type-input" data-price="40" type="radio" id="combined" name="ticket-type"
+									value="combined">
 								<label for="combined">Combined Admission</label>
 							</div>
 						</div>
@@ -421,10 +417,10 @@
 						<div class="tickets__amount-wrapper">
 							<p class="tickets__age">Basic 18+</p>
 							<div class="amount__buttons">
-								<button class="amount__button-minus18" type="button"
+								<button class="amount__button-minus18 tickets-btns" type="button"
 									onclick="this.nextElementSibling.stepDown()">_</button>
 								<input class="amount__number18" type="number" min="0" max="20" value="1" readonly>
-								<button class="amount__button-plus18" type="button"
+								<button class="amount__button-plus18 tickets-btns" type="button"
 									onclick="this.previousElementSibling.stepUp()">+</button>
 							</div>
 						</div>
@@ -432,15 +428,15 @@
 						<div class="tickets__amount-wrapper">
 							<p class="tickets__age">Senior 65+</p>
 							<div class="amount__buttons">
-								<button class="amount__button-minus65" type="button"
+								<button class="amount__button-minus65 tickets-btns" type="button"
 									onclick="this.nextElementSibling.stepDown()">_</button>
 								<input class="amount__number65" type="number" min="0" max="20" value="1" readonly>
-								<button class="amount__button-plus65" type="button"
+								<button class="amount__button-plus65 tickets-btns" type="button"
 									onclick="this.previousElementSibling.stepUp()">+</button>
 							</div>
 						</div>
 
-						<p class="tickets__total">Total &#8364;<span class="tickets__total-amount">220</span></p>
+						<p class="tickets__total">Total &#8364;<span class="tickets__total-amount"></span></p>
 						<button class="tickets__buy">Buy Now</button>
 					</div>
 				</div>

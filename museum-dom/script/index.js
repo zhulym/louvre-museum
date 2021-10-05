@@ -177,55 +177,42 @@ function showHideMenu() {
 }
 
 /*==============================================  Explore Slider  ============================================*/
+const body = document.querySelector('body');
+const exploreSlider = document.querySelector('.explore-slider');
 const exploreScroller = document.querySelector('.explore__scroller');
-const exploreSlider = document.querySelector('.explore__image');
-const exploreAfter = document.querySelector('.explore__after');
-let active = false;
 
-exploreScroller.addEventListener('mousedown', function () {
-  active = true;
-  exploreScroller.classList.add('scrolling');
-});
-
-document.body.addEventListener('mouseup', function () {
-  active = false;
-  exploreScroller.classList.remove('scrolling');
-});
-
-document.body.addEventListener('mouseleave', function () {
-  active = false;
-  exploreScroller.classList.remove('scrolling');
-});
-
-document.body.addEventListener('mousemove', function (e) {
-  if (!active) return;
-  let x = e.pageX;
-  x -= exploreSlider.getBoundingClientRect().left;
-  scrollIt(x);
-});
-
-function scrollIt(x) {
-  let transform = Math.max(0, (Math.min(x, exploreSlider.offsetWidth)));
-  exploreAfter.style.width = transform + "px";
-  exploreScroller.style.left = transform - 19 + "px";
+let positionOne = 0;
+let positionTwo = 0;
+let openWidth = 440;
+function getTemplate(width) {
+  return `
+    <div class="before" style="width: ${width}px">    </div>
+    <div class="explore__scroller" style="left: ${width - 20}px"></div>
+    <div class="after"></div>`
 }
 
-scrollIt(440);
+function render(width) {
+  exploreSlider.innerHTML = getTemplate(width);
+  document.querySelector('.explore__scroller').addEventListener('mousedown', onMouseDown)
+}
+render(openWidth);
+function onMouseDown(e) {
+  positionOne = e.clientX;
+  exploreSlider.addEventListener('mousemove', onMouseMove);
+}
+function onMouseUp() {
+  exploreSlider.removeEventListener('mousemove', onMouseMove);
+}
+function onMouseMove(e) {
+  positionTwo = e.clientX;
+  openWidth -= (positionOne - positionTwo);
+  if (openWidth > 720) openWidth = 720;
+  if (openWidth < 0) openWidth = 0;
+  render(openWidth);
+  positionOne = positionTwo;
+}
+body.addEventListener('mouseup', onMouseUp)
 
-exploreScroller.addEventListener('touchstart', function () {
-  active = true;
-  exploreScroller.classList.add('scrolling');
-});
-
-document.body.addEventListener('touchend', function () {
-  active = false;
-  exploreScroller.classList.remove('scrolling');
-});
-
-document.body.addEventListener('touchcancel', function () {
-  active = false;
-  exploreScroller.classList.remove('scrolling');
-});
 
 /*==============================================  ScrollTop  ============================================*/
 const scrollTopBtn = document.querySelector(".scroll-up-button");
@@ -262,7 +249,19 @@ var map = new mapboxgl.Map({
 
 map.addControl(new mapboxgl.NavigationControl());
 
-const popup = new mapboxgl.Popup({ offset: 25, color: 'black' }).setText(
+const popup = new mapboxgl.Popup({ offset: 25 }).setText(
+  'Louvre Museum!'
+);
+const popup2 = new mapboxgl.Popup({ offset: 25 }).setText(
+  'Louvre Museum!'
+);
+const popup3 = new mapboxgl.Popup({ offset: 25 }).setText(
+  'Louvre Museum!'
+);
+const popup4 = new mapboxgl.Popup({ offset: 25 }).setText(
+  'Louvre Museum!'
+);
+const popup5 = new mapboxgl.Popup({ offset: 25 }).setText(
   'Louvre Museum!'
 );
 
@@ -278,21 +277,25 @@ const marker2 = new mapboxgl.Marker({
   color: "#757575",
   draggable: true
 }).setLngLat([2.3333, 48.8602])
+  .setPopup(popup2)
   .addTo(map);
 const marker3 = new mapboxgl.Marker({
   color: "#757575",
   draggable: true
 }).setLngLat([2.3397, 48.8607])
+  .setPopup(popup3)
   .addTo(map);
 const marker4 = new mapboxgl.Marker({
   color: "#757575",
   draggable: true
 }).setLngLat([2.3330, 48.8619])
+  .setPopup(popup4)
   .addTo(map);
 const marker5 = new mapboxgl.Marker({
   color: "#757575",
   draggable: true
 }).setLngLat([2.3365, 48.8625])
+  .setPopup(popup5)
   .addTo(map);
 
 
@@ -302,12 +305,16 @@ const marker5 = new mapboxgl.Marker({
 // Самооценка проекта:
 console.log(`
 Самооценка: \n
-1. Слайдер в секции Welcome (всё работает согласно пунктов задания)                 (+24) 
-2. Вёрстка соответствует макету. Ширина экрана 768px(в допустимых отклон.)          (+40)
-3. Вёрстка соответствует макету. Ширина экрана 420px(в допустимых отклон.)          (+40)
-
-9. Интерактивная карта в секции Contacts                                            (+12)
-10. Дополнительный функционал (кнопка scrollTop)                                    (+10)
+1. Слайдер в секции Welcome (всё работает согласно пунктов задания)                 (+24)+ 
+2. Слайдер в секции Video                                                           (+20)+
+3. Кастомный видеоплеер                                                             (+36)+
+4. Слайдер сравнения изображений в секции Explore                                   (+10)+
+5. Анимация при прокрутке изображений в секции Galery                               (+8 )+
+6. Калькулятор продажи билетов в секции Tiskets                                     (+10)+
+7. Калькулятор продажи билетов в форме продажи билетов                              (+14)
+8. Валидация формы                                                                  (+16)
+9. Интерактивная карта в секции Contacts                                            (+12)+
+10. Дополнительный функционал (кнопка scrollTop)                                    (+10)+
 
   
 Итого: 160.

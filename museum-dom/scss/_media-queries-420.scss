@@ -124,18 +124,9 @@
     margin-top: 38px;
   }
 
-  .explore__scroller {
-    width: 20px;
-    height: 20px;
-    left: 58% !important;
-    border: 2px solid #fff;
-  }
-  .explore__scroller:before,
-  .explore__scroller:after {
-    width: 2px;
-  }
-  .explore__image {
+  .explore-slider {
     height: 368px;
+    width: 380px;
   }
   .explore__content {
     margin-bottom: 40px;
