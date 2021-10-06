@@ -318,12 +318,12 @@ input[type="date"] {
   appearance: none;
   font-size: 18px;
 }
-input[type="time"]::-webkit-datetime-edit-hour-field,
-input[type="time"]::-webkit-datetime-edit-minute-field,
-input[type="time"]::-webkit-datetime-edit-text {
-  -webkit-appearance: none;
-  display: none;
-}
+// input[type="time"]::-webkit-datetime-edit-hour-field,
+// input[type="time"]::-webkit-datetime-edit-minute-field,
+// input[type="time"]::-webkit-datetime-edit-text {
+//   -webkit-appearance: none;
+//   display: none;
+// }
 
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator {
@@ -337,23 +337,23 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   color: transparent;
   background: transparent;
 }
-// delete for validation
-input[type="date"]::-webkit-datetime-edit-text {
-  -webkit-appearance: none;
-  display: none;
-}
-input[type="date"]::-webkit-datetime-edit-month-field {
-  -webkit-appearance: none;
-  display: none;
-}
-input[type="date"]::-webkit-datetime-edit-day-field {
-  -webkit-appearance: none;
-  display: none;
-}
-input[type="date"]::-webkit-datetime-edit-year-field {
-  -webkit-appearance: none;
-  display: none;
-}
+// // delete for validation
+// input[type="date"]::-webkit-datetime-edit-text {
+//   -webkit-appearance: none;
+//   display: none;
+// }
+// input[type="date"]::-webkit-datetime-edit-month-field {
+//   -webkit-appearance: none;
+//   display: none;
+// }
+// input[type="date"]::-webkit-datetime-edit-day-field {
+//   -webkit-appearance: none;
+//   display: none;
+// }
+// input[type="date"]::-webkit-datetime-edit-year-field {
+//   -webkit-appearance: none;
+//   display: none;
+// }
 
 #ticket-selected-type {
   padding-left: 45px;
@@ -394,9 +394,8 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   height: 25px;
   input {
     font-size: 18px !important;
-    width: 35px;
+    width: 40px;
     height: 25px;
-    padding-left: 10px;
     padding-right: 0px;
     outline: none;
   }
@@ -431,6 +430,13 @@ input[type="date"]::-webkit-datetime-edit-year-field {
     position: relative;
     top: -12px;
   }
+}
+
+.form-basic-price {
+  color: #000000;
+}
+.form-senior-price {
+  color: #000000;
 }
 
 /*========================================= Form right block =============================*/

@@ -446,19 +446,20 @@
 			<div class="tickets__form-container">
 				<div class="tickets__overlay">
 
-					<div class="tickets__form-item">
+					<form class="tickets__form-item" name="ticketsForm">
 						<span class="close-form"><img src="./assets/images/tickets/tickets-form/сlose.svg" alt="сlose"></span>
 						<div class="tickets__form">
 							<img src="./assets/images/tickets/tickets-form/logoform-logo.svg" alt="tickets-logo">
 							<h2 class="tickets__form-heading">Booking tickets</h2>
 							<p>Tour to Louvre</p>
 
-							<form name="ticketsForm" class="form" novalidate>
 
+							<div class="form">
 								<div class="date-time__container">
 									<div class="form_control date-time-control">
 										<label class="time-date-label date-label" for="date"><img
-												src="./assets/images/tickets/tickets-form/date.svg" alt="date"><span>Date</span></label>
+												src="./assets/images/tickets/tickets-form/date.svg" alt="date"><span
+												class="hide-date-time">Date</span></label>
 										<input type="date" id="date" name="date" class="form-input" value="" required />
 										<div class="error-message"></div>
 									</div>
@@ -490,12 +491,12 @@
 								<div class="form_control">
 									<img class="ticket-selected-icon" src="./assets/images/tickets/tickets-form/type.svg" alt="type-icon">
 									<select name="type" id="ticket-selected-type">
-										<option selected>
+										<!-- <option class="select-options" selected>
 											Ticket Type
-										</option>
-										<option value="">Permanent exhibition</option>
-										<option value="">Temporary exhibition</option>
-										<option value="">Combined Admission</option>
+										</option> -->
+										<option class="select-options" selected value="" data-price="20">Permanent exhibition</option>
+										<option class="select-options" value="" data-price="25">Temporary exhibition</option>
+										<option class="select-options" value="" data-price="40">Combined Admission</option>
 									</select>
 								</div>
 
@@ -503,32 +504,36 @@
 									<p class="entry-tickets-heading">Entry ticket</p>
 									<div class="entry-tickets-content">
 										<div class="entry-tickets-basic">
-											<label for="input-basic">Basic 18+ (20 €)</label>
+											<label for="input-basic">Basic 18+ (<span class="form-basic-price">20</span>€)</label>
 											<div class="entry-tickets-input">
-												<button class="entry-tickets-button"><img
+												<button class="entry-tickets-button" type="button"
+													onclick="this.nextElementSibling.stepDown()"><img
 														src="./assets/images/tickets/tickets-form/rectangleminus-form.svg"
 														alt="rectangleminus"></button>
-												<input class="input-basic" id="input-basic" type="number" readonly min="0" max="20" value="2">
-												<button class="entry-tickets-button"><img
+												<input class="input-basic" id="input-basic" type="number" readonly min="0" max="20" value="1">
+												<button class="entry-tickets-button" type="button"
+													onclick="this.previousElementSibling.stepUp()"><img
 														src="./assets/images/tickets/tickets-form/rectangleplus-form.svg"
 														alt="rectangleminus"></button>
 											</div>
 										</div>
 										<div class="entry-tickets-senior">
-											<label for="input-senior">Senior 65+ (10 €)</label>
+											<label for="input-senior">Senior 65+ (<span class="form-senior-price">10</span>€)</label>
 											<div class="entry-tickets-input">
-												<button class="entry-tickets-button"><img
+												<button class="entry-tickets-button" type="button"
+													onclick="this.nextElementSibling.stepDown()"><img
 														src="./assets/images/tickets/tickets-form/rectangleminus-form.svg"
 														alt="rectangleminus"></button>
-												<input class="input-basic" id="input-senior" type="number" readonly min="0" max="20" value="2">
-												<button class="entry-tickets-button"><img
+												<input class="input-basic" id="input-senior" type="number" readonly min="0" max="20" value="1">
+												<button class="entry-tickets-button" type="button"
+													onclick="this.previousElementSibling.stepUp()"><img
 														src="./assets/images/tickets/tickets-form/rectangleplus-form.svg"
 														alt="rectangleminus"></button>
 											</div>
 										</div>
 									</div>
 								</div>
-							</form>
+							</div>
 
 						</div>
 
@@ -538,11 +543,11 @@
 									<h3 class="overview-heading">Overview</h3>
 									<h4 class="overview-tour">Tour to Louvre</h4>
 									<img src="./assets/images/tickets/tickets-form/date.svg" alt="card-date">
-									<span>Friday, August 19</span><br>
+									<span class="tickets__cards-date">Friday, August 19</span><br>
 									<img src="./assets/images/tickets/tickets-form/time.svg" alt="card-time">
 									<span>16 : 30</span><br>
 									<img src="./assets/images/tickets/tickets-form/type-check.svg" alt="card-check">
-									<span>Temporary exhibition</span>
+									<span class="right-tickets-type">Temporary exhibition</span>
 								</div>
 								<div class="tickets__overview-image">
 									<img src="./assets/images/tickets/tickets-form/overview.jpg" alt="overview">
@@ -550,14 +555,14 @@
 							</div>
 							<div class="tickets__counter">
 								<p class="tickets__counter-item">
-									<span class="card-tickets-amount">2</span>
-									<span class="card-amount-description">Basic (20 €)</span>
-									<span class="card-amount-result">40 €</span>
+									<span class="card-tickets-amount amount-basic">2</span>
+									<span class="card-amount-description">Basic (<span class="form-basic-price">20</span> €)</span>
+									<span class="card-amount-result basic-total-price">40 €</span>
 								</p>
 								<p class="tickets__counter-item counter-line">
-									<span class="card-tickets-amount">2</span>
-									<span class="card-amount-description">Senior (10 €)</span>
-									<span class="card-amount-result">20 €</span>
+									<span class="card-tickets-amount amount-senior">2</span>
+									<span class="card-amount-description">Senior (<span class="form-senior-price">10</span> €)</span>
+									<span class="card-amount-result senior-total-price">20 €</span>
 								</p>
 								<p class="tickets-total-block">
 									<span class="total-block__text">Total:</span>
@@ -569,7 +574,7 @@
 
 							<div class="tickets__card-form-container">
 
-								<form name="tickets-card-form" class="tickets__card-form">
+								<div class="tickets__card-form">
 									<div class="card-firs-side">
 										<img class="visa" src="./assets/images/tickets/tickets-form/visa.png" alt="visa">
 										<img class="mastercard" src="./assets/images/tickets/tickets-form/mastercard.png" alt="mastercard">
@@ -622,12 +627,12 @@
 
 									</div>
 									<button type="submit" class="card-form-submit">Book</button>
-								</form>
+								</div>
 
 							</div>
 						</div>
 
-					</div>
+					</form>
 				</div>
 			</div>
 

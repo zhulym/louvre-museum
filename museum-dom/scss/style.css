@@ -1527,13 +1527,6 @@ input[type="date"] {
   font-size: 18px;
 }
 
-input[type="time"]::-webkit-datetime-edit-hour-field,
-input[type="time"]::-webkit-datetime-edit-minute-field,
-input[type="time"]::-webkit-datetime-edit-text {
-  -webkit-appearance: none;
-  display: none;
-}
-
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator {
   position: absolute;
@@ -1545,26 +1538,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   bottom: 0;
   color: transparent;
   background: transparent;
-}
-
-input[type="date"]::-webkit-datetime-edit-text {
-  -webkit-appearance: none;
-  display: none;
-}
-
-input[type="date"]::-webkit-datetime-edit-month-field {
-  -webkit-appearance: none;
-  display: none;
-}
-
-input[type="date"]::-webkit-datetime-edit-day-field {
-  -webkit-appearance: none;
-  display: none;
-}
-
-input[type="date"]::-webkit-datetime-edit-year-field {
-  -webkit-appearance: none;
-  display: none;
 }
 
 #ticket-selected-type {
@@ -1612,9 +1585,8 @@ input[type="date"]::-webkit-datetime-edit-year-field {
 
 .entry-tickets-input input {
   font-size: 18px !important;
-  width: 35px;
+  width: 40px;
   height: 25px;
-  padding-left: 10px;
   padding-right: 0px;
   outline: none;
 }
@@ -1653,6 +1625,14 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   padding-left: 0;
   position: relative;
   top: -12px;
+}
+
+.form-basic-price {
+  color: #000000;
+}
+
+.form-senior-price {
+  color: #000000;
 }
 
 /*========================================= Form right block =============================*/
@@ -3363,8 +3343,8 @@ input[type="date"]::-webkit-datetime-edit-year-field {
     left: 281px;
   }
   .tickets__form-item label {
-    -ms-flex-preferred-size: 35%;
-        flex-basis: 35%;
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
   }
   #date {
     font-size: 17px;
@@ -4168,5 +4148,6 @@ ul li {
   -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
   /* Dark Background */
+  z-index: 50;
 }
 /*# sourceMappingURL=style.css.map */
