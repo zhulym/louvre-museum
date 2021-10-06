@@ -247,9 +247,6 @@
     font-weight: 400;
   }
 }
-.time-date-label {
-  flex-basis: 95% !important;
-}
 input[type="date"] {
   font-size: 18px;
 }
@@ -258,7 +255,8 @@ input[type="date"] {
   justify-content: space-between;
   column-gap: 20px;
   label {
-    width: 100% !important;
+    // width: 100% !important;
+    position: relative;
   }
 }
 .close-form {
@@ -309,14 +307,20 @@ input[type="date"] {
 #date {
   background: #ffffff url("../assets/images/tickets/tickets-form/arrow-input.svg") no-repeat top 13px right 13px;
   appearance: none;
-  font-size: 12px;
+  font-size: 16px;
   width: 240px !important;
+  color: transparent;
+  user-select: none;
+  &::selection {
+    background-color: white !important;
+  }
 }
 
 #time {
   background: #ffffff url("../assets/images/tickets/tickets-form/arrow-input.svg") no-repeat top 13px right 13px;
   appearance: none;
   font-size: 18px;
+  color: transparent;
 }
 // input[type="time"]::-webkit-datetime-edit-hour-field,
 // input[type="time"]::-webkit-datetime-edit-minute-field,
@@ -338,20 +342,16 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   background: transparent;
 }
 // // delete for validation
-// input[type="date"]::-webkit-datetime-edit-text {
-//   -webkit-appearance: none;
+// #date::-webkit-datetime-edit-text {
 //   display: none;
 // }
-// input[type="date"]::-webkit-datetime-edit-month-field {
-//   -webkit-appearance: none;
+// #date::-webkit-datetime-edit-month-field {
 //   display: none;
 // }
-// input[type="date"]::-webkit-datetime-edit-day-field {
-//   -webkit-appearance: none;
+// #date::-webkit-datetime-edit-day-field {
 //   display: none;
 // }
-// input[type="date"]::-webkit-datetime-edit-year-field {
-//   -webkit-appearance: none;
+// #date::-webkit-datetime-edit-year-field {
 //   display: none;
 // }
 

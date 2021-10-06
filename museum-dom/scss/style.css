@@ -1430,11 +1430,6 @@ input[type="range"].sound__progress {
   font-weight: 400;
 }
 
-.time-date-label {
-  -ms-flex-preferred-size: 95% !important;
-      flex-basis: 95% !important;
-}
-
 input[type="date"] {
   font-size: 18px;
 }
@@ -1451,7 +1446,7 @@ input[type="date"] {
 }
 
 .date-time__container label {
-  width: 100% !important;
+  position: relative;
 }
 
 .close-form {
@@ -1515,8 +1510,21 @@ input[type="date"] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  font-size: 12px;
+  font-size: 16px;
   width: 240px !important;
+  color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#date::-moz-selection {
+  background-color: white !important;
+}
+
+#date::selection {
+  background-color: white !important;
 }
 
 #time {
@@ -1525,6 +1533,7 @@ input[type="date"] {
      -moz-appearance: none;
           appearance: none;
   font-size: 18px;
+  color: transparent;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator,

@@ -459,14 +459,36 @@
 									<div class="form_control date-time-control">
 										<label class="time-date-label date-label" for="date"><img
 												src="./assets/images/tickets/tickets-form/date.svg" alt="date"><span
-												class="hide-date-time">Date</span></label>
+												class="hide-date">Date</span></label>
 										<input type="date" id="date" name="date" class="form-input" value="" required />
 										<div class="error-message"></div>
 									</div>
 									<div class="form_control date-time-control">
 										<label class="time-date-label" for="time"><img src="./assets/images/tickets/tickets-form/time.svg"
-												alt="time"><span>Time</span></label>
-										<input type="time" id="time" name="time" class="form-input" value="" required />
+												alt="time"><span class="hide-time">Time</span></label>
+										<input type="time" id="time" name="time" class="form-input" min="09:00" max="18:00" value=""
+											list="time-list" required />
+										<datalist id="time-list">
+											<option value="09:00">
+											<option value="09:30">
+											<option value="10:00">
+											<option value="10:30">
+											<option value="11:00">
+											<option value="11:30">
+											<option value="12:00">
+											<option value="12:30">
+											<option value="13:00">
+											<option value="13:30">
+											<option value="14:00">
+											<option value="14:30">
+											<option value="15:00">
+											<option value="15:30">
+											<option value="16:00">
+											<option value="16:30">
+											<option value="17:00">
+											<option value="17:30">
+											<option value="18:00">
+										</datalist>
 										<div class="error-message"></div>
 									</div>
 								</div>
@@ -545,7 +567,7 @@
 									<img src="./assets/images/tickets/tickets-form/date.svg" alt="card-date">
 									<span class="tickets__cards-date">Friday, August 19</span><br>
 									<img src="./assets/images/tickets/tickets-form/time.svg" alt="card-time">
-									<span>16 : 30</span><br>
+									<span class="tickets__cards-time">16:30</span><br>
 									<img src="./assets/images/tickets/tickets-form/type-check.svg" alt="card-check">
 									<span class="right-tickets-type">Temporary exhibition</span>
 								</div>
@@ -573,7 +595,6 @@
 
 
 							<div class="tickets__card-form-container">
-
 								<div class="tickets__card-form">
 									<div class="card-firs-side">
 										<img class="visa" src="./assets/images/tickets/tickets-form/visa.png" alt="visa">
@@ -582,10 +603,8 @@
 											<label for="card-number" class="card-label">Card number</label>
 											<input type="text" name="card-number" value="" id="card-number" class="card-number">
 										</div>
-
 										<div class="card-control card-number-style">
 											<label for="card-date" class="card-label expiration-date">Expiration date</label>
-
 											<button class="number-minus number-month" type="button"
 												onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();"><img
 													src="./assets/images/tickets/tickets-form/arrownumber-down.svg" alt="number-down"></button>
@@ -594,7 +613,6 @@
 											<button class="number-plus number-month" type="button"
 												onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();"><img
 													src="./assets/images/tickets/tickets-form/arrownumber-up.svg" alt="number-up"></button>
-
 											<button class="number-minus number-year" type="button"
 												onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();"><img
 													src="./assets/images/tickets/tickets-form/arrownumber-down.svg" alt="number-down"></button>
@@ -605,7 +623,6 @@
 													src="./assets/images/tickets/tickets-form/arrownumber-up.svg" alt="number-up"></button>
 											<span class="number-border-date"></span>
 											<span class="number-border-year"></span>
-
 										</div>
 
 										<div class="card-control">
@@ -628,14 +645,13 @@
 									</div>
 									<button type="submit" class="card-form-submit">Book</button>
 								</div>
-
 							</div>
 						</div>
 
 					</form>
+
 				</div>
 			</div>
-
 		</section>
 
 		<div id="parallax" class="parallax"></div>

@@ -34,6 +34,8 @@ if (localStorage.getItem('tickets')) {
   typeValue = params.type;
   setCurrentParams();
 }
+
+document.querySelector('.close-form').addEventListener('click', handleCloseForm);
 ticketsBuy.addEventListener('click', blockPastDate);
 formDate.addEventListener('change', handleDateChange);
 formTime.addEventListener('change', handleTimeChange);
@@ -49,15 +51,17 @@ function handleDateChange() {
   document.querySelector('.tickets__cards-date').innerHTML = `${formateDate[2]}, ${formateDate[0]} ${formateDate[1]}`
 
   if (formDate.value.length) {
-    document.querySelector('.hide-date-time').style.display = 'none';
-    document.querySelector('.time-date-label').style.flexBasis = '40px !important';
+    document.querySelector('.hide-date').style.display = 'none';
+    formDate.style.color = '#000000'
   } else {
     document.querySelector('.hide-date-time').style.display = 'inline';
   }
 }
 
 function handleTimeChange() {
-  console.log(formTime.value)
+  document.querySelector('.hide-time').style.display = 'none';
+  document.querySelector('.tickets__cards-time').innerHTML = formTime.value;
+  formTime.style.color = '#000000';
 }
 
 function blockPastDate() {
@@ -130,6 +134,13 @@ function handleSelectChange() {
 function handleEntryBtns() {
   saveParams(typeValue, inputBasicForm.value, inputSeniorForm.value);
   setCurrentParams();
+}
+
+function handleCloseForm() {
+  setCurrentParams();
+  ticketBasic.value = params.basic;
+  ticketSenior.value = params.senior;
+  ticketsTotal.innerHTML = params.type * params.basic + params.type * params.senior * discount;
 }
 
 getTotalPrice();
