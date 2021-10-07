@@ -187,17 +187,15 @@ const inputName = document.querySelector('#name');
 
 const validationShema = {
   name: {
-    regexp: /^[a-zA-Zа-яА-Я \s]+$/gi,
+    regexp: /^[a-zA-Zа-яА-Я \s]{3,15}$/gi,
     message: 'Incorrect name or field is empty!',
-    minLength: 3,
-    maxLength: 15
   },
   email: {
-    regexp: /\S+@\S+\.\S+/gi,
+    regexp: /^[A-za-z0-9\-\_]{3,15}@\w+([\.-]?[a-zA-Z]{3,})(\.[a-zA-Z]{2,})+$/ig,
     message: 'Incorrect email or field is empty!'
   },
   tel: {
-    regexp: /\S+@\S+\.\S+/gi,
+    regexp: /^[ -]*([0-9][ -]*){1,10}$/,
     message: 'Incorrect phone number or field is empty!'
   }
 }
@@ -210,40 +208,35 @@ function validateForm(event) {
   const input = event.target || event;
   const error = validationShema[input.name].message;
   const regExp = validationShema[input.name].regexp;
-  const minLength = validationShema[input.name].minLength;
-  const maxLength = validationShema[input.name].maxLength;
 
   const isValid = input.value.match(regExp);
-  let isValidLength;
-
   if (!input.required) return;
 
-  if (minLength && maxLength) {
-    input.value.length >= minLength && input.value.length <= maxLength ? isValidLength = true : isValidLength = false;
-  }
-
-  if (!isValid || !isValidLength) {
-    debugger
+  if (!isValid) {
     input.nextElementSibling.innerHTML = error;
-    event.target.parentNode.classList.add('error');
+    input.parentNode.classList.add('error');
     return false;
   } else {
     input.nextElementSibling.innerHTML = '';
-    event.target.parentNode.classList.remove('error');
+    input.parentNode.classList.remove('error');
     return true;
   }
 };
 
+ticketForm.addEventListener('submit', handleFormSubmit);
 
-
-
-
-
-
-form.addEventListener('submit', async (event) => {
+function handleFormSubmit(event) {
   event.preventDefault();
   const inputErrors = [];
   const inputValues = {};
-})
 
-
+  validateInputs.forEach((input) => {
+    const isValid = validateForm(input);
+    if (!isValid) {
+      inputErrors.push(input);
+      return;
+    }
+    inputValues[input.name] = input.value;
+    console.log('FORM IS VALIDATED!!!');
+  });
+}

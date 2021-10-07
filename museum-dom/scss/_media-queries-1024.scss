@@ -480,6 +480,12 @@
     padding: 75px 30px 30px 30px;
   }
 
+  .button-submit {
+    bottom: 7%;
+    display: block;
+    right: 6%;
+  }
+
   /*==============  Contacts  ==============*/
   .contacts__heading h2 {
     @include fontHeading();

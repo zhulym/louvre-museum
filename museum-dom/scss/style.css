@@ -2035,9 +2035,10 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .card-form-submit {
-  position: relative;
-  top: 56px;
-  left: 250px;
+  display: none;
+  position: absolute;
+  bottom: 7%;
+  right: 6%;
   font-size: 22px;
   line-height: 26px;
   background-color: #710707;
@@ -2064,6 +2065,16 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .card-form-submit:active {
   -webkit-transform: scale(0.99);
           transform: scale(0.99);
+}
+
+.card-label {
+  width: 50% !important;
+}
+
+.button-submit {
+  bottom: 14%;
+  display: block;
+  right: 18.5%;
 }
 
 .error-message {
@@ -2880,6 +2891,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     width: 1030px;
     padding: 75px 30px 30px 30px;
   }
+  .button-submit {
+    bottom: 7%;
+    display: block;
+    right: 6%;
+  }
   /*==============  Contacts  ==============*/
   .contacts__heading h2 {
     font-size: 50px;
@@ -3419,11 +3435,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   .cvv-description {
     line-height: 11px;
   }
-  .card-form-submit {
-    position: relative;
-    top: 54px;
-    left: 281px;
-  }
   #date {
     font-size: 17px;
   }
@@ -3439,6 +3450,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     color: #161615 !important;
     text-align: left;
     padding-left: 10px;
+  }
+  .button-submit {
+    bottom: -80%;
+    right: 8%;
+    width: 220px;
+    height: 45px;
   }
   /*==============  Menu  ==============*/
   .menu768__container {
@@ -4034,11 +4051,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   .cvv-description {
     top: 12px;
   }
-  .card-form-submit {
-    position: initial;
-    margin-top: 12%;
-    margin-left: 34%;
-    margin-bottom: 7%;
+  .button-submit {
+    bottom: -184%;
   }
 }
 

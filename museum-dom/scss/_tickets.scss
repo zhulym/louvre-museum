@@ -757,9 +757,10 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .card-form-submit {
-  position: relative;
-  top: 56px;
-  left: 250px;
+  display: none;
+  position: absolute;
+  bottom: 7%;
+  right: 6%;
   font-size: 22px;
   line-height: 26px;
   background-color: #710707;
@@ -778,6 +779,15 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   &:active {
     transform: scale(0.99);
   }
+}
+.card-label {
+  width: 50% !important;
+}
+
+.button-submit {
+  bottom: 14%;
+  display: block;
+  right: 18.5%;
 }
 
 .error-message {

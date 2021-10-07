@@ -444,11 +444,11 @@
   .cvv-description {
     line-height: 11px;
   }
-  .card-form-submit {
-    position: relative;
-    top: 54px;
-    left: 281px;
-  }
+  // .card-form-submit {
+  //   position: relative;
+  //   top: 54px;
+  //   left: 281px;
+  // }
   #date {
     font-size: 17px;
   }
@@ -465,6 +465,12 @@
     color: #161615 !important;
     text-align: left;
     padding-left: 10px;
+  }
+  .button-submit {
+    bottom: -80%;
+    right: 8%;
+    width: 220px;
+    height: 45px;
   }
 
   /*==============  Menu  ==============*/
