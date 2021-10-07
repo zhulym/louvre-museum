@@ -116,7 +116,7 @@ let distY = 0;
 let swipeTime = 0;
 let startTime = 0;
 const distHorizontal = 150;
-const distVertical = 100;
+const distVertical = 200;
 const allowedTime = 1000;
 
 sliderContainer.addEventListener('mousedown', function (e) {
@@ -218,6 +218,7 @@ body.addEventListener('mouseup', onMouseUp)
 const scrollTopBtn = document.querySelector(".scroll-up-button");
 
 const handleScroll = () => {
+
   if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
     scrollTopBtn.style.display = "block";
   }
@@ -236,6 +237,7 @@ scrollTopBtn.addEventListener("click", function (e) {
   e.preventDefault();
   scrollToTop();
 });
+
 
 /*==============================================  MapBox  ============================================*/
 

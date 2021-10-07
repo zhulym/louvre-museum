@@ -35,15 +35,17 @@ if (localStorage.getItem('tickets')) {
   setCurrentParams();
 }
 
-document.querySelector('.close-form').addEventListener('click', handleCloseForm);
-ticketsBuy.addEventListener('click', blockPastDate);
-formDate.addEventListener('change', handleDateChange);
-formTime.addEventListener('change', handleTimeChange);
-ticketTypeForm.addEventListener('change', handleSelectChange);
-ticketsBuy.addEventListener('click', setCurrentParams);
-ticketsType.forEach(el => el.addEventListener('click', setTypeValue));
-ticketsBtns.forEach(el => el.addEventListener('click', getTotalPrice));
-entryTicketsBtns.forEach(el => el.addEventListener('click', handleEntryBtns));
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.close-form').addEventListener('click', handleCloseForm);
+  ticketsBuy.addEventListener('click', blockPastDate);
+  formDate.addEventListener('change', handleDateChange);
+  formTime.addEventListener('change', handleTimeChange);
+  ticketTypeForm.addEventListener('change', handleSelectChange);
+  ticketsBuy.addEventListener('click', setCurrentParams);
+  ticketsType.forEach(el => el.addEventListener('click', setTypeValue));
+  ticketsBtns.forEach(el => el.addEventListener('click', getTotalPrice));
+  entryTicketsBtns.forEach(el => el.addEventListener('click', handleEntryBtns));
+});
 
 function handleDateChange() {
   let date = new Date(formDate.value);
@@ -79,7 +81,6 @@ function blockPastDate() {
   } else {
     document.querySelector('.hide-date-time').style.display = 'inline';
   }
-  console.log(formDate.value.length)
 }
 
 function setTypeValue() {
@@ -177,5 +178,72 @@ function createRipple(e) {
   this.appendChild(circle)
   setTimeout(() => circle.remove(), 500)
 }
+
+/*==============================================  Form Validation  ============================================*/
+const ticketForm = document.forms['ticketsForm'];
+const validateInputs = document.querySelectorAll('.validate-input');
+const validateControl = document.querySelectorAll('.validate-control');
+const inputName = document.querySelector('#name');
+
+const validationShema = {
+  name: {
+    regexp: /^[a-zA-Zа-яА-Я \s]+$/gi,
+    message: 'Incorrect name or field is empty!',
+    minLength: 3,
+    maxLength: 15
+  },
+  email: {
+    regexp: /\S+@\S+\.\S+/gi,
+    message: 'Incorrect email or field is empty!'
+  },
+  tel: {
+    regexp: /\S+@\S+\.\S+/gi,
+    message: 'Incorrect phone number or field is empty!'
+  }
+}
+
+validateInputs.forEach((item) => {
+  item.addEventListener('blur', validateForm)
+});
+
+function validateForm(event) {
+  const input = event.target || event;
+  const error = validationShema[input.name].message;
+  const regExp = validationShema[input.name].regexp;
+  const minLength = validationShema[input.name].minLength;
+  const maxLength = validationShema[input.name].maxLength;
+
+  const isValid = input.value.match(regExp);
+  let isValidLength;
+
+  if (!input.required) return;
+
+  if (minLength && maxLength) {
+    input.value.length >= minLength && input.value.length <= maxLength ? isValidLength = true : isValidLength = false;
+  }
+
+  if (!isValid || !isValidLength) {
+    debugger
+    input.nextElementSibling.innerHTML = error;
+    event.target.parentNode.classList.add('error');
+    return false;
+  } else {
+    input.nextElementSibling.innerHTML = '';
+    event.target.parentNode.classList.remove('error');
+    return true;
+  }
+};
+
+
+
+
+
+
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const inputErrors = [];
+  const inputValues = {};
+})
 
 

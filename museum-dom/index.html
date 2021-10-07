@@ -446,7 +446,7 @@
 			<div class="tickets__form-container">
 				<div class="tickets__overlay">
 
-					<form class="tickets__form-item" name="ticketsForm">
+					<form class="tickets__form-item" name="ticketsForm" novalidate>
 						<span class="close-form"><img src="./assets/images/tickets/tickets-form/сlose.svg" alt="сlose"></span>
 						<div class="tickets__form">
 							<img src="./assets/images/tickets/tickets-form/logoform-logo.svg" alt="tickets-logo">
@@ -460,14 +460,14 @@
 										<label class="time-date-label date-label" for="date"><img
 												src="./assets/images/tickets/tickets-form/date.svg" alt="date"><span
 												class="hide-date">Date</span></label>
-										<input type="date" id="date" name="date" class="form-input" value="" required />
+										<input type="date" id="date" name="date" class="form-input" value="" />
 										<div class="error-message"></div>
 									</div>
 									<div class="form_control date-time-control">
 										<label class="time-date-label" for="time"><img src="./assets/images/tickets/tickets-form/time.svg"
 												alt="time"><span class="hide-time">Time</span></label>
 										<input type="time" id="time" name="time" class="form-input" min="09:00" max="18:00" value=""
-											list="time-list" required />
+											list="time-list" />
 										<datalist id="time-list">
 											<option value="09:00">
 											<option value="09:30">
@@ -492,26 +492,31 @@
 										<div class="error-message"></div>
 									</div>
 								</div>
-								<div class="form_control">
-									<label for="name"><img src="./assets/images/tickets/tickets-form/name.svg"
-											alt="name"><span>Name</span></label>
-									<input type="text" id="name" name="name" class="form-input" required />
+								<div class="form_control validate-control">
+									<label class="style-label" for="name"><img src="./assets/images/tickets/tickets-form/name.svg"
+											alt="name"></label>
+									<input type="text" id="name" name="name" class="form-input validate-input" placeholder="Name"
+										required />
+									<div class="error-message"></div>
+								</div>
+								<div class="form_control validate-control">
+									<label class="style-label" for="email"><img src="./assets/images/tickets/tickets-form/email.svg"
+											alt="email"></label>
+									<input type="email" id="email" name="email" class="form-input validate-input" placeholder="E-mail"
+										required />
+									<div class="error-message"></div>
+								</div>
+								<div class="form_control validate-control">
+									<label class="style-label" for="tel"><img src="./assets/images/tickets/tickets-form/tel.svg"
+											alt="tel"></label>
+									<input type="tel" id="tel" name="tel" class="form-input validate-input" placeholder="Phone"
+										required />
 									<div class="error-message"></div>
 								</div>
 								<div class="form_control">
-									<label for="email"><img src="./assets/images/tickets/tickets-form/email.svg"
-											alt="email"><span>E-mail</span></label>
-									<input type="email" id="email" name="email" class="form-input" required />
-									<div class="error-message"></div>
-								</div>
-								<div class="form_control">
-									<label for="tel"><img src="./assets/images/tickets/tickets-form/tel.svg"
-											alt="tel"><span>Phone</span></label>
-									<input type="tel" id="tel" name="tel" class="form-input" required />
-									<div class="error-message"></div>
-								</div>
-								<div class="form_control">
-									<img class="ticket-selected-icon" src="./assets/images/tickets/tickets-form/type.svg" alt="type-icon">
+									<label class="style-label" for="ticket-selected-type"><img class="ticket-selected-icon"
+											src="./assets/images/tickets/tickets-form/type.svg" alt="type-icon"></label>
+									<!-- <img class="ticket-selected-icon" src="./assets/images/tickets/tickets-form/type.svg" alt="type-icon"> -->
 									<select name="type" id="ticket-selected-type">
 										<!-- <option class="select-options" selected>
 											Ticket Type
@@ -526,7 +531,7 @@
 									<p class="entry-tickets-heading">Entry ticket</p>
 									<div class="entry-tickets-content">
 										<div class="entry-tickets-basic">
-											<label for="input-basic">Basic 18+ (<span class="form-basic-price">20</span>€)</label>
+											<label for="input-basic">Basic 18+ (<span class="form-basic-price">20</span> €)</label>
 											<div class="entry-tickets-input">
 												<button class="entry-tickets-button" type="button"
 													onclick="this.nextElementSibling.stepDown()"><img
@@ -540,7 +545,7 @@
 											</div>
 										</div>
 										<div class="entry-tickets-senior">
-											<label for="input-senior">Senior 65+ (<span class="form-senior-price">10</span>€)</label>
+											<label for="input-senior">Senior 65+ (<span class="form-senior-price">10</span> €)</label>
 											<div class="entry-tickets-input">
 												<button class="entry-tickets-button" type="button"
 													onclick="this.nextElementSibling.stepDown()"><img

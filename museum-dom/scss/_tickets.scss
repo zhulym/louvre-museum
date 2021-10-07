@@ -191,6 +191,7 @@
 }
 .form_control {
   display: flex;
+  position: relative;
 }
 
 .date-time-control {
@@ -227,7 +228,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    width: 35%;
+    width: 11%;
     img {
       padding-left: 7px;
     }
@@ -250,12 +251,36 @@
 input[type="date"] {
   font-size: 18px;
 }
+
+.validate-input {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 400;
+}
+.validate-input::-webkit-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.validate-input:focus::-webkit-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+
+.validate-input::placeholder {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 400;
+}
+.validate-input:focus::placeholder {
+  color: transparent;
+}
+
 .date-time__container {
   display: flex;
   justify-content: space-between;
   column-gap: 20px;
   label {
-    // width: 100% !important;
+    width: 30%;
     position: relative;
   }
 }
@@ -356,9 +381,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 // }
 
 #ticket-selected-type {
-  padding-left: 45px;
   position: relative;
-  border: 1px solid #cecece;
+  border: 1px solid black;
+  border-left: none !important;
   background: #ffffff url("../assets/images/tickets/tickets-form/arrow-input.svg") no-repeat top 13px right 13px;
   appearance: none;
 }
@@ -368,8 +393,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   display: block;
   color: #000000;
   z-index: 5;
-  top: 571px;
-  left: 247px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.style-label {
+  display: initial;
 }
 
 .entry-tickets {
@@ -422,6 +451,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .entry-tickets-content {
   label {
+    display: -webkit-box;
     font-size: 18px;
     line-height: 0px;
     border: none;
@@ -750,6 +780,20 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.error-message {
+  position: absolute;
+  color: red !important;
+  left: 0;
+  top: 100%;
+  font-size: 16px;
+}
+
+.error {
+  border: 1px solid red;
+  box-shadow: 0 0 7px red;
+}
+
+// Ripple styles
 .card-form-submit .circle {
   position: absolute;
   background-color: rgb(255, 255, 255);
