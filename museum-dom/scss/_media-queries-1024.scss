@@ -307,7 +307,7 @@
 
   /*==============  VIDEO  ==============*/
   .video__content {
-    max-height: 444px;
+    height: 444px;
   }
   .video__heading h2 {
     @include fontHeading();

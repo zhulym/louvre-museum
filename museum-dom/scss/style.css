@@ -623,10 +623,34 @@
 
 .video__content {
   position: relative;
-  max-height: 650px;
+  height: 650px;
   overflow: hidden;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.video-item {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.video__content.max-video-height {
+  height: 100% !important;
+}
+
+.video__active {
+  position: relative;
+  opacity: 1;
+  width: 100%;
+}
+
+.video__active[poster] {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .video__controls {
@@ -787,19 +811,6 @@ input[type="range"].sound__progress {
   color: white;
   font-size: 24px;
   letter-spacing: 3px;
-}
-
-.video-item {
-  position: absolute;
-  opacity: 0;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.video__active {
-  position: relative;
-  opacity: 1;
-  width: 100%;
 }
 
 .video__heading {
@@ -2708,7 +2719,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   }
   /*==============  VIDEO  ==============*/
   .video__content {
-    max-height: 444px;
+    height: 444px;
   }
   .video__heading h2 {
     font-size: 50px;
@@ -3661,6 +3672,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   .video__progress,
   .sound__progress {
     height: 5px;
+  }
+  .video__content {
+    height: 200px;
   }
   .extra-range {
     -webkit-box-shadow: 0px 0 0 1px black;
