@@ -147,6 +147,29 @@ function slower() {
   videoItem[currentItem].playbackRate -= 0.25
   showPlayBackRate();
 }
+///////////////
+let swiperSlides1 = document.querySelectorAll('.swiper-slide');
+
+
+let miniSlides = document.querySelectorAll('.video-stream');
+console.log(swiperSlides1)
+
+console.log(Array.from(swiperSlides1))
+
+Array.from(swiperSlides1).forEach(el => el.addEventListener('click', stopMiniVideo));
+
+function stopMiniVideo() {
+  // if (miniSlides != null) {
+  //   for (let i = 0; i < miniSlides.length; i++) {
+  //     miniSlides[i].src = miniSlides[i].src;
+  //   }
+  // }
+  console.log('click');
+}
+document.addEventListener('click', function (e) {
+  console.log(e.target);
+})
+//////////////////
 
 function resetParams() {
   videoItem[currentItem].pause();
@@ -164,9 +187,9 @@ function resetParams() {
 let isSlideActive = false;
 
 function handleNextBtn() {
+  resetParams();
   if (!isSlideActive) {
     isSlideActive = true;
-    resetParams();
     if (currentItem === videoItem.length - 1) currentItem = -1;
     currentItem++;
     videoItem[currentItem].classList.add('video__active', 'video');
@@ -179,9 +202,9 @@ function handleNextBtn() {
 }
 
 function handlePrevBtn() {
+  resetParams();
   if (!isSlideActive) {
     isSlideActive = true;
-    resetParams();
     if (currentItem === 0) {
       currentItem = videoItem.length - 1;
     } else {
