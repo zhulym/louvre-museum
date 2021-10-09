@@ -167,7 +167,7 @@ function stopMiniVideo() {
   console.log('click');
 }
 document.addEventListener('click', function (e) {
-  console.log(e.target);
+  console.log(e.target)
 })
 //////////////////
 

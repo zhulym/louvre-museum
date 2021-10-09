@@ -28,19 +28,19 @@ let newImageArr = shuffle(galleryImages);
 createGallery();
 
 if (window.innerWidth > 768) {
-  setInterval(() => {
-    while (galleryLeft.firstChild) {
-      galleryLeft.removeChild(galleryLeft.firstChild);
-    }
-    while (galleryCenter.firstChild) {
-      galleryCenter.removeChild(galleryCenter.firstChild);
-    }
-    while (galleryRight.firstChild) {
-      galleryRight.removeChild(galleryRight.firstChild);
-    }
-    newImageArr = shuffle(galleryImages);
-    createGallery();
-  }, 5000);
+  // setInterval(() => {
+  while (galleryLeft.firstChild) {
+    galleryLeft.removeChild(galleryLeft.firstChild);
+  }
+  while (galleryCenter.firstChild) {
+    galleryCenter.removeChild(galleryCenter.firstChild);
+  }
+  while (galleryRight.firstChild) {
+    galleryRight.removeChild(galleryRight.firstChild);
+  }
+  newImageArr = shuffle(galleryImages);
+  createGallery();
+  // }, 5000);
 }
 
 function shuffle(array) {
@@ -51,7 +51,7 @@ function createImage(column, image, index) {
   galleryImage.classList.add('gallery-img');
   galleryImage.src = `${image}`;
   galleryImage.alt = `galery${index}`;
-  galleryImage.setAttribute('data-aos', 'fade-up');
+  // galleryImage.setAttribute('data-aos', 'fade-up');
   column.append(galleryImage);
 }
 function createGallery() {
@@ -103,4 +103,43 @@ function createGallery768() {
 }
 
 /* =============== Animation ========================*/
-AOS.init();
+// AOS.init();
+const galleryItems = document.querySelectorAll('.gallery-img')
+if (galleryItems.length > 0) {
+  window.addEventListener('scroll', animateGallery);
+
+  function animateGallery() {
+    for (let i = 0; i < galleryItems.length; i++) {
+      const animItem = galleryItems[i];
+      const animItemHeight = animItem.offsetHeight;
+      const animItemOffset = offset(animItem).top;
+      const animStart = 4;
+      let animItemPoint = window.innerHeight - animItemHeight / animStart;
+      if (animItemHeight > window.innerHeight) {
+        animItemPoint = window.innerHeight - window.innerHeight / animStart;
+      }
+      if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+        animItem.classList.add('item-animation');
+      } else {
+        animItem.classList.remove('item-animation');
+      }
+
+    }
+  }
+}
+
+function offset(el) {
+  const rect = el.getBoundingClientRect(),
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+}
+
+animateGallery();
+
+window.addEventListener("load", function () {
+  let scrollPosition = document.documentElement.scrollTop;
+  if (scrollPosition > 2500 && scrollPosition < 6500) {
+    animateGallery();
+  }
+});

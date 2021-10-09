@@ -1040,16 +1040,22 @@ input[type="range"].sound__progress {
 .gallery__left {
   position: relative;
   top: 12px;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 
 .gallery__center {
   position: relative;
   top: -40px;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 
 .gallery__right {
   position: relative;
   top: 35px;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 
 .gallery__shadow {
@@ -1097,6 +1103,20 @@ input[type="range"].sound__progress {
   100% {
     opacity: 1;
   }
+}
+
+.gallery-img {
+  -webkit-transform: translate(0px, 10%) scale(0.8);
+          transform: translate(0px, 10%) scale(0.8);
+  opacity: 0;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.gallery-img.item-animation {
+  -webkit-transform: translate(0px, 0px) scale(1);
+          transform: translate(0px, 0px) scale(1);
+  opacity: 1;
 }
 
 .tickets__content {
