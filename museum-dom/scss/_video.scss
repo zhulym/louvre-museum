@@ -14,12 +14,12 @@
   position: relative;
   height: 650px;
   overflow: hidden;
-  transition: all 0.5s ease;
+  // transition: all 0.5s ease;
 }
 .video-item {
   position: absolute;
   opacity: 0;
-  transition: all 0.5s ease;
+  // transition: all 0.5s ease;
 }
 .video__content.max-video-height {
   height: 100% !important;
