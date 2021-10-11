@@ -481,8 +481,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function handleDateChange() {
   let date = new Date(formDate.value);
-  let formateDate = date.toLocaleDateString('en-US', { month: 'long', year: '2-digit', weekday: 'long', }).split(' ');
-  document.querySelector('.tickets__cards-date').innerHTML = `${formateDate[2]}, ${formateDate[0]} ${formateDate[1]}`
+  let formateDate = date.toLocaleDateString('en-US', { month: 'long', day: '2-digit', weekday: 'long', }).split(' ');
+  document.querySelector('.tickets__cards-date').innerHTML = `${formateDate[0]} ${formateDate[1]} ${formateDate[2]}`
 
   if (formDate.value.length) {
     document.querySelector('.hide-date').style.display = 'none';
