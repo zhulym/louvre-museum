@@ -879,6 +879,34 @@ function handleBulletClick(e) {
   }, 50);
 }
 
+function arrowUpVolume() {
+  if (videoItem[currentItem].volume === 1) return;
+  speaker.classList.remove('mute');
+  videoItem[currentItem].muted = false;
+  videoItem[currentItem].volume = +(videoItem[currentItem].volume).toFixed(2) + 0.1;
+  soundProgress.value = videoItem[currentItem].volume;
+  rangePosition(soundProgress, videoItem[currentItem].volume * 100);
+}
+
+function arrowDownVolume() {
+  if (videoItem[currentItem].volume !== 0) {
+    videoItem[currentItem].volume = +(videoItem[currentItem].volume).toFixed(2) - 0.1;
+    if (videoItem[currentItem].volume === 0) {
+      videoItem[currentItem].muted = true;
+      speaker.classList.add('mute');
+    }
+    soundProgress.value = videoItem[currentItem].volume;
+    rangePosition(soundProgress, videoItem[currentItem].volume * 100);
+  }
+}
+
+function plusTenSec() {
+  videoItem[currentItem].currentTime += 5;
+}
+function minusTenSec() {
+  videoItem[currentItem].currentTime -= 5;
+}
+
 function handleKeys(e) {
   let scrollPosition = document.documentElement.scrollTop;
   if (scrollPosition > 1500 && scrollPosition < 4500) {
@@ -888,6 +916,12 @@ function handleKeys(e) {
     e.key === 'f' || e.key === 'а' ? toggleFullscreen() : null;
     e.key === '<' || e.key === 'Б' ? slower() : null;
     e.key === '>' || e.key === 'Ю' ? faster() : null;
+    e.key === 'Home' ? handleProgressKeyNum(0) : null;
+    e.key === 'End' ? handleProgressKeyNum(99) : null;
+    e.key === 'ArrowUp' ? arrowUpVolume() : null;
+    e.key === 'ArrowDown' ? arrowDownVolume() : null;
+    e.key === 'j' || e.key === 'о' ? minusTenSec() : null;
+    e.key === 'l' || e.key === 'д' ? plusTenSec() : null;
   }
 }
 
@@ -959,7 +993,14 @@ console.log(`
    - карта добавлена +4
    - на карту добавлены маркеры +4
    - стиль соотв. макету +4
-10. Дополнительный функционал (кнопка scrollTop)                                    (+10)
-
+10. Дополнительный функционал:
+    - (кнопка scrollTop) +5                                                         (+10)
+    - в кастомном видиоплеере доп кнопки Home, End, ArrowUp, ArrowDown, j, l
+      Home - перемотка в начало +2
+      End - перемотка в конец +2
+      ArrowUp - увеличить громкость (как в youtube) +2
+      ArrowDown - уменьшить громкость (как в youtube) +2
+      j - -5 сек видео  +2
+      l - +5 сек видео  +2
 Итого: 156.
 `);
