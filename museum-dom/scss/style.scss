@@ -29,7 +29,6 @@
 
 /*======================================  DEFAULT STYLES  ==================================*/
 * {
-    box-sizing: border-box;
     font-family: "Roboto", sans-serif;
     font-size: 22px;
     color: #fff;
@@ -47,7 +46,12 @@ body.lock_page-scroll {
 }
 
 html {
+    box-sizing: border-box;
     scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 img {
